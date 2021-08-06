@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>5</title>
+<link href="BTGK.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+	<div class="header">
+		<div class="logo"> <img src="fx_pint_tape_logo_by_classicluv_d7elvxu-fullview.png"> </div>
+		<ul class="nav">
+			<li> <a href="#section1"> About </a> </li>
+			<li> <a href="#section2"> Menu </a> </li>
+			<li> <a href="#section3"> Location </a> </li>		
+		</ul>
+	</div>
+	<div class="cover">
+		<h1 class="cover-title"> Central Coffee </h1>
+		<h1 class="subtitle"> Bespoke organically-sourced coffee</h1>
+	</div>
+	
+	<div class="container">
+	<section id="section1">
+	<div class="section1 margin-lr">
+		<div class="Content margin-top">
+			<h1> About </h1>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sagittis urna, a fermentum mauris. Mauris sagittis eu urna at sollicitudin. Sed et dui accumsan, vulputate dui ut, fringilla tellus. Vivamus a ex commodo, vulputate metus gravida, congue arcu. Fusce vehicula laoreet lorem vel lacinia. Etiam ac erat turpis. Morbi nec urna aliquet, placerat nisl ac, venenatis justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+		<div class="grid">
+			<div class="anh1">( </div>
+			<div class="anh2">  </div>
+			<div class="anh3">  </div>
+			<div class="anh4">  </div>
+		</div>
+	</div>
+	</section>
+		
+	<section id="section2">
+	<div class="section2 margin-lr">
+		<div class="Content margin-top">
+			<h1> Menu </h1>
+			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sagittis urna, a fermentum mauris. Mauris sagittis eu urna at sollicitudin. Sed et dui accumsan, vulputate dui ut, fringilla tellus. Vivamus a ex commodo, vulputate metus gravida, congue arcu. Fusce vehicula laoreet lorem vel lacinia. Etiam ac erat turpis. Morbi nec urna aliquet, placerat nisl ac, venenatis justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		</div>
+		<div class="sec2-menu">
+			<div class="trai"> 
+				<h2> DRINKS</h2>
+				<div class="hinhtrai"> <img src="fx.jpg"> </div>
+				<p>La Catalina (Colombia) <br>Guarumales (Ecuador) <br>Rukondo (Rwanda)<br>Peppermint Tea<br> Black tea</p>
+			</div>
+			<div class="phai">
+				<h2> FOOD </h2>
+				<div class="hinhphai"><img src="CDZJt5h.jpg">
+				</div>
+				<p>Frittata (Herb and Veggie, Italian, Corned Beef) <br> Breakfast sandwich <br> Cobb salad<br> Various baked goods</p>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="section3">
+	<div class="section3 margin-lr">
+			<h1 class="Content margin-top"> Location </h1>
+		<div class="map">
+		<div class="anh-map"> <img src="bs.jpg"> </div>
+	 	<div class="time"> 
+			<h1 class="hours"> HOURS </h1>
+		  	<p> Mon;-Thurs -- 7am - 8pm <br>Fri-Sun -- 8am - 10pm</p>
+		</div>
+	</div>
+	</div>
+	</section>
+	</div>
+	<div class="footer"> 
+		<p> © 2018 Central Coffee</p>	
+	</div>
+	
+</body>
+</html>
