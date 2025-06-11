@@ -1,1 +1,0 @@
-# ngapham.github.io

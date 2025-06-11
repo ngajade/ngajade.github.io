@@ -1,78 +1,375 @@
-<!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>NgaJade</title>
-<link href="BTGK.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <title> Portfolio </title>
+  <link rel="stylesheet" href="portstyle.css">
+	<link rel="icon" href="logob.png" type="image/x-icon">
+	<script src="https://kit.fontawesome.com/cb8f931045.js" crossorigin="anonymous"></script>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<meta property="og:image" content="logothumb.png"/>
+	<meta property="og:description" content="Hello! I'm Nga Pham. Welcome to my PORTFOLIO"/>
+	<meta property="og:image:width" content="1200"/>
+	<meta property="og:image:height" content="600"/>
 </head>
 <body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+<div class="header">
+	<button id="btntop" onClick="topFunction()">  <i class="fas fa-angle-up"></i> </button>
+  	<div class="noborder" style="display:flex;justify-content: center;  align-items: center">
+	<div class="navbar wid"> 
+      <p class="logo"> <a href="index.html">  JadeNga </a> </p>
 
-	<div class="header">
-		<div class="logo"> <img src="fx_pint_tape_logo_by_classicluv_d7elvxu-fullview.png"> </div>
 		<ul class="nav">
-			<li> <a href="#section1"> About </a> </li>
-			<li> <a href="#section2"> Menu </a> </li>
-			<li> <a href="#section3"> Location </a> </li>		
-		</ul>
-	</div>
-	<div class="cover">
-		<h1 class="cover-title"> Central Coffee </h1>
-		<h1 class="subtitle"> Bespoke organically-sourced coffee</h1>
-	</div>
-	
+			<li><a href="index.html" class="color">Home</a></li>
+			<li><a href="aboutme.html">About me</a></li>
+			<li>
+			  <a>Portfolio</a>
+			  <ul class="linewhite">
+				<li>
+				  <a href="portfolio.html"> Design </a>
+				</li>
+				<li><a href="photography.html">Photography</a></li>
+
+			  </ul>
+			</li>
+			<li><a href="contact.html">Contact</a></li>
+			<li class="search-box">
+				  <input class="search-input white" placeholder="Type something...">
+				  <a class="search-btn" href=""> <i class="fas fa-search"></i> </a>
+			  </li>
+		  </ul>	
+	</div>	
+  	</div>
+	<div class="showreel"> UX/UI designer </div>
 	<div class="container">
-	<section id="section1">
-	<div class="section1 margin-lr">
-		<div class="Content margin-top">
-			<h1> About </h1>
-			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sagittis urna, a fermentum mauris. Mauris sagittis eu urna at sollicitudin. Sed et dui accumsan, vulputate dui ut, fringilla tellus. Vivamus a ex commodo, vulputate metus gravida, congue arcu. Fusce vehicula laoreet lorem vel lacinia. Etiam ac erat turpis. Morbi nec urna aliquet, placerat nisl ac, venenatis justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-		<div class="grid">
-			<div class="anh1">( </div>
-			<div class="anh2">  </div>
-			<div class="anh3">  </div>
-			<div class="anh4">  </div>
-		</div>
-	</div>
-	</section>
-		
-	<section id="section2">
-	<div class="section2 margin-lr">
-		<div class="Content margin-top">
-			<h1> Menu </h1>
-			<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sagittis urna, a fermentum mauris. Mauris sagittis eu urna at sollicitudin. Sed et dui accumsan, vulputate dui ut, fringilla tellus. Vivamus a ex commodo, vulputate metus gravida, congue arcu. Fusce vehicula laoreet lorem vel lacinia. Etiam ac erat turpis. Morbi nec urna aliquet, placerat nisl ac, venenatis justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		</div>
-		<div class="sec2-menu">
-			<div class="trai"> 
-				<h2> DRINKS</h2>
-				<div class="hinhtrai"> <img src="fx.jpg"> </div>
-				<p>La Catalina (Colombia) <br>Guarumales (Ecuador) <br>Rukondo (Rwanda)<br>Peppermint Tea<br> Black tea</p>
-			</div>
-			<div class="phai">
-				<h2> FOOD </h2>
-				<div class="hinhphai"><img src="CDZJt5h.jpg">
+			<div class="wrapper-img">
+				<div class="box"></div>
+				<div>
+					<img class="image" src="home5.jpg"/>
 				</div>
-				<p>Frittata (Herb and Veggie, Italian, Corned Beef) <br> Breakfast sandwich <br> Cobb salad<br> Various baked goods</p>
+			</div>
+			<div class="circle-shape"></div>
+			<div class="circle-shape-2"></div>
+			<div class="circle-shape-3"></div>
+			<div class="circle-shape-4"></div>
+			<div class="blocks">
+				<div class="block-1 block">Hi!</div>
+				<div class="block-2 block"> Pham</div>
+				<div class="block-3 block">I'm</div>
+				<div class="block-4 block">Nga</div>
 			</div>
 		</div>
+</div>
+
+<section id="About">
+	<div class="title"> <span class="dec-text" data-aos="fade-up"> the </span> <span class="maintitle" data-aos="fade-up"> PHILOSOPHY </span> 
+		<div class="animateline"> <span> </span> </div>
 	</div>
-	</section>
-	<section id="section3">
-	<div class="section3 margin-lr">
-			<h1 class="Content margin-top"> Location </h1>
-		<div class="map">
-		<div class="anh-map"> <img src="bs.jpg"> </div>
-	 	<div class="time"> 
-			<h1 class="hours"> HOURS </h1>
-		  	<p> Mon;-Thurs -- 7am - 8pm <br>Fri-Sun -- 8am - 10pm</p>
+	<div class="aboutme" data-aos="fade-up" style="max-width:900px">
+		<div class="me-img" >
+ 				<img src="59323697_660016101096113_5471470301365665792_n.jpg">
+ 				<div class="social-links">
+ 					<a href="https://www.facebook.com/phnga24/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+ 					<a href="https://www.behance.net/phnga"target="_blank"><i class="fab fa-behance"></i></a>
+ 					<a href="https://www.instagram.com/ngaph.24/" target="_blank"><i class="fab fa-instagram"></i></a>
+ 				</div>
+ 		</div>
+	<p class="contenttext" > Hello, my name is Nga Pham, I was born and grew up in HCM city. With 3 years of experience in a product-based environment, I’ve had the opportunity to participated in end-to-end product development — from business analysis and userflow design to UI implementation, testing, and UX enhancement. As a UX/UI designer with a mindset of continuous improvement and always putting my heart into every design I believe that I can bring practical value to any business I work with.
+	</p>
+	</div>
+
+		<a href="aboutme.html">
+		<button type="submit" class="submit-btn text1" style="color: white;" data-aos="fade-up"> SEE MORE </button> 
+	</a>
+
+</section>
+
+<section id="sec2">
+	<div class="title" data-aos="flip-up" data-aos-duration="1000"> <span class="dec-text"> my </span> <span class="maintitle"> PHOTOGRAPHY </span></div>
+	<div class="dec"> </div>
+	<div class="sec2-img"> 
+		<div class="s2-item" data-aos="fade-up"data-aos-duration="1000"> <p class="maintitle"> Vinpearl </p> <hr class="s2-hr"> </div>
+		<div class="s2-item"data-aos="fade-up"data-aos-duration="1000"><p class="maintitle"> cocobeach </p> </div>
+		<div class="s2-item" data-aos="fade-up"data-aos-duration="1000"> <p class="minititle"> “There is one thing the photograph must contain, the humanity of the moment.” — <em> Robert Frank </em> </p> </div>
+		<div class="s2-item"data-aos="fade-up"data-aos-duration="1000"> <p class="maintitle"> Nha Trang </p> </div>
+		<div class="s2-item"data-aos="fade-up"data-aos-duration="1000"> <p class="maintitle">Phú Quốc </p></div>
+		<div class="s2-item"data-aos="fade-up"data-aos-duration="1000"> <a href="photography.html">
+			<button type="submit" class="submit-btn contenttext"> SEE MORE </button> </a></div>
+	</div>
+</section>
+
+<section id="sec3">
+  <div class="title" data-aos="flip-up" data-aos-duration="1000"> <span class="dec-text"> my </span> <span class="maintitle"> ARTWORK </span> <div class="animateline"> <span> </span></div></div>
+	<div class="sec3-content" data-aos="fade-up" data-aos-duration="1000">
+	
+	<div class="sec3-item">
+		<p class="num"> 01 </p>
+		<p class="maintitle"> Graphic Design </p>
+		<p class="contenttext"style="color:white">  Illustration, Photoshop, Indesign, Typography and Logo,... </p>
+	</div>
+	<div class="sec3-item">
+		<p class="num"> 02 </p>
+		<p class="maintitle"> UX/UI design </p>
+		<p class="contenttext"style="color:white"> HTML/CSS & Figma </p>
+	</div>
+	<div class="sec3-item">
+		<p class="num"> 03 </p>
+		<p class="maintitle"> Work Experience </p>
+		<p class="contenttext"style="color:white"> Websign design template, Mobile app & Web admin</p>
+	</div>
+	</div>
+<a href="portfolio.html">
+	<button type="submit" class="submit-btn text1" style="color: white;" data-aos="fade-up"> EXPLORE </button>
+</a>
+	
+
+</section>
+
+
+<section id="sec4">
+	<div class="sec4-table">
+		<div class="sec4-item"  data-aos="fade-up">
+			<div class="s4-img"><img src="29665625_434599600304432_2204259783478567512_o.jpg"> </div>
+		</div>
+		<div class="sec4-item" >
+			<div> 
+			<p class="minititle"  data-aos="fade-up" data-aos-duration="1000"> MY LATEST WORKS</p>
+			<div class="dec" style="margin-left:72px"> </div>
+			</div>
+		
+			<div class="s4-col" data-aos="fade-up" data-aos-duration="1000">
+				<p class="contenttext"> 01</p>
+					<a href="https://www.figma.com/proto/ZQDNxnefhqQxzQmx9zYJCn/Portfolio?page-id=76%3A24199&node-id=383-47101&viewport=242%2C295%2C0.04&t=HEPCRzzfehuTfHet-8&scaling=min-zoom&content-scaling=fixed&hide-ui=1" target="_blank" rel="noopener noreferrer"><p class="minititle">Sale management system</p></a>
+					<p class="contenttext"> Mobile app + Web admin</p>
+			</div>
+
+			<div class="s4-col" data-aos="fade-up" data-aos-duration="1000">
+				<p class="contenttext"> 02</p>
+					<a href="https://www.figma.com/proto/ZQDNxnefhqQxzQmx9zYJCn/Portfolio?page-id=0%3A1&node-id=1-1015&viewport=-2300%2C-29%2C0.44&t=i7yxf7zXlTss5dsk-8&scaling=min-zoom&content-scaling=fixed&hide-ui=1"  target="_blank" rel="noopener noreferrer"><p class="minititle"> Website collection </p></a>
+					<p class="contenttext"> Responsive & fully customizable  </p>
+			</div>
+
+			<div class="s4-col" data-aos="fade-up" data-aos-duration="1000">
+				<p class="contenttext"> 03</p>
+					<a href="https://www.behance.net/gallery/141241033/Felice-Wedding-Planner-and-Studio-Website" target="_blank"><p class="minititle"> Felice Wedding Website </p></a>
+					<p class="contenttext"> UX/UI project</p>
+			</div>
+
+			<div class="s4-col" data-aos="fade-up" data-aos-duration="1000">
+				<p class="contenttext"> 04</p>
+					<a href="https://www.behance.net/gallery/140724359/Solace-Furniture-Website" target="_blank"><p class="minititle"> Sol'ace Furniture Store </p></a>
+					<p class="contenttext"> Web design (Figma) </p>
+			</div>
+	
+			<div class="s4-col" data-aos="fade-up" data-aos-duration="1000">
+				<p class="contenttext"> 05</p>
+				<a href="https://klaverstudio.github.io/" target="_blank"><p class="minititle">Klaver Studio</p></a>
+				<p class="contenttext"> Web design (HTML/CSS) </p>
+			</div>
+		
+
+			<a href="portfolio.html">
+			<p class="dec-text" data-aos="fade-up" data-aos-duration="1000"> 
+				<button type="submit" class="submit-btn contenttext"> SEE MORE </button> 
+			</a>
+			
+			
+	</div>
+
+
+
+		<div class="sec4-item"  data-aos="fade-up" >
+			<div class="s4-img"> <img src="99e64ea9064e6c161795918dded172f9.jpeg"></div>
+		</div>
+	</div>	
+</section>
+<section id="footer" data-aos="fade-zoom-in" data-aos-duration="500" data-aos-easing="ease-in-back" >
+	<div style="display: flex;justify-content: center;  align-items: center; 	border-top: 1px solid black;border-bottom: 1px solid black;">
+	<div class="ft-t">
+		<div class="ft-col">
+			<a href="index.html"><p class="logo"> JadeNga</p> </a>
+			<p class="contenttext">Ho Chi Minh City, Vietnam </p>
+		</div>
+		<div class="ft-col">
+			<p class="bigtitle"> <a href="contact.html"> GET IN TOUCH </a> </p>
+			<div>
+			 	<span class="link"> <a href="aboutme.html"> About me </a> </span>
+				<span class="link"> <a href="photography.html"> PHOTOGRAPHY </a> </span>
+				<span class="link"> <a href="portfolio.html"> Design </a> </span>
+			</div>
+		</div>
+		<div class="ft-col">
+			<div> 
+				<a href="https://www.facebook.com/phnga24/" target="_blank"> <i class="fab fa-facebook-f"></i></a>
+				<a href="https://www.instagram.com/ngaph.24/" target="_blank"> <i class="fab fa-instagram-square"></i></a>
+				<a href="https://www.behance.net/phnga" target="_blank" > <i class="fab fa-behance"></i></a>
+			</div>
+			<p class="contenttext"><a href="mailto:phnga2405@gmail.com"> phnga2405@gmail.com</a> </p>
 		</div>
 	</div>
 	</div>
-	</section>
+	<div style="display: flex;justify-content: center;  align-items: center;">
+	<div class="ft-b">
+		<p class="contenttext"> All rights reserved </p>
+		<p class="contenttext"> Portfolio of Nga Pham </p>
+		<p class="contenttext"> Thanks for watching! </p>
 	</div>
-	<div class="footer"> 
-		<p> © 2018 Central Coffee</p>	
 	</div>
+</section>
+
 	
+<script>
+var mybutton = document.getElementById("btntop");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 500) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+	function topFunction() {
+  	document.body.scrollTop = 0;
+  	document.documentElement.scrollTop = 0;
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+<script>
+ AOS.init();
+</script>	
+<script>
+	          // hi
+			TweenMax.to(".block-1", 2, {
+				x: "-80",
+				y: "-180",
+				scale: "1.5",
+				ease: Expo.easeInOut,
+			});
+            // Pham
+			TweenMax.to(".block-2", 2, {
+				x: "-130",
+				y: "240",
+				scale: "0.6",
+				ease: Expo.easeInOut,
+			});
+            // im
+			TweenMax.to(".block-3", 2, {
+				x: "220",
+				y: "-280",
+				scale: "0.7",
+				ease: Expo.easeInOut,
+			});
+			// Nga
+			TweenMax.to(".block-4", 2, {
+				x: "20",
+				y: "200",
+				scale: "0.9",
+				ease: Expo.easeInOut,
+			});
+
+			TweenMax.to(".box",2, {
+				y: "-100%",
+				ease: Expo.easeInOut,
+			});
+
+			TweenMax.from(".circle-shape", 2.4, {
+				scale: "0",
+				ease: Expo.easeInOut,
+			});
+			TweenMax.from(".circle-shape-2", 2.4, {
+				scale: "0",
+				ease: Expo.easeInOut,
+			});
+			TweenMax.from(".circle-shape-3", 2.4, {
+				scale: "0",
+				ease: Expo.easeInOut,
+			});
+			TweenMax.from(".circle-shape-4", 2.4, {
+				scale: "0",
+				ease: Expo.easeInOut,
+			});
+			TweenMax.from(".navbar > div", 1.6, {
+				opacity: 0,
+				y: 60,
+				ease: Expo.easeInOut,
+				delay: 0.6,
+			});
+			TweenMax.from(".showreel", 1.6, {
+				opacity: 0,
+				y: 40,
+				ease: Expo.easeInOut,
+				delay: 0.6,
+			});
+			TweenMax.from(".site-logo", 1.6, {
+				opacity: 0,
+				y: 40,
+				ease: Expo.easeInOut,
+				delay: 0.6,
+			});
+			TweenMax.staggerFrom(
+				".site-menu > div",
+				1,
+				{
+					opacity: 0,
+					y: 60,
+					ease: Power2.easeOut,
+				},
+				0.2
+			);
+		</script>	
+	<script>
+            var cursor = $(".cursor"),
+                follower = $(".cursor-follower");
+
+            var posX = 0,
+                posY = 0,
+                mouseX = 0,
+                mouseY = 0;
+
+            TweenMax.to({}, 0.016, {
+                repeat: -1,
+                onRepeat: function() {
+                    posX += (mouseX - posX) / 9;
+                    posY += (mouseY - posY) / 9;
+
+                    TweenMax.set(follower, {
+                        css: {
+                            left: posX - 20,
+                            top: posY - 20
+                        }
+                    });
+
+                    TweenMax.set(cursor, {
+                        css: {
+                            left: mouseX,
+                            top: mouseY
+                        }
+                    });
+                }
+            });
+
+            $(document).on("mousemove", function(e) {
+                mouseX = e.pageX;
+                mouseY = e.pageY;
+            });
+
+            $(".portfolio-item img").on("mouseenter", function() {
+                cursor.addClass("active");
+                follower.addClass("active");
+            });
+
+            $(".portfolio-item img").on("mouseleave", function() {
+                cursor.removeClass("active");
+                follower.removeClass("active");
+            });
+        </script>
 </body>
 </html>
