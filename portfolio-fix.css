@@ -315,3 +315,70 @@ img {
 		height: auto;
 	}
 }
+
+
+/* =============================================================
+   6. SỬA CHỮ "EXPLORE MY WORKS" BỊ CẮT CHÂN
+      .deconstructed dùng mask theo % chiều cao; line-height khít
+      quá làm phần chân chữ bị cắt. Nới line-height + padding đáy.
+   ============================================================= */
+.top .deconstructed {
+	line-height: 1.4 !important;
+	padding-bottom: 0.25em;
+}
+.top .deconstructed > div {
+	line-height: 1.4 !important;
+	padding-bottom: 0.25em;
+}
+
+
+/* =============================================================
+   7. ĐỒNG NHẤT BỐ CỤC THUMBNAIL cho các dự án .proj-thumb
+      (Sales / Website collection / Wedding / GAMUS)
+      -> Ảnh TRÊN, tên + nút DƯỚI, căn giữa (giống Furniture/Speaker).
+      Chỉ hiện ẢNH ĐẦU làm thumbnail, ẩn ảnh thứ 2.
+      KHÔNG áp cho TYPOGRAPHY / ILLUSTRATION / PHOTOSHOP.
+   ============================================================= */
+
+/* xếp dọc: ảnh (gallery) lên trên, chữ (s7-col) xuống dưới */
+#sec7 .s7-item.proj-thumb {
+	flex-direction: column !important;
+	align-items: center !important;
+	gap: 24px;
+	padding: 50px 60px !important;
+}
+#sec7 .s7-item.proj-thumb .tz-gallery {
+	order: 1;
+	flex: none !important;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+#sec7 .s7-item.proj-thumb .s7-col {
+	order: 2;
+	flex: none !important;
+	width: 100%;
+	text-align: center;
+}
+
+/* chỉ hiện ảnh đầu tiên làm thumbnail, ẩn ảnh thứ 2 trở đi */
+#sec7 .s7-item.proj-thumb .tz-gallery .row > div:not(:first-child) {
+	display: none !important;
+}
+/* ảnh thumbnail: kích thước đồng nhất với Furniture/Speaker */
+#sec7 .s7-item.proj-thumb .tz-gallery .row > div:first-child {
+	margin: 0 !important;
+}
+#sec7 .s7-item.proj-thumb .tz-gallery img,
+#sec7 .s7-item.proj-thumb .b-img {
+	width: 100% !important;
+	max-width: 460px !important;
+	height: auto !important;
+}
+
+/* trên mobile cũng giữ dạng dọc căn giữa (đã sẵn cột, chỉ đảm bảo ẩn ảnh 2) */
+@media screen and (max-width: 1024px) {
+	#sec7 .s7-item.proj-thumb .tz-gallery .row > div:not(:first-child) {
+		display: none !important;
+	}
+}
