@@ -1,0 +1,246 @@
+/* =============================================================
+   portfolio-fix.css
+   Bản vá responsive DÀNH RIÊNG cho trang portfolio.html
+   Nạp file này SAU portstyle.css và style.css trong <head>.
+   Không sửa portstyle.css (dùng chung cả site) để tránh vỡ trang khác.
+   Tác giả: bản chỉnh sửa cho Nga Pham — 2026
+   ============================================================= */
+
+/* ---------- 0. Nền tảng: chống tràn ngang toàn trang ---------- */
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ---------- 1. Nút hamburger (mặc định ẩn trên desktop) ---------- */
+.hamburger {
+	display: none;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	padding: 8px;
+	z-index: 100001;
+}
+.hamburger span {
+	display: block;
+	width: 26px;
+	height: 2px;
+	margin: 5px 0;
+	background: #fff;
+	transition: 0.3s ease;
+}
+/* trạng thái khi mở menu -> biến thành dấu X */
+.nav-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-open .hamburger span:nth-child(2) { opacity: 0; }
+.nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* =============================================================
+   2. TABLET & NHỎ HƠN  (<= 1024px)
+   ============================================================= */
+@media screen and (max-width: 1024px) {
+
+	/* navbar co giãn theo màn hình thay vì width cứng 1280px */
+	.navbar {
+		width: 100% !important;
+		padding: 0 20px !important;
+	}
+
+	/* hiện nút hamburger */
+	.hamburger {
+		display: block;
+	}
+
+	/* menu chuyển thành panel trượt từ trên xuống */
+	.nav {
+		position: fixed;
+		top: 70px;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+		align-items: flex-start;
+		background: #141310;
+		width: 100%;
+		padding: 10px 24px 24px;
+		gap: 4px;
+		max-height: calc(100vh - 70px);
+		overflow-y: auto;
+		transform: translateY(-120%);
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.35s ease;
+	}
+	.nav-open .nav {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+	.nav > li {
+		width: 100%;
+		border-bottom: 1px solid rgba(255,255,255,0.12);
+	}
+	.nav li a {
+		display: block;
+		width: 100%;
+		font-size: 16px;
+		padding: 14px 4px;
+		color: #fff !important;
+	}
+
+	/* submenu Portfolio: hiển thị dạng danh sách thụt lề, không dùng absolute */
+	.nav ul {
+		position: static !important;
+		width: 100% !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: none !important;
+		border-top: 0 !important;
+		background: transparent !important;
+		margin: 0 0 6px 0 !important;
+		padding-left: 16px;
+	}
+	.nav ul:before, .nav ul:after,
+	.nav ul ul:before, .nav ul ul:after { display: none !important; }
+	.nav ul ul {
+		position: static !important;
+		transform: none !important;
+		left: auto !important;
+		border-left: 0 !important;
+	}
+	.nav ul li { border-bottom: 0; }
+	.nav ul li a { font-size: 14px; padding: 8px 4px; }
+
+	/* ẩn ô search trên mobile cho gọn */
+	.nav .search-box { display: none; }
+
+	/* --- Section 7: cột tiêu đề dọc bên trái bỏ đi, xếp dọc --- */
+	#sec7 { flex-direction: column; }
+	.s7-l { display: none !important; }
+	.s7-r { flex: 1; }
+
+	/* mỗi item chuyển từ hàng ngang -> cột dọc, cao tự động */
+	.s7-item {
+		flex-direction: column;
+		height: auto;
+		padding: 40px 16px;
+		gap: 24px;
+	}
+	.s7-col { flex: none; width: 100%; }
+
+	/* gallery ảnh: cho phép xuống dòng, ảnh co giãn */
+	.tz-gallery { flex: none; width: 100%; }
+	.tz-gallery .row {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 16px;
+	}
+	.tz-gallery .row div { margin: 0 !important; }
+	.tz-gallery img {
+		width: 100% !important;
+		max-width: 320px;
+		height: auto !important;
+		aspect-ratio: 5 / 7;
+		object-fit: cover;
+	}
+	.b-img { width: 100% !important; max-width: 340px !important; }
+
+	/* các block 2 cột (web) -> 1 cột */
+	.s7-item1 .s7-row {
+		flex-direction: column;
+		height: auto;
+	}
+	.s7-item1 .web {
+		border-right: none !important;
+		border-bottom: 1px solid black;
+		padding: 40px 20px;
+		height: auto;
+	}
+	.s7-item1 .web:last-child { border-bottom: none; }
+	.s7-item1 .s7-row img,
+	.s7-row img {
+		width: 100% !important;
+		max-width: 380px;
+		height: auto !important;
+	}
+
+	/* Section 8: nút / CTA */
+	#sec8 { padding: 0; }
+	.s8-1 { padding: 60px 24px; }
+	.s6-4 {
+		flex-direction: column;
+		height: auto;
+		padding: 50px 24px;
+		gap: 40px;
+	}
+	.s6-4:before, .s6-4:after { display: none; }
+	.s6-4 p { margin: 20px 0; }
+
+	/* Footer: xếp dọc, bỏ width cứng 1280px */
+	.ft-t, .ft-b {
+		width: 100% !important;
+		flex-direction: column;
+		text-align: center;
+		gap: 24px;
+		padding: 40px 24px !important;
+		height: auto;
+	}
+	.ft-col:nth-child(1),
+	.ft-col:nth-child(2),
+	.ft-col:nth-child(3) {
+		width: 100% !important;
+		text-align: center !important;
+		padding: 0 !important;
+	}
+	.ft-b .contenttext { width: 100% !important; text-align: center !important; }
+	.ft-t .bigtitle { font-size: 60px; }
+
+	/* tắt con trỏ tuỳ biến (chạy JS chuột) trên thiết bị cảm ứng */
+	.cursor, .cursor-follower { display: none !important; }
+}
+
+
+/* =============================================================
+   3. ĐIỆN THOẠI  (<= 640px)
+   ============================================================= */
+@media screen and (max-width: 640px) {
+
+	/* chữ tiêu đề lớn thu nhỏ để không tràn */
+	.maintitle { font-size: 30px; }
+	.s7-item .maintitle { font-size: 26px; }
+	.s7-col .maintitle { font-size: 22px !important; }
+	.bigtitle { font-size: 44px; letter-spacing: 4px; }
+
+	/* hiệu ứng chữ "EXPLORE MY WORKS" ở banner đầu */
+	.top { height: 320px; padding: 40px 16px; }
+	.deconstructed { font-size: 34px; }
+
+	/* nút MORE DETAILS full-width dễ bấm */
+	.s7-r button, .submit-btn {
+		width: 100% !important;
+		max-width: 260px;
+	}
+
+	.tz-gallery img { max-width: 100%; }
+	.b-img { max-width: 100% !important; }
+
+	.s8-1 { padding: 48px 16px; }
+	.ft-t .bigtitle { font-size: 44px; }
+
+	/* nút back-to-top nhỏ lại, sát mép */
+	#btntop { right: 16px; height: 48px; width: 48px; }
+	#btntop i { font-size: 26px; }
+}
+
+
+/* =============================================================
+   4. RẤT NHỎ  (<= 380px)
+   ============================================================= */
+@media screen and (max-width: 380px) {
+	.deconstructed { font-size: 26px; }
+	.maintitle { font-size: 26px; }
+	.logo { font-size: 18px; }
+}
