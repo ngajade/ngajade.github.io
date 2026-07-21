@@ -465,8 +465,8 @@ img {
 		height: auto !important;      /* bỏ height cố định 450px -> nút không rớt ra ngoài */
 		min-height: 520px;            /* các ô cao tối thiểu bằng nhau cho đều */
 		padding: 56px 48px !important;
-		border-right: 1px solid rgba(0,0,0,0.08) !important;
-		border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+		border-right: 1px solid black !important;
+		border-bottom: 1px solid black !important;
 		gap: 22px !important;
 	}
 	/* ô cột phải (mục thứ 2, 4...) bỏ viền phải để không kẻ đôi ở mép */
@@ -476,14 +476,14 @@ img {
 
 	/* ====== Khối 2 dự án (s7-item1: Furniture/Bakery/Klaver) ====== */
 	#sec7 .s7-item1 {
-		border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+		border-bottom: 1px solid black !important;
 	}
 	#sec7 .s7-item1 .s7-row {
 		padding: 0 !important;
 	}
 	#sec7 .s7-item1 .web {
 		padding: 56px 48px !important;
-		border-right: 1px solid rgba(0,0,0,0.08) !important;
+		border-right: 1px solid black !important;
 		gap: 22px;
 		justify-content: flex-start !important;
 	}
@@ -491,7 +491,7 @@ img {
 		border-right: none !important;
 	}
 
-	/* ====== ẢNH thumbnail: cùng tỉ lệ, bo góc, đổ bóng nhẹ ====== */
+	/* ====== ẢNH thumbnail: cùng tỉ lệ, VUÔNG (không bo góc, không bóng) ====== */
 	#sec7 .s7-item.proj-thumb .tz-gallery img,
 	#sec7 .s7-item.proj-thumb .b-img,
 	#sec7 .s7-item1 .web img {
@@ -500,14 +500,6 @@ img {
 		aspect-ratio: 16 / 10;
 		height: auto !important;
 		object-fit: cover;
-		border-radius: 10px;
-		box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-		transition: transform 0.35s ease, box-shadow 0.35s ease;
-	}
-	#sec7 .s7-item.proj-thumb .tz-gallery img:hover,
-	#sec7 .s7-item1 .web img:hover {
-		transform: translateY(-6px);
-		box-shadow: 0 14px 32px rgba(0,0,0,0.16);
 	}
 
 	/* ====== TÊN dự án: cỡ & khoảng cách đồng nhất ====== */
@@ -525,8 +517,8 @@ img {
 	#sec7 .s7-item.proj-thumb .minititle,
 	#sec7 .s7-item1 .web .minititle {
 		font-size: 13px !important;
-		font-weight: 500 !important;
-		color: #6b6b6b !important;
+		font-weight: 600 !important;
+		color: #343434 !important;   /* trả về màu đậm như gốc, không còn nhạt */
 		margin-top: 6px !important;
 	}
 
