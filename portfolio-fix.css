@@ -515,12 +515,19 @@ img {
 		font-size: 26px !important;
 		margin-top: 4px !important;
 	}
-	#sec7 .s7-item.proj-thumb .minititle,
+	/* proj-thumb ĐÃ CÓ maintitle -> ẩn minititle (phụ đề) đi */
+	#sec7 .s7-item.proj-thumb .minititle {
+		display: none !important;
+	}
+	/* .web KHÔNG có maintitle -> biến minititle thành tiêu đề chính */
 	#sec7 .s7-item1 .web .minititle {
-		font-size: 13px !important;
-		font-weight: 700 !important;
-		color: #141310 !important;   /* đậm rõ */
-		margin-top: 6px !important;
+		font-family: ogg !important;
+		text-transform: uppercase;
+		font-size: 26px !important;
+		font-weight: 400 !important;
+		letter-spacing: 0 !important;
+		color: #343434 !important;
+		margin-top: 4px !important;
 	}
 
 	/* ====== Dấu ♦ (dec) đặt đều, làm phân tách nhẹ ====== */
@@ -530,38 +537,24 @@ img {
 		opacity: 0.5;
 	}
 
-	/* ====== NÚT MORE DETAILS: nền đen, chữ trắng, chấm cam bên phải ====== */
+	/* ====== NÚT MORE DETAILS: nền transparent, viền (như gốc) ====== */
 	#sec7 .s7-item.proj-thumb .submit-btn,
 	#sec7 .s7-item1 .web .submit-btn {
-		position: relative;
 		margin: 14px auto 0 !important;
 		width: auto !important;
-		min-width: 190px;
-		padding: 13px 46px 13px 26px !important;
-		background: #141310 !important;
-		color: #fff !important;
-		border: 1px solid #141310 !important;
+		min-width: 170px;
+		padding: 12px 28px !important;
+		background: transparent !important;
+		color: #343434 !important;
+		border: 1px solid #999 !important;
 		letter-spacing: 1.5px;
 		font-size: 11px !important;
-		transition: background 0.3s ease, color 0.3s ease;
-	}
-	/* chấm cam bên phải nút */
-	#sec7 .s7-item.proj-thumb .submit-btn::after,
-	#sec7 .s7-item1 .web .submit-btn::after {
-		content: "";
-		position: absolute;
-		right: 16px;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 9px;
-		height: 9px;
-		border-radius: 50%;
-		background: #f93700;
+		transition: background 0.25s ease, color 0.25s ease;
 	}
 	#sec7 .s7-item.proj-thumb .submit-btn:hover,
 	#sec7 .s7-item1 .web .submit-btn:hover {
-		background: #f93700 !important;
-		border-color: #f93700 !important;
+		background: #141310 !important;
+		border-color: #141310 !important;
 		color: #fff !important;
 	}
 
