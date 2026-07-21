@@ -244,3 +244,65 @@ img {
 	.maintitle { font-size: 26px; }
 	.logo { font-size: 18px; }
 }
+
+
+/* =============================================================
+   5. BỎ HẲN CỘT "PORTFOLIO" DỌC — dàn nội dung full-width
+      (áp dụng MỌI kích thước màn hình, ghi đè .s7-l/.s7-r gốc)
+   ============================================================= */
+
+/* Ẩn hoàn toàn cột tiêu đề dọc bên trái */
+#sec7 .s7-l {
+	display: none !important;
+}
+
+/* Vùng nội dung chiếm trọn chiều ngang */
+#sec7 .s7-r {
+	flex: 1 1 100% !important;
+	width: 100% !important;
+}
+
+/* ---- Các section dạng (chữ | gallery ảnh) ---- */
+/* Chỉ áp dụng cho desktop/tablet lớn; mobile đã xử lý ở khối trên (<=1024px) */
+@media screen and (min-width: 1025px) {
+
+	/* thêm lề hai bên cho mọi item -> tất cả thẳng mép trái/phải */
+	#sec7 .s7-item {
+		padding: 0 60px;
+	}
+
+	/* cân lại tỉ lệ: chữ gọn hơn, ẢNH TO RA */
+	#sec7 .s7-item .s7-col {
+		flex: 1 1 34%;
+	}
+	#sec7 .s7-item .tz-gallery {
+		flex: 1 1 66%;
+		display: flex;
+		justify-content: center;
+	}
+	#sec7 .s7-item .tz-gallery .row {
+		justify-content: center;
+	}
+
+	/* ảnh gallery to hơn (từ 250px -> 300px), ảnh lớn "b-img" cũng tăng */
+	#sec7 .tz-gallery img {
+		width: 300px;
+		height: 400px;
+	}
+	#sec7 .b-img {
+		width: 600px !important;
+		height: 400px;
+	}
+
+	/* ---- Các section dạng 2 khối web (Furniture / Speaker ...) ---- */
+	/* thêm lề hai bên cho thẳng hàng với các item phía trên */
+	#sec7 .s7-item1 .s7-row {
+		padding: 0 60px;
+	}
+	/* ảnh trong khối web to ra, đồng đều */
+	#sec7 .s7-item1 .web img {
+		width: 100%;
+		max-width: 480px;
+		height: auto;
+	}
+}
