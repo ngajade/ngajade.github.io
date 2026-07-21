@@ -280,18 +280,27 @@ img {
 		display: flex;
 		justify-content: center;
 	}
+	/* cặp ảnh căn giữa trong khung, không cho tràn/cắt cạnh */
 	#sec7 .s7-item .tz-gallery .row {
 		justify-content: center;
+		flex-wrap: nowrap;
+		max-width: 100%;
+	}
+	#sec7 .s7-item .tz-gallery .row div {
+		flex: 0 1 auto;
+		min-width: 0;
 	}
 
-	/* ảnh gallery to hơn (từ 250px -> 300px), ảnh lớn "b-img" cũng tăng */
+	/* ảnh gallery to hơn nhưng co được để luôn vừa khung (không bị cắt) */
 	#sec7 .tz-gallery img {
-		width: 300px;
-		height: 400px;
+		width: 280px;
+		max-width: 100%;
+		height: 380px;
 	}
 	#sec7 .b-img {
-		width: 600px !important;
-		height: 400px;
+		width: 480px !important;
+		max-width: 100%;
+		height: 380px;
 	}
 
 	/* ---- Các section dạng 2 khối web (Furniture / Speaker ...) ---- */
