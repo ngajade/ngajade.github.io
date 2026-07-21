@@ -444,3 +444,123 @@ img {
 	#sec8 .s8-1 .maintitle { font-size: 28px; }
 	#sec8 .s8-1 img { height: 90px; }
 }
+
+
+/* =============================================================
+   9. POLISH TỔNG THỂ khu vực dự án (#sec7)
+      Thống nhất spacing / padding / ảnh / tên / nút cho MỌI ô,
+      bỏ các viền kẻ thô, tạo khoảng thở đều -> gọn & đẹp.
+      Khối này đặt CUỐI cùng nên có ưu tiên cao nhất.
+   ============================================================= */
+@media screen and (min-width: 1025px) {
+
+	/* --- Khung chung: bỏ overflow ẩn, cho phép lưới đều --- */
+	#sec7 .s7-r {
+		padding: 0;
+	}
+
+	/* ====== Ô kiểu THUMBNAIL (proj-thumb) ====== */
+	#sec7 .s7-item.proj-thumb {
+		width: 50% !important;
+		padding: 56px 48px !important;
+		border-right: 1px solid rgba(0,0,0,0.08) !important;
+		border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+		gap: 22px !important;
+	}
+	/* ô cột phải (mục thứ 2, 4...) bỏ viền phải để không kẻ đôi ở mép */
+	#sec7 .s7-item.proj-thumb:nth-of-type(even) {
+		border-right: none !important;
+	}
+
+	/* ====== Khối 2 dự án (s7-item1: Furniture/Bakery/Klaver) ====== */
+	#sec7 .s7-item1 {
+		border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+	}
+	#sec7 .s7-item1 .s7-row {
+		padding: 0 !important;
+	}
+	#sec7 .s7-item1 .web {
+		padding: 56px 48px !important;
+		border-right: 1px solid rgba(0,0,0,0.08) !important;
+		gap: 22px;
+		justify-content: flex-start !important;
+	}
+	#sec7 .s7-item1 .web:last-child {
+		border-right: none !important;
+	}
+
+	/* ====== ẢNH thumbnail: cùng tỉ lệ, bo góc, đổ bóng nhẹ ====== */
+	#sec7 .s7-item.proj-thumb .tz-gallery img,
+	#sec7 .s7-item.proj-thumb .b-img,
+	#sec7 .s7-item1 .web img {
+		width: 100% !important;
+		max-width: 440px !important;
+		aspect-ratio: 16 / 10;
+		height: auto !important;
+		object-fit: cover;
+		border-radius: 10px;
+		box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+		transition: transform 0.35s ease, box-shadow 0.35s ease;
+	}
+	#sec7 .s7-item.proj-thumb .tz-gallery img:hover,
+	#sec7 .s7-item1 .web img:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 14px 32px rgba(0,0,0,0.16);
+	}
+
+	/* ====== TÊN dự án: cỡ & khoảng cách đồng nhất ====== */
+	#sec7 .s7-item.proj-thumb .maintitle,
+	#sec7 .s7-item.proj-thumb .minititle,
+	#sec7 .s7-item1 .web .minititle {
+		text-align: center;
+		margin: 0 !important;
+		letter-spacing: 1px;
+	}
+	#sec7 .s7-item.proj-thumb .maintitle {
+		font-size: 26px !important;
+		margin-top: 4px !important;
+	}
+	#sec7 .s7-item.proj-thumb .minititle,
+	#sec7 .s7-item1 .web .minititle {
+		font-size: 13px !important;
+		font-weight: 500 !important;
+		color: #6b6b6b !important;
+		margin-top: 6px !important;
+	}
+
+	/* ====== Dấu ♦ (dec) đặt đều, làm phân tách nhẹ ====== */
+	#sec7 .proj-thumb .dec,
+	#sec7 .s7-item1 .web .dec {
+		margin: 14px auto !important;
+		opacity: 0.5;
+	}
+
+	/* ====== NÚT MORE DETAILS: đồng nhất, tinh tế ====== */
+	#sec7 .s7-item.proj-thumb .submit-btn,
+	#sec7 .s7-item1 .web .submit-btn {
+		margin: 14px auto 0 !important;
+		width: auto !important;
+		min-width: 160px;
+		padding: 11px 26px !important;
+		border: 1px solid #222 !important;
+		letter-spacing: 1.5px;
+		font-size: 11px !important;
+	}
+
+	/* ====== Dòng phân cách "Academic & Personal Projects" ====== */
+	#sec7 .s7-item1 .s7-col.noborder,
+	#sec7 .s7-item1 > .s7-col {
+		padding: 48px 20px !important;
+	}
+	#sec7 .s7-item1 .s7-col .maintitle {
+		letter-spacing: 3px;
+	}
+}
+
+/* căn giữa nội dung mỗi .web (ảnh trên - tên - nút) cho mọi kích thước */
+#sec7 .s7-item1 .web {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
