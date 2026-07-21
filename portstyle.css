@@ -83,7 +83,7 @@ html{
 
 *{
 	margin: 0;
-	padding: 0; 
+	padding: 0;
 	box-sizing: border-box;
 	color: #343434;
 	list-style: none;
@@ -96,7 +96,7 @@ html{
 	color: #343434;
 	text-transform: uppercase;
 	font-size: 45px;
-	position: relative;	
+	position: relative;
 }
 .bigtitle{
 	font-family: Yipes;
@@ -211,7 +211,7 @@ html{
 	border-radius: 20px;
 	display:none;
 	animation: fadeIn 0.4s linear;
-	
+
 }
 #btntop:hover:before{
 	display: block;
@@ -228,7 +228,7 @@ html{
 	z-index: -1;
 	display:none;
 	animation: fadeIn 0.4s linear;
-	
+
 }
 #btntop:hover:after{
 	display: block;
@@ -316,7 +316,7 @@ html{
 	visibility: visible;
 	opacity: 1;
 	transform: translateY(0);
-	
+
 }
 .nav ul li a{
  	display: block;
@@ -371,13 +371,13 @@ html{
 
 
 
-.search-input{	
+.search-input{
 	background: none;
 	outline: none;
 	border:none;
 	margin-top: 10px;
 	width: 0px;
-	height: 30px;  
+	height: 30px;
 	transition: all .3s ease;
 }
 .search-box:hover .search-input{
@@ -410,9 +410,9 @@ html{
 hr{
 	width: 30px;
 	border: 0;
-	border-bottom: 1px solid black; 
+	border-bottom: 1px solid black;
 	margin-right: 15px;
-	
+
 }
 .sub-title2{
 	font-family: 'Mrs Saint Delafield', cursive;
@@ -491,7 +491,7 @@ background-color: white!important;
 }
 
 .me-img{
-	position: relative;	
+	position: relative;
 }
 #About .link a{
 	border-bottom: 1px solid white;
@@ -578,7 +578,7 @@ background-color: white!important;
 
 #sec2{
 	padding: 80px 0px;
-	text-align: center;	
+	text-align: center;
 }
 #sec2 .dec-text{
 	color: black;
@@ -616,7 +616,7 @@ background-color: white!important;
 .s2-item:nth-child(3) p{
 	width: 100%;
 	position: absolute;
-	left: 50%;	
+	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%)
 }
@@ -690,7 +690,7 @@ background-color: white!important;
 	width: 8%;
 }
 .sec3-content{
-	margin-top:20px; 
+	margin-top:20px;
 	margin-bottom:28px;
 	display: flex;
 	align-items: center;
@@ -699,7 +699,7 @@ background-color: white!important;
 
 .sec3-item{
 	width: calc(100% / 3 - 30px);
-	padding: 20px 40px 30px 40px; 
+	padding: 20px 40px 30px 40px;
 	position: relative;
 	overflow: hidden;
 }
@@ -746,7 +746,7 @@ background-color: white!important;
 	z-index: 2;
 	position: relative;
 	letter-spacing: 1px;
-	
+
 }
 #sec3 .arrow{
 	position: absolute;
@@ -799,7 +799,7 @@ background-color: white!important;
 	transform: translate(-50%,-50%);
 	overflow: hidden;
     transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
-} 
+}
 .s4-img img{
 	height: 490px;
 	width: 260px;
@@ -845,7 +845,7 @@ background-color: white!important;
 	transform: scale(1.1)
 }
 
-.s4-col .minititle 
+.s4-col .minititle
 {margin-bottom: 0px!important;}
 
 
@@ -885,7 +885,7 @@ background-color: white!important;
 	justify-content: space-between;
 	flex-direction: column;
 	align-items: center;
-	padding: 0 20px;	
+	padding: 0 20px;
 }
 .ft-col .link a{
 	color: black;
@@ -933,7 +933,7 @@ background-color: white!important;
 
 #sec5{
 	display: flex;
-	
+
 }
 .contact-header{
 	margin-top: 200px;
@@ -951,7 +951,7 @@ background-color: white!important;
 }
 .phone{
 	position: absolute;
-	right: 17%; 
+	right: 17%;
 	top: -105px;
 	height: 500px;
 	z-index: -1;
@@ -1140,7 +1140,7 @@ background-color: white!important;
 
 
 .s6-1{
-	padding-top: 100px;	
+	padding-top: 100px;
 	padding-bottom: 100px;
 }
 .s6-1-1{
@@ -1429,13 +1429,13 @@ background-color: white!important;
 
 
 #sec7{
-	display: flex;	
+	display: flex;
 }
 /*header portfolio - codepen*/
 .black {
 	position: absolute;
 	/* background: #141310; */
-	
+
 }
 .black a, .black i{
 	color: white;
@@ -1444,7 +1444,7 @@ background-color: white!important;
 	background: transparent;
 }
 .white{
-	color:white;	
+	color:white;
 }
 .top {
 	display: flex;
@@ -1468,12 +1468,12 @@ background-color: white!important;
 }
 .deconstructed {
 	position: relative;
-	
+
 	color: transparent;
 	font-family: Ogg;
 	font-size: 90PX;
 	line-height: 1.2;
-	
+
 }
 
 .deconstructed > div {
@@ -1641,7 +1641,7 @@ background-color: white!important;
 	height: 250px;
 	width: 100%;
 	display: flex;
-	
+
 }
 .s7-item1 .s7-col{
 	width: 100%;
@@ -1676,7 +1676,7 @@ background-color: white!important;
 .web button{
 	margin:0;
 }
-#sec7 .imghover:hover{ 
+#sec7 .imghover:hover{
 	animation: shadow-pop-br 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 	transition: 1s ease
 }
@@ -1725,7 +1725,7 @@ background-color: white!important;
 .s9-r{
 	position: relative;
 	text-align: center;
-	
+
 	height: 700px;
 	flex: 2.5;
 }
@@ -2070,7 +2070,6 @@ background-color: white!important;
 }
 .showreel{
 	position: absolute;
-	left: ;
 	bottom: 0;
 	padding: 40px 80px;
 	font-family: OGG;
@@ -2210,7 +2209,7 @@ background-color: white!important;
   }
 }
 .tracking-in-contract-bck {
-	-webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.2s both;     
+	-webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.2s both;
 }
 
 @-webkit-keyframes tracking-in-contract-bck {
@@ -2300,7 +2299,7 @@ background-color: white!important;
 		z-index: 10000;
 	}
 	.grid-demo{padding: 40px; grid-gap:40px}
-	
+
 	/* .over{
 		overflow-x: hidden;
 	} */
@@ -2330,24 +2329,26 @@ background-color: white!important;
 	.s6-2 p{text-align: left;}
 	.s6-2 .maintitle {text-align: left;font-size: 40px;}
 	.s6-1-1{display: block;}
-	.s6-1-1 .titt{margin-top:40px;
+	.s6-1-1 .titt{
+		margin-top:40px;
+	}
 	.s6-1-2{
-		margin-top: 70px
+		margin-top: 70px;
 	}
 	.s6-1-1 img{
-		height:100%
-		 width: 350px;
+		height:100%;
+		width: 350px;
 		margin-right: 40px;
 	}
 	.s6-1-1 div{
 		padding-right: 20px;
-		
+
 	}
 	.s6-1-2 hr{margin-left: 0;}
 	.s6-2-1{
 		padding: 40px
 	}
-	
+
 	.s7-col .maintitle{
 		font-size: 23px;
 		font-weight: 600
@@ -2362,7 +2363,7 @@ background-color: white!important;
 .s7-item1 .s7-row img {
     height: 170px;
 	width: 300px}
-	
+
 .s9-img{
 	height: 500px;
     width: 630px;
@@ -2399,4 +2400,4 @@ background-color: white!important;
 	.contact-header .mt{
 		bottom: 17%
 	}
-}}
+}
