@@ -465,12 +465,16 @@ img {
 		height: auto !important;      /* bỏ height cố định 450px -> nút không rớt ra ngoài */
 		min-height: 560px;            /* các ô cao tối thiểu bằng nhau cho đều */
 		padding: 56px 48px !important;
-		border-right: 1px solid black !important;
 		border-bottom: 1px solid black !important;
 		gap: 22px !important;
 	}
-	/* ô cột phải (mục thứ 2, 4...) bỏ viền phải để không kẻ đôi ở mép */
-	#sec7 .s7-item.proj-thumb:nth-of-type(even) {
+	/* CỘT TRÁI của mỗi cặp (ô proj-thumb KHÔNG đứng ngay sau proj-thumb khác)
+	   -> có viền phải làm đường kẻ giữa 2 cột */
+	#sec7 .s7-item.proj-thumb {
+		border-right: 1px solid black !important;
+	}
+	/* CỘT PHẢI (proj-thumb đứng NGAY SAU proj-thumb khác) -> bỏ viền phải ở mép */
+	#sec7 .s7-item.proj-thumb + .s7-item.proj-thumb {
 		border-right: none !important;
 	}
 
@@ -530,17 +534,23 @@ img {
 		margin-top: 4px !important;
 	}
 
-	/* ====== Dấu ♦ (dec) đặt đều, làm phân tách nhẹ ====== */
+	/* ====== Dấu ♦ (dec): ĐẬM như cũ (bỏ opacity), khoảng cách đều ====== */
 	#sec7 .proj-thumb .dec,
 	#sec7 .s7-item1 .web .dec {
-		margin: 14px auto !important;
-		opacity: 0.5;
+		margin: 18px auto !important;
+		opacity: 1 !important;
+		background: #141310 !important;
+	}
+	/* tiêu đề: khoảng cách đều tới dấu ♦ */
+	#sec7 .s7-item.proj-thumb .maintitle,
+	#sec7 .s7-item1 .web .minititle {
+		margin-bottom: 0 !important;
 	}
 
-	/* ====== NÚT MORE DETAILS: nền transparent, viền (như gốc) ====== */
+	/* ====== NÚT MORE DETAILS: nền transparent, viền, khoảng cách ĐỀU ====== */
 	#sec7 .s7-item.proj-thumb .submit-btn,
 	#sec7 .s7-item1 .web .submit-btn {
-		margin: 14px auto 0 !important;
+		margin: 18px auto 0 !important;
 		width: auto !important;
 		min-width: 170px;
 		padding: 12px 28px !important;
@@ -567,10 +577,11 @@ img {
 		align-items: center;
 		justify-content: flex-start;
 	}
+	/* .web: ảnh trên - title - ♦ - nút xếp liền, khoảng cách đều (giống proj-thumb) */
 	#sec7 .s7-item1 .web {
-		justify-content: space-between !important;
+		justify-content: flex-start !important;
 	}
-	#sec7 .s7-item1 .web img { margin-bottom: auto; }
+	#sec7 .s7-item1 .web img { margin-bottom: 8px; }
 
 	/* ====== Dòng phân cách "Academic & Personal Projects" ====== */
 	#sec7 .s7-item1 .s7-col.noborder,
