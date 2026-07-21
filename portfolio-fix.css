@@ -463,7 +463,7 @@ img {
 	#sec7 .s7-item.proj-thumb {
 		width: 50% !important;
 		height: auto !important;      /* bỏ height cố định 450px -> nút không rớt ra ngoài */
-		min-height: 520px;            /* các ô cao tối thiểu bằng nhau cho đều */
+		min-height: 560px;            /* các ô cao tối thiểu bằng nhau cho đều */
 		padding: 56px 48px !important;
 		border-right: 1px solid black !important;
 		border-bottom: 1px solid black !important;
@@ -483,6 +483,7 @@ img {
 	}
 	#sec7 .s7-item1 .web {
 		padding: 56px 48px !important;
+		min-height: 560px;                    /* cùng chiều cao với proj-thumb -> spacing đều */
 		border-right: 1px solid black !important;
 		gap: 22px;
 		justify-content: flex-start !important;
@@ -491,12 +492,12 @@ img {
 		border-right: none !important;
 	}
 
-	/* ====== ẢNH thumbnail: cùng tỉ lệ, VUÔNG (không bo góc, không bóng) ====== */
+	/* ====== ẢNH thumbnail: TO HƠN, cùng tỉ lệ, VUÔNG ====== */
 	#sec7 .s7-item.proj-thumb .tz-gallery img,
 	#sec7 .s7-item.proj-thumb .b-img,
 	#sec7 .s7-item1 .web img {
 		width: 100% !important;
-		max-width: 440px !important;
+		max-width: 560px !important;
 		aspect-ratio: 16 / 10;
 		height: auto !important;
 		object-fit: cover;
@@ -517,8 +518,8 @@ img {
 	#sec7 .s7-item.proj-thumb .minititle,
 	#sec7 .s7-item1 .web .minititle {
 		font-size: 13px !important;
-		font-weight: 600 !important;
-		color: #343434 !important;   /* trả về màu đậm như gốc, không còn nhạt */
+		font-weight: 700 !important;
+		color: #141310 !important;   /* đậm rõ */
 		margin-top: 6px !important;
 	}
 
@@ -529,16 +530,39 @@ img {
 		opacity: 0.5;
 	}
 
-	/* ====== NÚT MORE DETAILS: đồng nhất, tinh tế ====== */
+	/* ====== NÚT MORE DETAILS: nền đen, chữ trắng, chấm cam bên phải ====== */
 	#sec7 .s7-item.proj-thumb .submit-btn,
 	#sec7 .s7-item1 .web .submit-btn {
+		position: relative;
 		margin: 14px auto 0 !important;
 		width: auto !important;
-		min-width: 160px;
-		padding: 11px 26px !important;
-		border: 1px solid #222 !important;
+		min-width: 190px;
+		padding: 13px 46px 13px 26px !important;
+		background: #141310 !important;
+		color: #fff !important;
+		border: 1px solid #141310 !important;
 		letter-spacing: 1.5px;
 		font-size: 11px !important;
+		transition: background 0.3s ease, color 0.3s ease;
+	}
+	/* chấm cam bên phải nút */
+	#sec7 .s7-item.proj-thumb .submit-btn::after,
+	#sec7 .s7-item1 .web .submit-btn::after {
+		content: "";
+		position: absolute;
+		right: 16px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+		background: #f93700;
+	}
+	#sec7 .s7-item.proj-thumb .submit-btn:hover,
+	#sec7 .s7-item1 .web .submit-btn:hover {
+		background: #f93700 !important;
+		border-color: #f93700 !important;
+		color: #fff !important;
 	}
 
 	/* đẩy khối chữ (tên+nút) xuống, ảnh giữ trên -> các ô cao bằng nhau,
@@ -560,9 +584,7 @@ img {
 	#sec7 .s7-item1 > .s7-col {
 		padding: 48px 20px !important;
 	}
-	#sec7 .s7-item1 .s7-col .maintitle {
-		letter-spacing: 3px;
-	}
+	/* KHÔNG thêm letter-spacing -> giữ đúng font/khoảng cách gốc */
 }
 
 /* căn giữa nội dung mỗi .web (ảnh trên - tên - nút) cho mọi kích thước */
