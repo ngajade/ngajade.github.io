@@ -462,6 +462,8 @@ img {
 	/* ====== Ô kiểu THUMBNAIL (proj-thumb) ====== */
 	#sec7 .s7-item.proj-thumb {
 		width: 50% !important;
+		height: auto !important;      /* bỏ height cố định 450px -> nút không rớt ra ngoài */
+		min-height: 520px;            /* các ô cao tối thiểu bằng nhau cho đều */
 		padding: 56px 48px !important;
 		border-right: 1px solid rgba(0,0,0,0.08) !important;
 		border-bottom: 1px solid rgba(0,0,0,0.08) !important;
@@ -546,6 +548,20 @@ img {
 		letter-spacing: 1.5px;
 		font-size: 11px !important;
 	}
+
+	/* đẩy khối chữ (tên+nút) xuống, ảnh giữ trên -> các ô cao bằng nhau,
+	   nút MORE DETAILS thẳng hàng giữa 2 cột cùng hàng */
+	#sec7 .s7-item.proj-thumb .s7-col {
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	#sec7 .s7-item1 .web {
+		justify-content: space-between !important;
+	}
+	#sec7 .s7-item1 .web img { margin-bottom: auto; }
 
 	/* ====== Dòng phân cách "Academic & Personal Projects" ====== */
 	#sec7 .s7-item1 .s7-col.noborder,
