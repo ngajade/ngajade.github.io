@@ -139,14 +139,15 @@ img {
 		gap: 16px;
 	}
 	.tz-gallery .row div { margin: 0 !important; }
+	/* MOBILE: giữ ảnh thumbnail CHỮ NHẬT NGANG (16:10) như desktop */
 	.tz-gallery img {
 		width: 100% !important;
-		max-width: 320px;
+		max-width: 460px;
 		height: auto !important;
-		aspect-ratio: 5 / 7;
+		aspect-ratio: 16 / 10;
 		object-fit: cover;
 	}
-	.b-img { width: 100% !important; max-width: 340px !important; }
+	.b-img { width: 100% !important; max-width: 460px !important; aspect-ratio: 16 / 10; object-fit: cover; }
 
 	/* các block 2 cột (web) -> 1 cột */
 	.s7-item1 .s7-row {
@@ -161,10 +162,13 @@ img {
 	}
 	.s7-item1 .web:last-child { border-bottom: none; }
 	.s7-item1 .s7-row img,
-	.s7-row img {
+	.s7-row img,
+	.s7-item1 .web img {
 		width: 100% !important;
-		max-width: 380px;
+		max-width: 460px;
 		height: auto !important;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
 	}
 
 	/* Section 8: nút / CTA */
@@ -463,10 +467,10 @@ img {
 	#sec7 .s7-item.proj-thumb {
 		width: 50% !important;
 		height: auto !important;      /* bỏ height cố định 450px -> nút không rớt ra ngoài */
-		min-height: 560px;            /* các ô cao tối thiểu bằng nhau cho đều */
 		padding: 56px 48px !important;
 		border-bottom: 1px solid black !important;
-		gap: 22px !important;
+		gap: 20px !important;
+		justify-content: flex-start !important;   /* nội dung xếp từ trên xuống, không trôi */
 	}
 	/* CỘT TRÁI của mỗi cặp (ô proj-thumb KHÔNG đứng ngay sau proj-thumb khác)
 	   -> có viền phải làm đường kẻ giữa 2 cột */
@@ -487,9 +491,8 @@ img {
 	}
 	#sec7 .s7-item1 .web {
 		padding: 56px 48px !important;
-		min-height: 560px;                    /* cùng chiều cao với proj-thumb -> spacing đều */
 		border-right: 1px solid black !important;
-		gap: 22px;
+		gap: 20px;
 		justify-content: flex-start !important;
 	}
 	#sec7 .s7-item1 .web:last-child {
@@ -534,23 +537,26 @@ img {
 		margin-top: 4px !important;
 	}
 
-	/* ====== Dấu ♦ (dec): ĐẬM như cũ (bỏ opacity), khoảng cách đều ====== */
+	/* ====== Dấu ♦ (dec): ĐẬM (bỏ opacity). Khoảng cách do gap của cột lo -> đều ====== */
 	#sec7 .proj-thumb .dec,
 	#sec7 .s7-item1 .web .dec {
-		margin: 18px auto !important;
+		margin: 0 auto !important;
 		opacity: 1 !important;
 		background: #141310 !important;
 	}
-	/* tiêu đề: khoảng cách đều tới dấu ♦ */
 	#sec7 .s7-item.proj-thumb .maintitle,
 	#sec7 .s7-item1 .web .minititle {
-		margin-bottom: 0 !important;
+		margin: 0 !important;
+	}
+	/* s7-col trong proj-thumb dùng gap để khoảng cách title-♦-nút đều */
+	#sec7 .s7-item.proj-thumb .s7-col {
+		gap: 20px;
 	}
 
 	/* ====== NÚT MORE DETAILS: nền transparent, viền, khoảng cách ĐỀU ====== */
 	#sec7 .s7-item.proj-thumb .submit-btn,
 	#sec7 .s7-item1 .web .submit-btn {
-		margin: 18px auto 0 !important;
+		margin: 0 auto !important;
 		width: auto !important;
 		min-width: 170px;
 		padding: 12px 28px !important;
@@ -568,10 +574,9 @@ img {
 		color: #fff !important;
 	}
 
-	/* đẩy khối chữ (tên+nút) xuống, ảnh giữ trên -> các ô cao bằng nhau,
-	   nút MORE DETAILS thẳng hàng giữa 2 cột cùng hàng */
+	/* cụm chữ (tên+♦+nút) nằm NGAY DƯỚI ảnh, không trôi xuống đáy */
 	#sec7 .s7-item.proj-thumb .s7-col {
-		margin-top: auto;
+		margin-top: 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -597,4 +602,95 @@ img {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+}
+
+
+/* =============================================================
+   10. FOOTER — làm gọn & đẹp, responsive tốt
+   ============================================================= */
+#footer .ft-t {
+	width: 100% !important;
+	max-width: 1200px;
+	margin: 0 auto;
+	align-items: center !important;
+	gap: 24px;
+	padding: 56px 40px !important;
+}
+#footer .ft-col:nth-child(1),
+#footer .ft-col:nth-child(2),
+#footer .ft-col:nth-child(3) {
+	width: 33.33% !important;
+}
+#footer .ft-col:nth-child(1) { text-align: left; }
+#footer .ft-col:nth-child(2) { text-align: center; }
+#footer .ft-col:nth-child(3) { text-align: right; }
+
+/* tên thương hiệu */
+#footer .ft-col .logo {
+	font-size: 24px;
+	letter-spacing: 2px;
+	margin-bottom: 8px;
+}
+#footer .ft-col:nth-child(1) .contenttext {
+	color: #6b6b6b;
+	letter-spacing: 0.5px;
+}
+
+/* GET IN TOUCH: gọn, không quá to */
+#footer .ft-t .bigtitle {
+	font-size: 40px !important;
+	letter-spacing: 6px !important;
+	margin: 0 0 20px 0 !important;
+}
+#footer .ft-col:nth-child(2) .link {
+	display: inline-flex;
+	gap: 22px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#footer .ft-col:nth-child(2) .link a { margin: 0 !important; }
+
+/* social + email bên phải */
+#footer .ft-col:nth-child(3) i {
+	font-size: 18px;
+	margin-left: 14px;
+}
+#footer .ft-col:nth-child(3) .contenttext {
+	margin-top: 12px;
+	color: #6b6b6b;
+}
+
+/* dòng dưới cùng */
+#footer .ft-b {
+	width: 100% !important;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 18px 40px !important;
+	height: auto !important;
+}
+#footer .ft-b .contenttext { color: #8a8a8a; letter-spacing: 0.5px; }
+
+/* ---- Footer trên MOBILE: xếp dọc, căn giữa ---- */
+@media screen and (max-width: 900px) {
+	#footer .ft-t {
+		flex-direction: column;
+		text-align: center;
+		gap: 32px;
+		padding: 48px 24px !important;
+	}
+	#footer .ft-col:nth-child(1),
+	#footer .ft-col:nth-child(2),
+	#footer .ft-col:nth-child(3) {
+		width: 100% !important;
+		text-align: center !important;
+	}
+	#footer .ft-t .bigtitle { font-size: 32px !important; letter-spacing: 4px !important; }
+	#footer .ft-col:nth-child(3) i { margin: 0 8px; }
+	#footer .ft-b {
+		flex-direction: column;
+		text-align: center;
+		gap: 8px;
+		padding: 24px !important;
+	}
+	#footer .ft-b .contenttext { width: 100% !important; text-align: center !important; }
 }
