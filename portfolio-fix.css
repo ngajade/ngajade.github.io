@@ -333,19 +333,43 @@ img {
 
 
 /* =============================================================
-   7. ĐỒNG NHẤT BỐ CỤC THUMBNAIL cho các dự án .proj-thumb
+   7. LƯỚI 2 CỘT cho các dự án .proj-thumb
       (Sales / Website collection / Wedding / GAMUS)
-      -> Ảnh TRÊN, tên + nút DƯỚI, căn giữa (giống Furniture/Speaker).
+      -> Xếp 2 cột như Furniture/Speaker: ảnh TRÊN, tên + nút DƯỚI.
       Chỉ hiện ẢNH ĐẦU làm thumbnail, ẩn ảnh thứ 2.
       KHÔNG áp cho TYPOGRAPHY / ILLUSTRATION / PHOTOSHOP.
    ============================================================= */
 
-/* xếp dọc: ảnh (gallery) lên trên, chữ (s7-col) xuống dưới */
+/* Cho vùng nội dung xuống dòng để tạo lưới */
+#sec7 .s7-r {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	align-items: stretch;
+}
+
+/* Mặc định: mọi con của .s7-r chiếm nguyên hàng (giữ layout cũ cho
+   Academic title, Furniture/Speaker block, TYPO/ILLUS/PHOTOSHOP) */
+#sec7 .s7-r > .s7-item,
+#sec7 .s7-r > .s7-item1 {
+	width: 100%;
+}
+
+/* ==== CHỈ .proj-thumb: mỗi ô chiếm 50% -> tự xếp 2 cột ==== */
+@media screen and (min-width: 1025px) {
+	#sec7 .s7-r > .s7-item.proj-thumb {
+		width: 50% !important;
+		border-right: 1px solid black;
+	}
+	/* ô cột phải trong mỗi cặp: bỏ viền phải kép (tuỳ chọn thẩm mỹ) */
+}
+
+/* Bố cục bên trong mỗi ô proj-thumb: ảnh trên, chữ dưới, căn giữa */
 #sec7 .s7-item.proj-thumb {
 	flex-direction: column !important;
 	align-items: center !important;
-	gap: 24px;
-	padding: 50px 60px !important;
+	justify-content: flex-start;
+	gap: 20px;
+	padding: 50px 40px !important;
 }
 #sec7 .s7-item.proj-thumb .tz-gallery {
 	order: 1;
@@ -365,20 +389,58 @@ img {
 #sec7 .s7-item.proj-thumb .tz-gallery .row > div:not(:first-child) {
 	display: none !important;
 }
-/* ảnh thumbnail: kích thước đồng nhất với Furniture/Speaker */
 #sec7 .s7-item.proj-thumb .tz-gallery .row > div:first-child {
 	margin: 0 !important;
 }
+/* ảnh thumbnail: vừa khung ô, không bị cắt */
 #sec7 .s7-item.proj-thumb .tz-gallery img,
 #sec7 .s7-item.proj-thumb .b-img {
 	width: 100% !important;
-	max-width: 460px !important;
+	max-width: 420px !important;
 	height: auto !important;
 }
 
-/* trên mobile cũng giữ dạng dọc căn giữa (đã sẵn cột, chỉ đảm bảo ẩn ảnh 2) */
+/* Mobile/tablet: mỗi dự án 1 cột (full-width), vẫn căn giữa */
 @media screen and (max-width: 1024px) {
+	#sec7 .s7-r > .s7-item.proj-thumb {
+		width: 100% !important;
+	}
 	#sec7 .s7-item.proj-thumb .tz-gallery .row > div:not(:first-child) {
 		display: none !important;
 	}
+}
+
+
+/* =============================================================
+   8. SỬA "ARE YOU INTERESTING?" / "BOOK ME NOW" bị lệch khi responsive
+      .s8-1 (chữ thường) trong CSS gốc không được căn giữa như .S8-1.
+   ============================================================= */
+#sec8 .s8-1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 80px 24px;
+	gap: 24px;
+}
+#sec8 .s8-1 > * {
+	margin: 0 !important;
+}
+#sec8 .s8-1 .maintitle {
+	width: 100%;
+	text-align: center;
+	word-break: break-word;
+}
+#sec8 .s8-1 img {
+	height: 120px;
+	width: auto;
+}
+/* thu nhỏ tiêu đề trên màn hình nhỏ để không tràn/lệch */
+@media screen and (max-width: 900px) {
+	#sec8 .s8-1 .maintitle { font-size: 40px; }
+}
+@media screen and (max-width: 560px) {
+	#sec8 .s8-1 .maintitle { font-size: 28px; }
+	#sec8 .s8-1 img { height: 90px; }
 }
