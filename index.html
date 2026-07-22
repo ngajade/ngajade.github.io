@@ -1,6 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Portfolio </title>
   <link rel="stylesheet" href="portstyle.css">
 	<link rel="icon" href="logob.png" type="image/x-icon">
@@ -16,6 +17,8 @@
 	<meta property="og:description" content="Hello! I'm Nga Pham. Welcome to my PORTFOLIO"/>
 	<meta property="og:image:width" content="1200"/>
 	<meta property="og:image:height" content="600"/>
+    <!-- Bản vá responsive cho trang chủ (nạp SAU cùng để ghi đè) -->
+    <link rel="stylesheet" href="index-fix.css">
 </head>
 <body>
   <div class="cursor"></div>
@@ -23,9 +26,11 @@
 <div class="header">
 	<button id="btntop" onClick="topFunction()">  <i class="fas fa-angle-up"></i> </button>
   	<div class="noborder" style="display:flex;justify-content: center;  align-items: center">
-	<div class="navbar wid"> 
+	<div class="navbar wid">
       <p class="logo"> <a href="index.html">  JadeNga </a> </p>
-
+	  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+	  	<span></span><span></span><span></span>
+	  </button>
 		<ul class="nav">
 			<li><a href="index.html" class="color">Home</a></li>
 			<li><a href="aboutme.html">About me</a></li>
@@ -44,8 +49,8 @@
 				  <input class="search-input white" placeholder="Type something...">
 				  <a class="search-btn" href=""> <i class="fas fa-search"></i> </a>
 			  </li>
-		  </ul>	
-	</div>	
+		  </ul>
+	</div>
   	</div>
 	<div class="showreel"> UX/UI designer </div>
 	<div class="container">
@@ -69,7 +74,7 @@
 </div>
 
 <section id="About">
-	<div class="title"> <span class="dec-text" data-aos="fade-up"> the </span> <span class="maintitle" data-aos="fade-up"> PHILOSOPHY </span> 
+	<div class="title"> <span class="dec-text" data-aos="fade-up"> the </span> <span class="maintitle" data-aos="fade-up"> PHILOSOPHY </span>
 		<div class="animateline"> <span> </span> </div>
 	</div>
 	<div class="aboutme" data-aos="fade-up" style="max-width:900px">
@@ -86,7 +91,7 @@
 	</div>
 
 		<a href="aboutme.html">
-		<button type="submit" class="submit-btn text1" style="color: white;" data-aos="fade-up"> SEE MORE </button> 
+		<button type="submit" class="submit-btn text1" style="color: white;" data-aos="fade-up"> SEE MORE </button>
 	</a>
 
 </section>
@@ -94,7 +99,7 @@
 <section id="sec2">
 	<div class="title" data-aos="flip-up" data-aos-duration="1000"> <span class="dec-text"> my </span> <span class="maintitle"> PHOTOGRAPHY </span></div>
 	<div class="dec"> </div>
-	<div class="sec2-img"> 
+	<div class="sec2-img">
 		<div class="s2-item" data-aos="fade-up"data-aos-duration="1000"> <p class="maintitle"> Vinpearl </p> <hr class="s2-hr"> </div>
 		<div class="s2-item"data-aos="fade-up"data-aos-duration="1000"><p class="maintitle"> cocobeach </p> </div>
 		<div class="s2-item" data-aos="fade-up"data-aos-duration="1000"> <p class="minititle"> “There is one thing the photograph must contain, the humanity of the moment.” — <em> Robert Frank </em> </p> </div>
@@ -108,7 +113,7 @@
 <section id="sec3">
   <div class="title" data-aos="flip-up" data-aos-duration="1000"> <span class="dec-text"> my </span> <span class="maintitle"> ARTWORK </span> <div class="animateline"> <span> </span></div></div>
 	<div class="sec3-content" data-aos="fade-up" data-aos-duration="1000">
-	
+
 	<div class="sec3-item">
 		<p class="num"> 01 </p>
 		<p class="maintitle"> Graphic Design </p>
@@ -128,7 +133,7 @@
 <a href="portfolio.html">
 	<button type="submit" class="submit-btn text1" style="color: white;" data-aos="fade-up"> EXPLORE </button>
 </a>
-	
+
 
 </section>
 
@@ -139,11 +144,11 @@
 			<div class="s4-img"><img src="29665625_434599600304432_2204259783478567512_o.jpg"> </div>
 		</div>
 		<div class="sec4-item" >
-			<div> 
+			<div>
 			<p class="minititle"  data-aos="fade-up" data-aos-duration="1000"> MY LATEST WORKS</p>
 			<div class="dec" style="margin-left:72px"> </div>
 			</div>
-		
+
 			<div class="s4-col" data-aos="fade-up" data-aos-duration="1000">
 				<p class="contenttext"> 01</p>
 					<a href="https://www.figma.com/proto/ZQDNxnefhqQxzQmx9zYJCn/Portfolio?page-id=76%3A24199&node-id=383-47101&viewport=242%2C295%2C0.04&t=HEPCRzzfehuTfHet-8&scaling=min-zoom&content-scaling=fixed&hide-ui=1" target="_blank" rel="noopener noreferrer"><p class="minititle">Sale management system</p></a>
@@ -167,20 +172,20 @@
 					<a href="https://www.behance.net/gallery/140724359/Solace-Furniture-Website" target="_blank"><p class="minititle"> Sol'ace Furniture Store </p></a>
 					<p class="contenttext"> Web design (Figma) </p>
 			</div>
-	
+
 			<div class="s4-col" data-aos="fade-up" data-aos-duration="1000">
 				<p class="contenttext"> 05</p>
 				<a href="https://klaverstudio.github.io/" target="_blank"><p class="minititle">Klaver Studio</p></a>
 				<p class="contenttext"> Web design (HTML/CSS) </p>
 			</div>
-		
+
 
 			<a href="portfolio.html">
-			<p class="dec-text" data-aos="fade-up" data-aos-duration="1000"> 
-				<button type="submit" class="submit-btn contenttext"> SEE MORE </button> 
+			<p class="dec-text" data-aos="fade-up" data-aos-duration="1000">
+				<button type="submit" class="submit-btn contenttext"> SEE MORE </button>
 			</a>
-			
-			
+
+
 	</div>
 
 
@@ -188,7 +193,7 @@
 		<div class="sec4-item"  data-aos="fade-up" >
 			<div class="s4-img"> <img src="99e64ea9064e6c161795918dded172f9.jpeg"></div>
 		</div>
-	</div>	
+	</div>
 </section>
 <section id="footer" data-aos="fade-zoom-in" data-aos-duration="500" data-aos-easing="ease-in-back" >
 	<div style="display: flex;justify-content: center;  align-items: center; 	border-top: 1px solid black;border-bottom: 1px solid black;">
@@ -206,7 +211,7 @@
 			</div>
 		</div>
 		<div class="ft-col">
-			<div> 
+			<div>
 				<a href="https://www.facebook.com/phnga24/" target="_blank"> <i class="fab fa-facebook-f"></i></a>
 				<a href="https://www.instagram.com/ngaph.24/" target="_blank"> <i class="fab fa-instagram-square"></i></a>
 				<a href="https://www.behance.net/phnga" target="_blank" > <i class="fab fa-behance"></i></a>
@@ -224,7 +229,7 @@
 	</div>
 </section>
 
-	
+
 <script>
 var mybutton = document.getElementById("btntop");
 window.onscroll = function() {scrollFunction()};
@@ -240,11 +245,39 @@ function scrollFunction() {
   	document.documentElement.scrollTop = 0;
 }
 </script>
+
+<!-- Mobile menu toggle (hamburger) -->
+<script>
+	(function () {
+		var burger = document.getElementById("hamburger");
+		var body = document.body;
+		if (burger) {
+			burger.addEventListener("click", function (e) {
+				e.stopPropagation();
+				var open = body.classList.toggle("nav-open");
+				burger.setAttribute("aria-expanded", open ? "true" : "false");
+			});
+			document.querySelectorAll(".nav a").forEach(function (a) {
+				a.addEventListener("click", function () {
+					body.classList.remove("nav-open");
+					burger.setAttribute("aria-expanded", "false");
+				});
+			});
+			document.addEventListener("click", function (e) {
+				if (body.classList.contains("nav-open") && !e.target.closest(".navbar")) {
+					body.classList.remove("nav-open");
+					burger.setAttribute("aria-expanded", "false");
+				}
+			});
+		}
+	})();
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 <script> new WOW().init(); </script>
 <script>
  AOS.init();
-</script>	
+</script>
 <script>
 	          // hi
 			TweenMax.to(".block-1", 2, {
@@ -308,23 +341,7 @@ function scrollFunction() {
 				ease: Expo.easeInOut,
 				delay: 0.6,
 			});
-			TweenMax.from(".site-logo", 1.6, {
-				opacity: 0,
-				y: 40,
-				ease: Expo.easeInOut,
-				delay: 0.6,
-			});
-			TweenMax.staggerFrom(
-				".site-menu > div",
-				1,
-				{
-					opacity: 0,
-					y: 60,
-					ease: Power2.easeOut,
-				},
-				0.2
-			);
-		</script>	
+		</script>
 	<script>
             var cursor = $(".cursor"),
                 follower = $(".cursor-follower");
@@ -359,16 +376,6 @@ function scrollFunction() {
             $(document).on("mousemove", function(e) {
                 mouseX = e.pageX;
                 mouseY = e.pageY;
-            });
-
-            $(".portfolio-item img").on("mouseenter", function() {
-                cursor.addClass("active");
-                follower.addClass("active");
-            });
-
-            $(".portfolio-item img").on("mouseleave", function() {
-                cursor.removeClass("active");
-                follower.removeClass("active");
             });
         </script>
 </body>
