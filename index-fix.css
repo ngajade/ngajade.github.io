@@ -121,8 +121,9 @@ img { max-width: 100%; }
 		width: 100%;
 		font-size: 16px;
 		padding: 14px 4px;
-		color: #141310 !important;
 	}
+	.nav li a:not(.color) { color: #141310 !important; }
+	.nav li a.color { color: #f93700 !important; }
 	/* submenu Portfolio: danh sách thụt lề, bỏ absolute */
 	.nav ul {
 		position: static !important;
