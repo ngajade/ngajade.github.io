@@ -36,27 +36,26 @@ img { max-width: 100%; }
    ============================================================= */
 @media screen and (min-width: 1025px) {
 
-	/* ---- #About: khối ảnh + chữ căn giữa cân đối, gọn gàng ---- */
+	/* ---- #About: khối ảnh + chữ trong container 1280px, ảnh to hơn ---- */
 	#About .aboutme {
 		display: flex !important;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center !important;
-		gap: 40px;
-		max-width: 860px !important;
+		gap: 56px;
+		max-width: 1280px !important;
 		margin: 0 auto;
 	}
-	/* ảnh chân dung: to & cân đối hơn, thấy rõ khuôn mặt (không crop cận) */
+	/* ảnh chân dung TO hơn, thấy rõ khuôn mặt (không crop cận) */
 	#About .me-img img {
-		width: 210px !important;
-		height: 280px !important;
+		width: 260px !important;
+		height: 340px !important;
 		object-fit: cover;
 		object-position: top center;
 		margin-right: 0 !important;
 	}
-	/* đoạn text: thu gọn bề ngang cho dòng dễ đọc, căn trái gọn */
 	#About .aboutme .contenttext {
-		flex: 0 1 560px;
+		flex: 0 1 640px;
 		text-align: left;
 		line-height: 1.9;
 	}
@@ -66,6 +65,13 @@ img { max-width: 100%; }
 		max-width: 1280px;
 		margin: 0 auto;
 		gap: 40px;
+	}
+
+	/* ---- #sec2 (PHOTOGRAPHY): full-width, cao ~80vh ---- */
+	#sec2 .sec2-img {
+		padding: 0 40px 40px !important;
+		min-height: 80vh;
+		grid-template-rows: 1fr 1fr 1fr 1fr !important;
 	}
 }
 

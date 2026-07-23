@@ -606,91 +606,11 @@ img {
 
 
 /* =============================================================
-   10. FOOTER — làm gọn & đẹp, responsive tốt
+   10. HEADER: link đang active hiển thị màu cam kể cả trên navbar tối
+      (.black a{color:white} đè .color -> cần rule mạnh hơn)
    ============================================================= */
-#footer .ft-t {
-	width: 100% !important;
-	max-width: 1200px;
-	margin: 0 auto;
-	align-items: center !important;
-	gap: 24px;
-	padding: 56px 40px !important;
-}
-#footer .ft-col:nth-child(1),
-#footer .ft-col:nth-child(2),
-#footer .ft-col:nth-child(3) {
-	width: 33.33% !important;
-}
-#footer .ft-col:nth-child(1) { text-align: left; }
-#footer .ft-col:nth-child(2) { text-align: center; }
-#footer .ft-col:nth-child(3) { text-align: right; }
-
-/* tên thương hiệu */
-#footer .ft-col .logo {
-	font-size: 24px;
-	letter-spacing: 2px;
-	margin-bottom: 8px;
-}
-#footer .ft-col:nth-child(1) .contenttext {
-	color: #6b6b6b;
-	letter-spacing: 0.5px;
-}
-
-/* GET IN TOUCH: gọn, không quá to */
-#footer .ft-t .bigtitle {
-	font-size: 40px !important;
-	letter-spacing: 6px !important;
-	margin: 0 0 20px 0 !important;
-}
-#footer .ft-col:nth-child(2) .link {
-	display: inline-flex;
-	gap: 22px;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-#footer .ft-col:nth-child(2) .link a { margin: 0 !important; }
-
-/* social + email bên phải */
-#footer .ft-col:nth-child(3) i {
-	font-size: 18px;
-	margin-left: 14px;
-}
-#footer .ft-col:nth-child(3) .contenttext {
-	margin-top: 12px;
-	color: #6b6b6b;
-}
-
-/* dòng dưới cùng */
-#footer .ft-b {
-	width: 100% !important;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 18px 40px !important;
-	height: auto !important;
-}
-#footer .ft-b .contenttext { color: #8a8a8a; letter-spacing: 0.5px; }
-
-/* ---- Footer trên MOBILE: xếp dọc, căn giữa ---- */
-@media screen and (max-width: 900px) {
-	#footer .ft-t {
-		flex-direction: column;
-		text-align: center;
-		gap: 32px;
-		padding: 48px 24px !important;
-	}
-	#footer .ft-col:nth-child(1),
-	#footer .ft-col:nth-child(2),
-	#footer .ft-col:nth-child(3) {
-		width: 100% !important;
-		text-align: center !important;
-	}
-	#footer .ft-t .bigtitle { font-size: 32px !important; letter-spacing: 4px !important; }
-	#footer .ft-col:nth-child(3) i { margin: 0 8px; }
-	#footer .ft-b {
-		flex-direction: column;
-		text-align: center;
-		gap: 8px;
-		padding: 24px !important;
-	}
-	#footer .ft-b .contenttext { width: 100% !important; text-align: center !important; }
+.navbar .nav a.color,
+.navbar.black .nav a.color,
+.black .nav a.color {
+	color: #f93700 !important;
 }
