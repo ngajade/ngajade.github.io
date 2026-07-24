@@ -170,20 +170,53 @@ img { max-width: 100%; }
 		opacity: 1 !important;
 	}
 
-	/* s9-1: cột tiêu đề dọc bỏ đi, ảnh full-width */
-	#sec9 .s9-1 { flex-direction: column; }
+	/* s9-1: cột tiêu đề dọc bỏ đi, ảnh + caption căn giữa, khít nội dung */
+	#sec9 .s9-1 {
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		padding: 40px 24px !important;
+		height: auto !important;
+	}
 	#sec9 .s9-l { display: none !important; }
-	#sec9 .s9-r { flex: none !important; width: 100%; height: auto !important; padding: 40px 0; }
-	#sec9 .s9-img { width: 90% !important; height: auto !important; }
-	#sec9 .s9-img img { position: static !important; transform: none !important; width: 100% !important; height: auto !important; }
-	#sec9 .s9-img:after { display: none; }
+	#sec9 .s9-r {
+		flex: none !important;
+		width: 100% !important;
+		height: auto !important;
+		padding: 0 !important;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	/* khung ảnh: cao theo nội dung, căn giữa, KHÔNG để trống thừa */
+	#sec9 .s9-img {
+		position: static !important;
+		width: 100% !important;
+		max-width: 460px !important;
+		height: auto !important;
+		margin: 0 auto !important;
+		overflow: visible !important;
+		transform: none !important;
+		display: block;
+	}
+	#sec9 .s9-img img {
+		position: static !important;
+		transform: none !important;
+		width: 100% !important;
+		height: auto !important;
+		display: block;
+		filter: grayscale(1);
+	}
+	#sec9 .s9-img:after { display: none !important; }
 	#sec9 .s9-img .minititle {
 		position: static !important;
 		transform: none !important;
 		opacity: 1 !important;
 		color: #343434 !important;
-		margin-top: 16px;
+		margin: 16px auto 0 !important;
 		text-align: center;
+		width: 100% !important;
+		bottom: auto !important;
 	}
 
 	/* grid ảnh: bỏ grid-areas, chuyển 1 cột (hoặc 2 cột tablet) */
