@@ -203,21 +203,29 @@ img { max-width: 100%; }
 		position: static !important;
 		transform: none !important;
 		width: 100% !important;
+		max-width: 460px !important;
 		height: auto !important;
 		display: block;
+		margin: 0 auto !important;
 		filter: grayscale(1);
 	}
 	#sec9 .s9-img:after { display: none !important; }
+	#sec9 .s9-img p.minititle,
 	#sec9 .s9-img .minititle {
 		position: static !important;
 		transform: none !important;
 		opacity: 1 !important;
 		color: #343434 !important;
-		margin: 16px auto 0 !important;
+		margin-top: 16px !important;
+		margin-bottom: 0 !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
 		text-align: center;
 		width: 100% !important;
 		bottom: auto !important;
 	}
+	/* đảm bảo ảnh + caption căn giữa tuyệt đối trong section */
+	#sec9 .s9-1, #sec9 .s9-2 { text-align: center; }
 
 	/* grid ảnh: bỏ grid-areas, chuyển 1 cột (hoặc 2 cột tablet) */
 	#sec9 .grid-demo {
