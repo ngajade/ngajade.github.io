@@ -148,18 +148,27 @@ img { max-width: 100%; }
 	   ========================================================= */
 	.header-top {
 		height: auto !important;
-		min-height: 260px;
-		padding: 70px 24px !important;
+		min-height: 240px;
+		padding: 64px 24px !important;
+		position: relative;
+		z-index: 5;
+		background: var(--bg-color, #faf7f3);
 	}
-	.header-top h1 { font-size: 48px !important; line-height: 1.2 !important; }
-	.header-top em { font-size: 28px !important; }
-	/* tắt lớp phủ animation reveal -> chữ "Capturing the MOMENT" luôn hiện đủ */
+	.header-top h1 { font-size: 46px !important; line-height: 1.25 !important; }
+	.header-top em { font-size: 26px !important; }
+	/* Tắt HOÀN TOÀN hiệu ứng reveal -> chữ "Capturing the MOMENT" luôn hiện rõ */
 	.header-top .home-title span::before,
 	.header-top .home-title span::after {
+		content: none !important;
 		display: none !important;
 		animation: none !important;
+		background: transparent !important;
 	}
-	.header-top .home-title span { overflow: visible !important; }
+	.header-top .home-title span {
+		overflow: visible !important;
+		color: #141310 !important;
+		opacity: 1 !important;
+	}
 
 	/* s9-1: cột tiêu đề dọc bỏ đi, ảnh full-width */
 	#sec9 .s9-1 { flex-direction: column; }
