@@ -253,3 +253,55 @@ img { max-width: 100%; }
 	.maintitle { font-size: 26px; }
 	.logo { font-size: 18px; }
 }
+
+
+/* =============================================================
+   FOOTER RESPONSIVE CHUẨN — đồng bộ, đẹp cho mọi trang
+   ============================================================= */
+@media screen and (max-width: 900px) {
+	#footer .ft-t {
+		width: 100% !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		text-align: center !important;
+		gap: 30px !important;
+		padding: 48px 24px !important;
+		height: auto !important;
+	}
+	#footer .ft-col,
+	#footer .ft-col:nth-child(1),
+	#footer .ft-col:nth-child(2),
+	#footer .ft-col:nth-child(3) {
+		width: 100% !important;
+		text-align: center !important;
+		padding: 0 !important;
+	}
+	#footer .ft-col .logo { font-size: 22px; }
+	#footer .ft-t .bigtitle {
+		font-size: 38px !important;
+		letter-spacing: 4px !important;
+		margin: 6px 0 18px 0 !important;
+		line-height: 1.1 !important;
+	}
+	#footer .ft-nav {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 12px 20px;
+		margin-top: 4px;
+	}
+	#footer .ft-nav .link { margin: 0 !important; }
+	#footer .ft-nav .link a { margin: 0 !important; font-size: 13px; }
+	#footer .ft-col:nth-child(3) > div { margin-bottom: 10px; }
+	#footer .ft-col:nth-child(3) i { margin: 0 10px !important; font-size: 18px; }
+	#footer .ft-b {
+		width: 100% !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		text-align: center !important;
+		gap: 6px !important;
+		padding: 20px 24px !important;
+		height: auto !important;
+	}
+	#footer .ft-b .contenttext { width: 100% !important; text-align: center !important; }
+}

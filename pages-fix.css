@@ -175,13 +175,20 @@ img { max-width: 100%; }
 		gap: 24px !important;
 		padding: 40px 24px !important;
 	}
-	#sec9 .grid-img { grid-area: auto !important; }
+	#sec9 .grid-img { grid-area: auto !important; height: auto !important; }
+	/* ảnh giữ tỉ lệ gốc, không ép crop -> đẹp & tự nhiên */
+	#sec9 .grid-img .demo-img,
+	#sec9 .grid-img .tz-gallery {
+		width: 100% !important;
+		height: auto !important;
+	}
 	#sec9 .grid-img .demo-img img,
 	#sec9 .grid-img .tz-gallery img {
 		width: 100% !important;
 		height: auto !important;
-		aspect-ratio: 3 / 4;
+		aspect-ratio: auto !important;
 		object-fit: cover;
+		display: block;
 	}
 
 
@@ -240,4 +247,60 @@ img { max-width: 100%; }
 	/* back-to-top */
 	#btntop { right: 16px; height: 48px; width: 48px; }
 	#btntop i { font-size: 26px; }
+}
+
+
+/* =============================================================
+   FOOTER RESPONSIVE CHUẨN — đồng bộ, đẹp cho mọi trang
+   (đặt cuối file để ưu tiên cao nhất)
+   ============================================================= */
+@media screen and (max-width: 900px) {
+	#footer .ft-t {
+		width: 100% !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		text-align: center !important;
+		gap: 30px !important;
+		padding: 48px 24px !important;
+		height: auto !important;
+	}
+	#footer .ft-col,
+	#footer .ft-col:nth-child(1),
+	#footer .ft-col:nth-child(2),
+	#footer .ft-col:nth-child(3) {
+		width: 100% !important;
+		text-align: center !important;
+		padding: 0 !important;
+	}
+	#footer .ft-col .logo { font-size: 22px; }
+	#footer .ft-t .bigtitle {
+		font-size: 38px !important;
+		letter-spacing: 4px !important;
+		margin: 6px 0 18px 0 !important;
+		line-height: 1.1 !important;
+	}
+	/* menu 5 links: bọc gọn, căn giữa, khoảng đều */
+	#footer .ft-nav {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 12px 20px;
+		margin-top: 4px;
+	}
+	#footer .ft-nav .link { margin: 0 !important; }
+	#footer .ft-nav .link a { margin: 0 !important; font-size: 13px; }
+	/* social + email căn giữa */
+	#footer .ft-col:nth-child(3) > div { margin-bottom: 10px; }
+	#footer .ft-col:nth-child(3) i { margin: 0 10px !important; font-size: 18px; }
+	/* dòng cuối cùng: xếp dọc căn giữa */
+	#footer .ft-b {
+		width: 100% !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		text-align: center !important;
+		gap: 6px !important;
+		padding: 20px 24px !important;
+		height: auto !important;
+	}
+	#footer .ft-b .contenttext { width: 100% !important; text-align: center !important; }
 }
