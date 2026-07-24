@@ -146,9 +146,20 @@ img { max-width: 100%; }
 	/* =========================================================
 	   PHOTOGRAPHY  (header-top + #sec9 + grid)
 	   ========================================================= */
-	.header-top { height: 340px !important; padding: 0 16px; }
-	.header-top h1 { font-size: 54px !important; }
-	.header-top em { font-size: 30px !important; }
+	.header-top {
+		height: auto !important;
+		min-height: 260px;
+		padding: 70px 24px !important;
+	}
+	.header-top h1 { font-size: 48px !important; line-height: 1.2 !important; }
+	.header-top em { font-size: 28px !important; }
+	/* tắt lớp phủ animation reveal -> chữ "Capturing the MOMENT" luôn hiện đủ */
+	.header-top .home-title span::before,
+	.header-top .home-title span::after {
+		display: none !important;
+		animation: none !important;
+	}
+	.header-top .home-title span { overflow: visible !important; }
 
 	/* s9-1: cột tiêu đề dọc bỏ đi, ảnh full-width */
 	#sec9 .s9-1 { flex-direction: column; }
