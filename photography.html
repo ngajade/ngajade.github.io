@@ -15,6 +15,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
     <link rel="stylesheet" href="bootstrap-gallery/style.css">
+    <link rel="stylesheet" href="pages-fix.css">
 
 </head>
 <body>
@@ -24,6 +25,9 @@
 <div style="display: flex;justify-content: center;  align-items: center; border-bottom: 1px solid #343434">
 	<div class="navbar over"data-aos="fade-zoom-in" data-aos-duration="300" data-aos-easing="ease-in-back">
       <p class="logo"> <a href="index.html">   JadeNga </a> </p>
+	  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+	  	<span></span><span></span><span></span>
+	  </button>
 	  <ul class="nav">
 		<li><a href="index.html">Home</a></li>
 		<li><a href="aboutme.html">About me</a></li>
@@ -391,6 +395,24 @@ function scrollFunction() {
 </script>
 <script>
   AOS.init();
+</script>
+<script>
+	(function () {
+		var burger = document.getElementById("hamburger"), body = document.body;
+		if (burger) {
+			burger.addEventListener("click", function (e) {
+				e.stopPropagation();
+				var open = body.classList.toggle("nav-open");
+				burger.setAttribute("aria-expanded", open ? "true" : "false");
+			});
+			document.querySelectorAll(".nav a").forEach(function (a) {
+				a.addEventListener("click", function () { body.classList.remove("nav-open"); });
+			});
+			document.addEventListener("click", function (e) {
+				if (body.classList.contains("nav-open") && !e.target.closest(".navbar")) body.classList.remove("nav-open");
+			});
+		}
+	})();
 </script>
 </body>
 </html>

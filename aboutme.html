@@ -10,6 +10,7 @@
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="pages-fix.css">
 </head>
 <body>
 <div class="cursor"></div>
@@ -18,6 +19,9 @@
 <div style="display: flex;justify-content: center;  align-items: center; border-bottom: 1px solid #343434">
     <div class="navbar over">
       <p class="logo"> <a href="index.html"> JadeNga </a> </p>
+	  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+	  	<span></span><span></span><span></span>
+	  </button>
         <ul class="nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="aboutme.html" class="color">About me</a></li>
@@ -273,6 +277,24 @@ function scrollFunction() {
 </script>
 <script>
   AOS.init();
+</script>
+<script>
+	(function () {
+		var burger = document.getElementById("hamburger"), body = document.body;
+		if (burger) {
+			burger.addEventListener("click", function (e) {
+				e.stopPropagation();
+				var open = body.classList.toggle("nav-open");
+				burger.setAttribute("aria-expanded", open ? "true" : "false");
+			});
+			document.querySelectorAll(".nav a").forEach(function (a) {
+				a.addEventListener("click", function () { body.classList.remove("nav-open"); });
+			});
+			document.addEventListener("click", function (e) {
+				if (body.classList.contains("nav-open") && !e.target.closest(".navbar")) body.classList.remove("nav-open");
+			});
+		}
+	})();
 </script>
 </body>
 </html>

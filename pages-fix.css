@@ -1,0 +1,243 @@
+/* =============================================================
+   pages-fix.css
+   Bản vá responsive dùng CHUNG cho: aboutme.html, photography.html,
+   contact.html. Nạp SAU portstyle.css. Không sửa portstyle.css.
+   Rule được scope theo section id (#sec6 / #sec9 / #sec5) nên không
+   xung đột giữa các trang.
+   ============================================================= */
+
+/* ---------- 0. Chống tràn ngang ---------- */
+html, body { max-width: 100%; overflow-x: hidden; }
+img { max-width: 100%; }
+
+/* ---------- 1. Hamburger (ẩn desktop) ---------- */
+.hamburger {
+	display: none;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	padding: 8px;
+	z-index: 100001;
+}
+.hamburger span {
+	display: block;
+	width: 26px; height: 2px;
+	margin: 5px 0;
+	background: #141310;
+	transition: 0.3s ease;
+}
+.nav-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-open .hamburger span:nth-child(2) { opacity: 0; }
+.nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* =============================================================
+   2. TABLET & MOBILE  (<= 1024px)
+   ============================================================= */
+@media screen and (max-width: 1024px) {
+
+	/* ---- Navbar + hamburger + panel ---- */
+	.navbar, .navbar.over, .navbar.wid {
+		width: 100% !important;
+		padding: 0 20px !important;
+	}
+	.hamburger { display: block; }
+
+	.nav {
+		position: fixed;
+		top: 64px; left: 0; right: 0;
+		flex-direction: column;
+		align-items: flex-start;
+		background: #faf7f3;
+		width: 100%;
+		padding: 10px 24px 24px;
+		gap: 2px;
+		max-height: calc(100vh - 64px);
+		overflow-y: auto;
+		box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+		transform: translateY(-120%);
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.35s ease;
+		z-index: 100000;
+	}
+	.nav-open .nav { transform: translateY(0); opacity: 1; visibility: visible; }
+	.nav > li { width: 100%; border-bottom: 1px solid rgba(0,0,0,0.08); }
+	.nav li a { display: block; width: 100%; font-size: 16px; padding: 14px 4px; }
+	.nav li a:not(.color) { color: #141310 !important; }
+	.nav li a.color { color: #f93700 !important; }
+	.nav .search-box { display: none; }
+
+	/* tắt con trỏ tuỳ biến trên cảm ứng */
+	.cursor, .cursor-follower { display: none !important; }
+
+
+	/* =========================================================
+	   ABOUTME  (#sec6)
+	   ========================================================= */
+	/* s6-1: ảnh + text -> xếp dọc, căn giữa */
+	#sec6 .s6-1 { padding: 60px 24px !important; }
+	#sec6 .s6-1-1 {
+		display: block !important;
+		max-width: 100% !important;
+		text-align: center;
+	}
+	#sec6 .s6-1-1 img {
+		width: 100% !important;
+		max-width: 420px;
+		height: auto !important;
+		margin: 0 auto 28px !important;
+		display: block;
+	}
+	#sec6 .s6-1-1 .titt { margin-top: 0 !important; }
+	#sec6 .s6-1-1 .maintitle { font-size: 56px !important; line-height: 1.1 !important; }
+	#sec6 .s6-1-2 {
+		flex-direction: column;
+		margin-top: 40px !important;
+		gap: 16px;
+	}
+	#sec6 .s6-1-2 p { width: 100% !important; font-size: 20px !important; }
+	#sec6 .s6-1-2 hr { width: 60px !important; }
+
+	/* s6-2: 2 cột (text đen | ảnh) -> xếp dọc */
+	#sec6 .s6-2 {
+		flex-direction: column;
+		height: auto !important;
+	}
+	#sec6 .s6-2-1 {
+		width: 100% !important;
+		padding: 48px 24px !important;
+	}
+	#sec6 .s6-2-2 {
+		width: 100% !important;
+		min-height: 320px;
+	}
+
+	/* s6-3: motto quote */
+	#sec6 .s6-3 { padding: 60px 24px !important; }
+	#sec6 .s6-3 .maintitle { font-size: 34px !important; line-height: 1.3 !important; }
+	#sec6 .s6-3 i { font-size: 30px !important; }
+
+	/* s6-5: navigation keywords -> gọn, tắt preview hover */
+	#sec6 .s6-5 { height: auto !important; padding-bottom: 40px; }
+	#sec6 .navigation-wrapper { padding: 60px 0 20px !important; }
+	#sec6 .navigation-wrapper ul {
+		position: static !important;
+		width: 100% !important;
+		transform: none !important;
+		padding: 20px 24px 0 !important;
+	}
+	#sec6 .s6-5 a { font-size: 34px !important; }
+	#sec6 .navigation-item { padding: 0 8px !important; margin: 12px 0 !important; }
+	#sec6 .project-preview { display: none !important; }
+
+	/* s6-4: 2 cột CTA -> xếp dọc */
+	#sec6 .s6-4 {
+		flex-direction: column;
+		height: auto !important;
+		padding: 50px 24px !important;
+		gap: 40px;
+	}
+	#sec6 .s6-4:before, #sec6 .s6-4:after { display: none !important; }
+	#sec6 .s6-4 p { margin: 12px 0 !important; }
+	#sec6 .s6-4 .maintitle { font-size: 30px !important; }
+
+
+	/* =========================================================
+	   PHOTOGRAPHY  (header-top + #sec9 + grid)
+	   ========================================================= */
+	.header-top { height: 340px !important; padding: 0 16px; }
+	.header-top h1 { font-size: 54px !important; }
+	.header-top em { font-size: 30px !important; }
+
+	/* s9-1: cột tiêu đề dọc bỏ đi, ảnh full-width */
+	#sec9 .s9-1 { flex-direction: column; }
+	#sec9 .s9-l { display: none !important; }
+	#sec9 .s9-r { flex: none !important; width: 100%; height: auto !important; padding: 40px 0; }
+	#sec9 .s9-img { width: 90% !important; height: auto !important; }
+	#sec9 .s9-img img { position: static !important; transform: none !important; width: 100% !important; height: auto !important; }
+	#sec9 .s9-img:after { display: none; }
+	#sec9 .s9-img .minititle {
+		position: static !important;
+		transform: none !important;
+		opacity: 1 !important;
+		color: #343434 !important;
+		margin-top: 16px;
+		text-align: center;
+	}
+
+	/* grid ảnh: bỏ grid-areas, chuyển 1 cột (hoặc 2 cột tablet) */
+	#sec9 .grid-demo {
+		display: grid !important;
+		grid-template-columns: 1fr 1fr !important;
+		grid-template-areas: none !important;
+		grid-template-rows: none !important;
+		gap: 24px !important;
+		padding: 40px 24px !important;
+	}
+	#sec9 .grid-img { grid-area: auto !important; }
+	#sec9 .grid-img .demo-img img,
+	#sec9 .grid-img .tz-gallery img {
+		width: 100% !important;
+		height: auto !important;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+	}
+
+
+	/* =========================================================
+	   CONTACT  (contact-header + #sec5 form)
+	   ========================================================= */
+	#sec5 { flex-direction: column; }
+	#sec5 .s5-l {
+		flex: none !important;
+		width: 100%;
+		border-right: none !important;
+		border-bottom: 1px solid black;
+		padding: 40px 0;
+		position: static !important;
+		text-align: center;
+	}
+	#sec5 .s5-l .maintitle {
+		position: static !important;
+		transform: none !important;
+		font-size: 48px !important;
+		left: auto !important; top: auto !important;
+	}
+	#sec5 .s5-m { flex: none !important; width: 100%; }
+	#sec5 .input-login {
+		padding: 48px 24px !important;
+		width: 100% !important;
+	}
+	#sec5 .input-login .maintitle { font-size: 26px !important; margin-bottom: 30px !important; }
+	/* FIRST/LAST NAME 2 ô -> 1 cột trên mobile nhỏ */
+	#sec5 .name { flex-direction: column; }
+	#sec5 .name .input-data { width: 100% !important; }
+	#sec5 .datetime { flex-direction: column; }
+	#sec5 .date { width: 100% !important; margin-right: 0 !important; }
+	#sec5 .submit-btn { width: 100% !important; max-width: 260px; }
+}
+
+
+/* =============================================================
+   3. ĐIỆN THOẠI  (<= 640px)
+   ============================================================= */
+@media screen and (max-width: 640px) {
+	/* aboutme */
+	#sec6 .s6-1-1 .maintitle { font-size: 42px !important; }
+	#sec6 .s6-3 .maintitle { font-size: 26px !important; }
+	#sec6 .s6-5 a { font-size: 26px !important; }
+
+	/* photography */
+	.header-top h1 { font-size: 38px !important; }
+	.header-top em { font-size: 22px !important; }
+	#sec9 .grid-demo { grid-template-columns: 1fr !important; }
+
+	/* contact */
+	#sec5 .s5-l .maintitle { font-size: 36px !important; }
+	#sec5 .input-login .maintitle { font-size: 22px !important; }
+
+	/* back-to-top */
+	#btntop { right: 16px; height: 48px; width: 48px; }
+	#btntop i { font-size: 26px; }
+}
