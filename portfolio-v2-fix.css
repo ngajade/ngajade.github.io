@@ -1,0 +1,669 @@
+/* =============================================================
+   portfolio-fix.css
+   Bản vá responsive DÀNH RIÊNG cho trang portfolio.html
+   Nạp file này SAU portstyle.css và style.css trong <head>.
+   Không sửa portstyle.css (dùng chung cả site) để tránh vỡ trang khác.
+   Tác giả: bản chỉnh sửa cho Nga Pham — 2026
+   ============================================================= */
+
+/* ---------- 0. Nền tảng: chống tràn ngang toàn trang ---------- */
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ---------- 1. Nút hamburger (mặc định ẩn trên desktop) ---------- */
+.hamburger {
+	display: none;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	padding: 8px;
+	z-index: 100001;
+}
+.hamburger span {
+	display: block;
+	width: 26px;
+	height: 2px;
+	margin: 5px 0;
+	background: #fff;
+	transition: 0.3s ease;
+}
+/* trạng thái khi mở menu -> biến thành dấu X */
+.nav-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-open .hamburger span:nth-child(2) { opacity: 0; }
+.nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* =============================================================
+   2. TABLET & NHỎ HƠN  (<= 1024px)
+   ============================================================= */
+@media screen and (max-width: 1024px) {
+
+	/* navbar co giãn theo màn hình thay vì width cứng 1280px */
+	.navbar {
+		width: 100% !important;
+		padding: 0 20px !important;
+	}
+
+	/* hiện nút hamburger */
+	.hamburger {
+		display: block;
+	}
+
+	/* menu chuyển thành panel trượt từ trên xuống */
+	.nav {
+		position: fixed;
+		top: 70px;
+		left: 0;
+		right: 0;
+		flex-direction: column;
+		align-items: flex-start;
+		background: #141310;
+		width: 100%;
+		padding: 10px 24px 24px;
+		gap: 4px;
+		max-height: calc(100vh - 70px);
+		overflow-y: auto;
+		transform: translateY(-120%);
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.35s ease;
+	}
+	.nav-open .nav {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+	.nav > li {
+		width: 100%;
+		border-bottom: 1px solid rgba(255,255,255,0.12);
+	}
+	.nav li a {
+		display: block;
+		width: 100%;
+		font-size: 16px;
+		padding: 14px 4px;
+	}
+	.nav li a:not(.color) { color: #fff !important; }
+	.nav li a.color { color: #f93700 !important; }
+
+	/* submenu Portfolio: hiển thị dạng danh sách thụt lề, không dùng absolute */
+	.nav ul {
+		position: static !important;
+		width: 100% !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: none !important;
+		border-top: 0 !important;
+		background: transparent !important;
+		margin: 0 0 6px 0 !important;
+		padding-left: 16px;
+	}
+	.nav ul:before, .nav ul:after,
+	.nav ul ul:before, .nav ul ul:after { display: none !important; }
+	.nav ul ul {
+		position: static !important;
+		transform: none !important;
+		left: auto !important;
+		border-left: 0 !important;
+	}
+	.nav ul li { border-bottom: 0; }
+	.nav ul li a { font-size: 14px; padding: 8px 4px; }
+
+	/* ẩn ô search trên mobile cho gọn */
+	.nav .search-box { display: none; }
+
+	/* --- Section 7: cột tiêu đề dọc bên trái bỏ đi, xếp dọc --- */
+	#sec7 { flex-direction: column; }
+	.s7-l { display: none !important; }
+	.s7-r { flex: 1; }
+
+	/* mỗi item chuyển từ hàng ngang -> cột dọc, cao tự động */
+	.s7-item {
+		flex-direction: column;
+		height: auto;
+		padding: 40px 16px;
+		gap: 24px;
+	}
+	.s7-col { flex: none; width: 100%; }
+
+	/* gallery ảnh: cho phép xuống dòng, ảnh co giãn */
+	.tz-gallery { flex: none; width: 100%; }
+	.tz-gallery .row {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 16px;
+	}
+	.tz-gallery .row div { margin: 0 !important; }
+	/* MOBILE: giữ ảnh thumbnail CHỮ NHẬT NGANG (16:10) như desktop */
+	.tz-gallery img {
+		width: 100% !important;
+		max-width: 460px;
+		height: auto !important;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+	}
+	.b-img { width: 100% !important; max-width: 460px !important; aspect-ratio: 16 / 10; object-fit: cover; }
+
+	/* các block 2 cột (web) -> 1 cột */
+	.s7-item1 .s7-row {
+		flex-direction: column;
+		height: auto;
+	}
+	.s7-item1 .web {
+		border-right: none !important;
+		border-bottom: 1px solid black;
+		padding: 40px 20px;
+		height: auto;
+	}
+	.s7-item1 .web:last-child { border-bottom: none; }
+	.s7-item1 .s7-row img,
+	.s7-row img,
+	.s7-item1 .web img {
+		width: 100% !important;
+		max-width: 460px;
+		height: auto !important;
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+	}
+
+	/* Section 8: nút / CTA */
+	#sec8 { padding: 0; }
+	.s8-1 { padding: 60px 24px; }
+	.s6-4 {
+		flex-direction: column;
+		height: auto;
+		padding: 50px 24px;
+		gap: 40px;
+	}
+	.s6-4:before, .s6-4:after { display: none; }
+	.s6-4 p { margin: 20px 0; }
+
+	/* Footer: xếp dọc, bỏ width cứng 1280px */
+	.ft-t, .ft-b {
+		width: 100% !important;
+		flex-direction: column;
+		text-align: center;
+		gap: 24px;
+		padding: 40px 24px !important;
+		height: auto;
+	}
+	.ft-col:nth-child(1),
+	.ft-col:nth-child(2),
+	.ft-col:nth-child(3) {
+		width: 100% !important;
+		text-align: center !important;
+		padding: 0 !important;
+	}
+	.ft-b .contenttext { width: 100% !important; text-align: center !important; }
+	.ft-t .bigtitle { font-size: 60px; }
+
+	/* tắt con trỏ tuỳ biến (chạy JS chuột) trên thiết bị cảm ứng */
+	.cursor, .cursor-follower { display: none !important; }
+}
+
+
+/* =============================================================
+   3. ĐIỆN THOẠI  (<= 640px)
+   ============================================================= */
+@media screen and (max-width: 640px) {
+
+	/* chữ tiêu đề lớn thu nhỏ để không tràn */
+	.maintitle { font-size: 30px; }
+	.s7-item .maintitle { font-size: 26px; }
+	.s7-col .maintitle { font-size: 22px !important; }
+	.bigtitle { font-size: 44px; letter-spacing: 4px; }
+
+	/* hiệu ứng chữ "EXPLORE MY WORKS" ở banner đầu */
+	.top { height: 320px; padding: 40px 16px; }
+	.deconstructed { font-size: 34px; }
+
+	/* nút MORE DETAILS full-width dễ bấm */
+	.s7-r button, .submit-btn {
+		width: 100% !important;
+		max-width: 260px;
+	}
+
+	.tz-gallery img { max-width: 100%; }
+	.b-img { max-width: 100% !important; }
+
+	.s8-1 { padding: 48px 16px; }
+	.ft-t .bigtitle { font-size: 44px; }
+
+	/* nút back-to-top nhỏ lại, sát mép */
+	#btntop { right: 16px; height: 48px; width: 48px; }
+	#btntop i { font-size: 26px; }
+}
+
+
+/* =============================================================
+   4. RẤT NHỎ  (<= 380px)
+   ============================================================= */
+@media screen and (max-width: 380px) {
+	.deconstructed { font-size: 26px; }
+	.maintitle { font-size: 26px; }
+	.logo { font-size: 18px; }
+}
+
+
+/* =============================================================
+   5. BỎ HẲN CỘT "PORTFOLIO" DỌC — dàn nội dung full-width
+      (áp dụng MỌI kích thước màn hình, ghi đè .s7-l/.s7-r gốc)
+   ============================================================= */
+
+/* Ẩn hoàn toàn cột tiêu đề dọc bên trái */
+#sec7 .s7-l {
+	display: none !important;
+}
+
+/* Vùng nội dung chiếm trọn chiều ngang */
+#sec7 .s7-r {
+	flex: 1 1 100% !important;
+	width: 100% !important;
+}
+
+/* ---- Các section dạng (chữ | gallery ảnh) ---- */
+/* Chỉ áp dụng cho desktop/tablet lớn; mobile đã xử lý ở khối trên (<=1024px) */
+@media screen and (min-width: 1025px) {
+
+	/* thêm lề hai bên cho mọi item -> tất cả thẳng mép trái/phải */
+	#sec7 .s7-item {
+		padding: 0 60px;
+	}
+
+	/* cân lại tỉ lệ: chữ gọn hơn, ẢNH TO RA */
+	#sec7 .s7-item .s7-col {
+		flex: 1 1 34%;
+	}
+	#sec7 .s7-item .tz-gallery {
+		flex: 1 1 66%;
+		display: flex;
+		justify-content: center;
+	}
+	/* cặp ảnh căn giữa trong khung, không cho tràn/cắt cạnh */
+	#sec7 .s7-item .tz-gallery .row {
+		justify-content: center;
+		flex-wrap: nowrap;
+		max-width: 100%;
+	}
+	#sec7 .s7-item .tz-gallery .row div {
+		flex: 0 1 auto;
+		min-width: 0;
+	}
+
+	/* ảnh gallery to hơn nhưng co được để luôn vừa khung (không bị cắt) */
+	#sec7 .tz-gallery img {
+		width: 280px;
+		max-width: 100%;
+		height: 380px;
+	}
+	#sec7 .b-img {
+		width: 480px !important;
+		max-width: 100%;
+		height: 380px;
+	}
+
+	/* ---- Các section dạng 2 khối web (Furniture / Speaker ...) ---- */
+	/* thêm lề hai bên cho thẳng hàng với các item phía trên */
+	#sec7 .s7-item1 .s7-row {
+		padding: 0 60px;
+	}
+	/* ảnh trong khối web to ra, đồng đều */
+	#sec7 .s7-item1 .web img {
+		width: 100%;
+		max-width: 480px;
+		height: auto;
+	}
+}
+
+
+/* =============================================================
+   6. SỬA CHỮ "EXPLORE MY WORKS" BỊ CẮT CHÂN
+      .deconstructed dùng mask theo % chiều cao; line-height khít
+      quá làm phần chân chữ bị cắt. Nới line-height + padding đáy.
+   ============================================================= */
+.top .deconstructed {
+	line-height: 1.4 !important;
+	padding-bottom: 0.25em;
+}
+.top .deconstructed > div {
+	line-height: 1.4 !important;
+	padding-bottom: 0.25em;
+}
+
+
+/* =============================================================
+   7. LƯỚI 2 CỘT cho các dự án .proj-thumb
+      (Sales / Website collection / Wedding / GAMUS)
+      -> Xếp 2 cột như Furniture/Speaker: ảnh TRÊN, tên + nút DƯỚI.
+      Chỉ hiện ẢNH ĐẦU làm thumbnail, ẩn ảnh thứ 2.
+      KHÔNG áp cho TYPOGRAPHY / ILLUSTRATION / PHOTOSHOP.
+   ============================================================= */
+
+/* Cho vùng nội dung xuống dòng để tạo lưới */
+#sec7 .s7-r {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	align-items: stretch;
+}
+
+/* Mặc định: mọi con của .s7-r chiếm nguyên hàng (giữ layout cũ cho
+   Academic title, Furniture/Speaker block, TYPO/ILLUS/PHOTOSHOP) */
+#sec7 .s7-r > .s7-item,
+#sec7 .s7-r > .s7-item1 {
+	width: 100%;
+}
+
+/* ==== CHỈ .proj-thumb: mỗi ô chiếm 50% -> tự xếp 2 cột ==== */
+@media screen and (min-width: 1025px) {
+	#sec7 .s7-r > .s7-item.proj-thumb {
+		width: 50% !important;
+		border-right: 1px solid black;
+	}
+	/* ô cột phải trong mỗi cặp: bỏ viền phải kép (tuỳ chọn thẩm mỹ) */
+}
+
+/* Bố cục bên trong mỗi ô proj-thumb: ảnh trên, chữ dưới, căn giữa */
+#sec7 .s7-item.proj-thumb {
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: flex-start;
+	gap: 20px;
+	padding: 50px 40px !important;
+}
+#sec7 .s7-item.proj-thumb .tz-gallery {
+	order: 1;
+	flex: none !important;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+#sec7 .s7-item.proj-thumb .s7-col {
+	order: 2;
+	flex: none !important;
+	width: 100%;
+	text-align: center;
+}
+
+/* chỉ hiện ảnh đầu tiên làm thumbnail, ẩn ảnh thứ 2 trở đi */
+#sec7 .s7-item.proj-thumb .tz-gallery .row > div:not(:first-child) {
+	display: none !important;
+}
+#sec7 .s7-item.proj-thumb .tz-gallery .row > div:first-child {
+	margin: 0 !important;
+}
+/* ảnh thumbnail: vừa khung ô, không bị cắt */
+#sec7 .s7-item.proj-thumb .tz-gallery img,
+#sec7 .s7-item.proj-thumb .b-img {
+	width: 100% !important;
+	max-width: 420px !important;
+	height: auto !important;
+}
+
+/* Mobile/tablet: mỗi dự án 1 cột (full-width), vẫn căn giữa */
+@media screen and (max-width: 1024px) {
+	#sec7 .s7-r > .s7-item.proj-thumb {
+		width: 100% !important;
+	}
+	#sec7 .s7-item.proj-thumb .tz-gallery .row > div:not(:first-child) {
+		display: none !important;
+	}
+}
+
+
+/* =============================================================
+   8. SỬA "ARE YOU INTERESTING?" / "BOOK ME NOW" bị lệch khi responsive
+      .s8-1 (chữ thường) trong CSS gốc không được căn giữa như .S8-1.
+   ============================================================= */
+#sec8 .s8-1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 80px 24px;
+	gap: 24px;
+}
+#sec8 .s8-1 > * {
+	margin: 0 !important;
+}
+#sec8 .s8-1 .maintitle {
+	width: 100%;
+	text-align: center;
+	word-break: break-word;
+}
+#sec8 .s8-1 img {
+	height: 120px;
+	width: auto;
+}
+/* thu nhỏ tiêu đề trên màn hình nhỏ để không tràn/lệch */
+@media screen and (max-width: 900px) {
+	#sec8 .s8-1 .maintitle { font-size: 40px; }
+}
+@media screen and (max-width: 560px) {
+	#sec8 .s8-1 .maintitle { font-size: 28px; }
+	#sec8 .s8-1 img { height: 90px; }
+}
+
+
+/* =============================================================
+   9. POLISH TỔNG THỂ khu vực dự án (#sec7)
+      Thống nhất spacing / padding / ảnh / tên / nút cho MỌI ô,
+      bỏ các viền kẻ thô, tạo khoảng thở đều -> gọn & đẹp.
+      Khối này đặt CUỐI cùng nên có ưu tiên cao nhất.
+   ============================================================= */
+@media screen and (min-width: 1025px) {
+
+	/* --- Khung chung: bỏ overflow ẩn, cho phép lưới đều --- */
+	#sec7 .s7-r {
+		padding: 0;
+	}
+
+	/* ====== Ô kiểu THUMBNAIL (proj-thumb) ====== */
+	#sec7 .s7-item.proj-thumb {
+		width: 50% !important;
+		height: auto !important;      /* bỏ height cố định 450px -> nút không rớt ra ngoài */
+		padding: 56px 48px !important;
+		border-bottom: 1px solid black !important;
+		gap: 20px !important;
+		justify-content: flex-start !important;   /* nội dung xếp từ trên xuống, không trôi */
+	}
+	/* CỘT TRÁI của mỗi cặp (ô proj-thumb KHÔNG đứng ngay sau proj-thumb khác)
+	   -> có viền phải làm đường kẻ giữa 2 cột */
+	#sec7 .s7-item.proj-thumb {
+		border-right: 1px solid black !important;
+	}
+	/* CỘT PHẢI (proj-thumb đứng NGAY SAU proj-thumb khác) -> bỏ viền phải ở mép */
+	#sec7 .s7-item.proj-thumb + .s7-item.proj-thumb {
+		border-right: none !important;
+	}
+
+	/* ====== Khối 2 dự án (s7-item1: Furniture/Bakery/Klaver) ====== */
+	#sec7 .s7-item1 {
+		border-bottom: 1px solid black !important;
+	}
+	#sec7 .s7-item1 .s7-row {
+		padding: 0 !important;
+	}
+	#sec7 .s7-item1 .web {
+		padding: 56px 48px !important;
+		border-right: 1px solid black !important;
+		gap: 20px;
+		justify-content: flex-start !important;
+	}
+	#sec7 .s7-item1 .web:last-child {
+		border-right: none !important;
+	}
+
+	/* ====== ẢNH thumbnail: TO HƠN, cùng tỉ lệ, VUÔNG ====== */
+	#sec7 .s7-item.proj-thumb .tz-gallery img,
+	#sec7 .s7-item.proj-thumb .b-img,
+	#sec7 .s7-item1 .web img {
+		width: 100% !important;
+		max-width: 560px !important;
+		aspect-ratio: 16 / 10;
+		height: auto !important;
+		object-fit: cover;
+	}
+
+	/* ====== TÊN dự án: cỡ & khoảng cách đồng nhất ====== */
+	#sec7 .s7-item.proj-thumb .maintitle,
+	#sec7 .s7-item.proj-thumb .minititle,
+	#sec7 .s7-item1 .web .minititle {
+		text-align: center;
+		margin: 0 !important;
+		letter-spacing: 1px;
+	}
+	#sec7 .s7-item.proj-thumb .maintitle {
+		font-size: 26px !important;
+		margin-top: 4px !important;
+	}
+	/* proj-thumb ĐÃ CÓ maintitle -> ẩn minititle (phụ đề) đi */
+	#sec7 .s7-item.proj-thumb .minititle {
+		display: none !important;
+	}
+	/* .web KHÔNG có maintitle -> biến minititle thành tiêu đề chính */
+	#sec7 .s7-item1 .web .minititle {
+		font-family: ogg !important;
+		text-transform: uppercase;
+		font-size: 26px !important;
+		font-weight: 400 !important;
+		letter-spacing: 0 !important;
+		color: #343434 !important;
+		margin-top: 4px !important;
+	}
+
+	/* ====== Dấu ♦ (dec): ĐẬM (bỏ opacity). Khoảng cách do gap của cột lo -> đều ====== */
+	#sec7 .proj-thumb .dec,
+	#sec7 .s7-item1 .web .dec {
+		margin: 0 auto !important;
+		opacity: 1 !important;
+		background: #141310 !important;
+	}
+	#sec7 .s7-item.proj-thumb .maintitle,
+	#sec7 .s7-item1 .web .minititle {
+		margin: 0 !important;
+	}
+	/* s7-col trong proj-thumb dùng gap để khoảng cách title-♦-nút đều */
+	#sec7 .s7-item.proj-thumb .s7-col {
+		gap: 20px;
+	}
+
+	/* ====== NÚT MORE DETAILS: nền transparent, viền, khoảng cách ĐỀU ====== */
+	#sec7 .s7-item.proj-thumb .submit-btn,
+	#sec7 .s7-item1 .web .submit-btn {
+		margin: 0 auto !important;
+		width: auto !important;
+		min-width: 170px;
+		padding: 12px 28px !important;
+		background: transparent !important;
+		color: #343434 !important;
+		border: 1px solid #999 !important;
+		letter-spacing: 1.5px;
+		font-size: 11px !important;
+		transition: background 0.25s ease, color 0.25s ease;
+	}
+	#sec7 .s7-item.proj-thumb .submit-btn:hover,
+	#sec7 .s7-item1 .web .submit-btn:hover {
+		background: #141310 !important;
+		border-color: #141310 !important;
+		color: #fff !important;
+	}
+
+	/* cụm chữ (tên+♦+nút) nằm NGAY DƯỚI ảnh, không trôi xuống đáy */
+	#sec7 .s7-item.proj-thumb .s7-col {
+		margin-top: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	/* .web: ảnh trên - title - ♦ - nút xếp liền, khoảng cách đều (giống proj-thumb) */
+	#sec7 .s7-item1 .web {
+		justify-content: flex-start !important;
+	}
+	#sec7 .s7-item1 .web img { margin-bottom: 8px; }
+
+	/* ====== Dòng phân cách "Academic & Personal Projects" ====== */
+	#sec7 .s7-item1 .s7-col.noborder,
+	#sec7 .s7-item1 > .s7-col {
+		padding: 48px 20px !important;
+	}
+	/* KHÔNG thêm letter-spacing -> giữ đúng font/khoảng cách gốc */
+}
+
+/* căn giữa nội dung mỗi .web (ảnh trên - tên - nút) cho mọi kích thước */
+#sec7 .s7-item1 .web {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+
+/* =============================================================
+   10. HEADER: link đang active hiển thị màu cam kể cả trên navbar tối
+      (.black a{color:white} đè .color -> cần rule mạnh hơn)
+   ============================================================= */
+.navbar .nav a.color,
+.navbar.black .nav a.color,
+.black .nav a.color {
+	color: #f93700 !important;
+}
+
+
+/* =============================================================
+   11. FOOTER RESPONSIVE CHUẨN — đồng bộ, đẹp cho mọi trang
+   ============================================================= */
+@media screen and (max-width: 900px) {
+	#footer .ft-t {
+		width: 100% !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		text-align: center !important;
+		gap: 30px !important;
+		padding: 48px 24px !important;
+		height: auto !important;
+	}
+	#footer .ft-col,
+	#footer .ft-col:nth-child(1),
+	#footer .ft-col:nth-child(2),
+	#footer .ft-col:nth-child(3) {
+		width: 100% !important;
+		text-align: center !important;
+		padding: 0 !important;
+	}
+	#footer .ft-col .logo { font-size: 22px; }
+	#footer .ft-t .bigtitle {
+		font-size: 38px !important;
+		letter-spacing: 4px !important;
+		margin: 6px 0 18px 0 !important;
+		line-height: 1.1 !important;
+	}
+	#footer .ft-nav {
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 12px 20px;
+		margin-top: 4px;
+	}
+	#footer .ft-nav .link { margin: 0 !important; }
+	#footer .ft-nav .link a { margin: 0 !important; font-size: 13px; }
+	#footer .ft-col:nth-child(3) > div { margin-bottom: 10px; }
+	#footer .ft-col:nth-child(3) i { margin: 0 10px !important; font-size: 18px; }
+	#footer .ft-b {
+		width: 100% !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		text-align: center !important;
+		gap: 6px !important;
+		padding: 20px 24px !important;
+		height: auto !important;
+	}
+	#footer .ft-b .contenttext { width: 100% !important; text-align: center !important; }
+}
