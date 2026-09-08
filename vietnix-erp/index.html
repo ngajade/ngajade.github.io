@@ -871,6 +871,107 @@
     @media(max-width:1200px){#account-context .ux-case:nth-of-type(2).open,#account-context .ux-case:nth-of-type(2).open .ux-case-body,#account-context .ux-case:nth-of-type(3).open,#account-context .ux-case:nth-of-type(3).open .ux-case-body{height:auto}#account-context .ux-case:nth-of-type(2) .ux-decisions{top:0;margin-top:24px}#account-context .ux-case:nth-of-type(2) .ux-visuals,#account-context .ux-case:nth-of-type(3) .ux-visuals{height:auto;min-height:0;grid-template-columns:1fr 1fr;gap:24px}}
     @media(max-width:800px){#account-context .ux-case:nth-of-type(2) .ux-visuals,#account-context .ux-case:nth-of-type(3) .ux-visuals{grid-template-columns:1fr}#account-context .ux-case .ux-visual-panel>img{left:50%!important;top:56px!important;width:calc(100% - 40px)!important;height:calc(100% - 56px)!important;transform:translateX(-50%)}#account-context .ux-result{height:auto;min-height:0;padding-top:4px}#account-context .ux-result blockquote{height:auto;font-size:20px;line-height:29px}}
     @media(max-width:800px){.screen-lightbox .screen-preview img{width:auto;height:auto;max-width:100%;max-height:calc(100vh - 32px);border-radius:0}}
+
+    /* Final responsive guard: desktop Figma overrides above must never widen mobile. */
+    @media(max-width:800px){
+      html,body{width:100%;max-width:100%;overflow-x:hidden}
+      .wrap,.nav-inner,.hero-inner,.role,.role-copy,.role-work,.migration-inner,
+      .migration-head,.problem-grid,.comparison,.compare-item,.design-inner,
+      .design-head,.design-showcase,.design-overview,.ds-stats,.core-message,
+      .foundation,.foundation-head,.accordion,.acc,.acc-content,.token-row,
+      .token-copy,.token-chain,.process-inner,.process-head,.flow-wrap,.flow,
+      .process-core,.case-studies-head,.ux-case,.ux-case-body,.ux-case-main,
+      .ux-problem-solution,.ux-visuals,.ux-visual,.ux-decisions,.ux-result,
+      .screens-inner,.screen-head,.screen-gallery,.footer-inner{
+        width:100%;max-width:100%;min-width:0
+      }
+      .hero,.migration,.design,.process,#account-context.case-studies,.screens,.footer{
+        height:auto;min-height:0
+      }
+      .hero-title,.hero-copy,.hero-copy .lead,.hero-copy .detail,.meta-list,
+      .role-copy>p:last-child,.design-description,.design-overview .ds-stats,
+      .design-overview .core-message,.design-overview .core-message p,
+      .token-row .token-copy,.token-row .token-copy h3,.token-row .token-copy p,
+      .process-core,.screen-head .title-xl,.screen-head .description{
+        width:100%;max-width:100%
+      }
+      .hero{padding:48px 0 64px}.hero-inner{gap:48px}.hero-intro{height:auto}
+      .hero-info{grid-template-columns:1fr;gap:28px;margin-top:28px}
+      .hero-media{height:auto;min-height:0;aspect-ratio:4/3}
+      .hero-media img{object-fit:cover}
+      .role{grid-template-columns:1fr;gap:36px;padding:0}
+      .role-copy h2{font-size:44px;line-height:48px}
+      .role-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .role-stat{min-width:0;padding-right:12px}.role-stat+.role-stat{padding-left:12px}
+      .role-stat strong{font-size:36px;line-height:40px}
+      .migration,.design,.process{padding:72px 0}
+      .migration-head h2{font-size:44px;line-height:48px}
+      .problem-grid{height:auto;grid-template-columns:1fr;gap:24px}
+      .comparison{grid-template-columns:1fr;gap:24px}
+      .problem-card,.problem-card:first-child{height:auto;min-height:0;margin-top:0;padding:24px;border-radius:20px}
+      .compare-arrow{transform:rotate(90deg);justify-self:center}
+      .compare-media{height:auto;aspect-ratio:16/10}
+      .design-inner,.migration-inner,.process-inner{gap:44px}
+      .design-head{height:auto}.design-overview{grid-template-columns:1fr;gap:24px}
+      .design-overview .ds-stats{height:auto;grid-template-columns:1fr}
+      .design-overview .ds-stat,.design-overview .ds-stat+.ds-stat{
+        height:auto;padding:16px 0;border-left:0;border-top:1px solid var(--line)
+      }
+      .design-overview .core-message{height:auto;min-height:74px;margin:0;padding:16px 0 16px 20px}
+      .design-overview .core-message p{font-size:24px;line-height:31px}
+      .design-showcase .ds-media{height:auto;min-height:0;aspect-ratio:16/10;border-radius:20px}
+      .token-row{grid-template-columns:1fr;gap:28px}
+      .token-row .token-copy{height:auto;min-height:0;gap:12px}
+      .token-row .token-copy h3{font-size:32px;line-height:38px}
+      .token-row .token-chain{width:100%;height:auto;grid-template-columns:1fr;gap:14px}
+      .token-row .chain-card{width:100%;height:auto;min-height:150px;padding:24px;border-radius:24px}
+      .token-row .chain-arrow{width:100%;height:24px;transform:rotate(90deg)}
+      .token-groups{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .acc-button,.acc.open .acc-button{grid-template-columns:40px minmax(0,1fr) 20px}
+      .acc-title{font-size:25px;line-height:31px}
+      .acc-content,.acc:nth-child(4).open .acc-content{padding:20px 0 28px;grid-template-columns:1fr;gap:24px}
+      .token-table,.foundation-visual,.acc:nth-child(4) .screens-visual{width:100%;height:auto}
+      .acc:nth-child(4) .screens-visual{grid-template-columns:1fr;padding:18px;border-radius:22px}
+      .process-head{grid-template-columns:1fr;gap:20px}
+      .flow{grid-template-columns:1fr}
+      .flow-card,.flow-card:nth-child(n){height:auto;min-height:0;padding:32px 0 96px;border-right:0;border-bottom:1px solid var(--white14)}
+      .flow-card .meter,.flow-card:nth-child(n) .meter{left:0;right:0;top:auto;bottom:32px}
+      .flow-visual{height:auto;aspect-ratio:4/3}
+      .process-core{height:auto;min-height:0}
+      #account-context .case-studies-head{height:auto}
+      #account-context .ux-case.open,#account-context .ux-case:not(.open){height:auto;padding:0}
+      #account-context .ux-case.open .ux-case-head{height:auto;min-height:76px;padding:20px 0;grid-template-columns:40px minmax(0,1fr) 20px;gap:10px}
+      #account-context .ux-case.open .ux-case-body{width:100%;height:auto;margin:0;padding:24px 0;grid-template-columns:1fr;gap:24px}
+      #account-context .ux-context,#account-context .ux-card{height:auto;min-height:0}
+      #account-context .ux-problem-solution,#account-context .ux-visuals{grid-template-columns:1fr}
+      #account-context .ux-visual-panel{width:100%;height:auto;aspect-ratio:676/360}
+      #account-context .ux-case .ux-visual-panel>img{left:50%!important;right:auto!important;top:40px!important;bottom:auto!important;width:calc(100% - 28px)!important;height:calc(100% - 40px)!important;transform:translateX(-50%)}
+      #account-context .ux-decisions{height:auto;display:block;padding-top:42px}
+      #account-context .ux-decisions .ux-decision{height:auto;min-height:0;padding:18px 0}
+      #account-context .ux-result,#account-context .ux-case:first-of-type .ux-result{height:auto;min-height:0}
+      #account-context .ux-result blockquote{height:auto;font-size:20px;line-height:28px}
+      .screens{padding:72px 0}.screens-inner{gap:32px}
+      .screen-head{width:calc(100% - 40px);margin-inline:auto}
+      .screen-head .title-xl{font-size:42px;line-height:46px;white-space:normal}
+      .screen-head .description{white-space:normal}
+      .screen-gallery{height:auto;overflow:hidden}
+      .screen-row,.screen-row:first-child{width:100%;height:auto;overflow-x:auto;overflow-y:hidden;padding:0 20px;touch-action:pan-x}
+      .screen-track{width:max-content;height:auto;padding:0;animation:none;transform:none}
+      .screen-card{width:calc(100vw - 40px);max-width:390px;height:auto;flex:0 0 calc(100vw - 40px);aspect-ratio:8/5}
+      .screen-card-media{width:100%;height:100%}
+      .footer{padding:72px 0}.footer .footer-inner{width:calc(100% - 40px)}
+      .footer .footer-title{width:100%;height:auto;margin:22px 0 32px;font-size:clamp(50px,15vw,68px);line-height:.9;white-space:normal}
+      .footer .footer-mail{width:100%;max-width:366px;font-size:21px;line-height:29px}
+    }
+    @media(max-width:520px){
+      .wrap{width:calc(100% - 32px)}
+      .role-stats{grid-template-columns:1fr}
+      .role-stat,.role-stat+.role-stat{padding:16px 0;border-left:0;border-top:1px solid var(--line)}
+      .token-groups{grid-template-columns:1fr 1fr}
+      .screen-head{width:calc(100% - 32px)}
+      .screen-row,.screen-row:first-child{padding-inline:16px}
+      .screen-card{width:calc(100vw - 32px);flex-basis:calc(100vw - 32px)}
+    }
   </style>
 </head>
 <body>
