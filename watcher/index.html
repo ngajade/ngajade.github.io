@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Watcher — web app monitoring case study by Nga Pham.">
+  <title>Watcher — Web App Case Study</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__identity">
+        <a class="site-header__name" href="../index.html">Nga Pham</a>
+        <span class="site-header__project">Watcher</span>
+      </div>
+        <a class="site-header__portfolio" href="../index.html">Nga Pham's Portfolio</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="cover" aria-label="Watcher project cover">
+      <img src="assets/screens/thumb.png" alt="Tổng quan dự án Watcher">
+      <div class="cover-shade" aria-hidden="true"></div>
+      <p class="cover-caption">Web app · Product design · 2026</p>
+    </section>
+
+    <article class="project-sheet">
+      <header class="project-header reveal">
+        <p class="kicker">Early-stage exploration</p>
+        <h1>Watcher</h1>
+        <div class="project-content-row">
+          <div class="project-story">
+            <p class="project-description">Watcher là web app giám sát dịch vụ mà tôi tham gia trong giai đoạn khởi tạo. Tôi phụ trách định hình trải nghiệm ban đầu và thiết kế các màn hình cốt lõi trước khi bàn giao dự án cho designer khác tiếp tục phát triển.</p>
+            <p class="handoff-note">Các màn hình trong selection này chỉ thể hiện phần công việc do tôi trực tiếp thực hiện trước thời điểm bàn giao.</p>
+          </div>
+          <aside class="project-facts" aria-label="Project snapshot">
+            <p class="project-facts__label">Project snapshot</p>
+            <dl class="project-snapshot">
+              <div><dt>My contribution</dt><dd>Initial UX direction<br>Core UI screens</dd></div>
+              <div><dt>Project status</dt><dd>Early exploration<br>Design handoff</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </header>
+
+      <section class="gallery" id="screens" aria-labelledby="gallery-title">
+        <h2 class="visually-hidden" id="gallery-title">UI screens</h2>
+        <div class="gallery-grid">
+          <figure class="screen-card screen-card--wide reveal" data-screen="Monitor overview"><div class="screen-media"><span class="placeholder">01</span></div></figure>
+          <figure class="screen-card reveal" data-screen="Monitor list"><div class="screen-media"><span class="placeholder">02</span></div></figure>
+          <figure class="screen-card reveal" data-screen="HTTP/S detail"><div class="screen-media"><span class="placeholder">03</span></div></figure>
+          <figure class="screen-card screen-card--wide reveal" data-screen="Create monitor"><div class="screen-media"><span class="placeholder">04</span></div></figure>
+          <figure class="screen-card reveal" data-screen="DNS detail"><div class="screen-media"><span class="placeholder">05</span></div></figure>
+          <figure class="screen-card reveal" data-screen="Incident management"><div class="screen-media"><span class="placeholder">06</span></div></figure>
+          <figure class="screen-card screen-card--wide reveal" data-screen="Incident list"><div class="screen-media"><span class="placeholder">07</span></div></figure>
+          <figure class="screen-card reveal" data-screen="Incident detail"><div class="screen-media"><span class="placeholder">08</span></div></figure>
+          <figure class="screen-card reveal" data-screen="Integrations"><div class="screen-media"><span class="placeholder">09</span></div></figure>
+          <figure class="screen-card reveal" data-screen="Integration setup"><div class="screen-media"><span class="placeholder">10</span></div></figure>
+          <figure class="screen-card reveal" data-screen="Notifications"><div class="screen-media"><span class="placeholder">11</span></div></figure>
+        </div>
+      </section>
+
+      <footer class="project-footer reveal" id="contact">
+        <p class="footer-eyebrow">Let's work together</p>
+        <h2 class="footer-title">Have a project<br><span>in mind?</span></h2>
+        <a class="footer-email" href="mailto:phnga2405@gmail.com">phnga2405@gmail.com <span aria-hidden="true">↗</span></a>
+        <div class="footer-row"><span>© 2026 Nga Pham</span><a href="#top">Back to top ↑</a></div>
+      </footer>
+    </article>
+  </main>
+
+  <dialog class="lightbox" aria-label="Xem trước UI screen">
+    <button class="lightbox-close" type="button" aria-label="Đóng preview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Xem hình trước"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+    <div class="lightbox-stage"><img class="lightbox-image" alt=""></div>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Xem hình tiếp theo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <p class="lightbox-counter" aria-live="polite"></p>
+  </dialog>
+  <script src="main.js"></script>
+</body>
+</html>
