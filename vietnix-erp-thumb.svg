@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Hero trang Vietnix ERP</title>
+  <desc id="desc">Thumbnail tái hiện phần hero của case study Vietnix ERP.</desc>
+  <rect width="1600" height="1000" fill="#ffffff"/>
+  <path d="M0 76H1600" stroke="#dfe4ec"/>
+  <text x="52" y="48" fill="#131721" font-family="Arial, sans-serif" font-size="18" font-weight="600">Nga Pham</text>
+  <g fill="#586274" font-family="Arial, sans-serif" font-size="13"><text x="875" y="47">TỔNG QUAN</text><text x="994" y="47">BÀI TOÁN</text><text x="1092" y="47">DESIGN SYSTEM</text><text x="1228" y="47">QUY TRÌNH</text><text x="1325" y="47">CẢI TIẾN UX</text><text x="1440" y="47">MÀN HÌNH</text></g>
+  <text x="64" y="144" fill="#8a94a4" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">CASE STUDY · 2025 – 2026</text>
+  <rect x="64" y="168" width="48" height="5" fill="#1163d4"/><rect x="112" y="168" width="48" height="5" fill="#d44a1e"/>
+  <text x="64" y="260" fill="#0a0a0a" font-family="Arial, sans-serif" font-size="74" font-weight="800">ERP - Platform Migration</text>
+  <text x="64" y="344" fill="#0a0a0a" font-family="Arial, sans-serif" font-size="74" font-weight="800">&amp; System Redesign</text>
+  <text x="64" y="422" fill="#131721" font-family="Arial, sans-serif" font-size="21" font-weight="600">Dự án tập trung vào tái cấu trúc toàn diện và chuyển đổi nền tảng cho Vietnix,</text>
+  <text x="64" y="454" fill="#131721" font-family="Arial, sans-serif" font-size="21" font-weight="600">nhằm thay thế WHMCS bằng hệ thống ERP tự xây dựng.</text>
+  <text x="64" y="510" fill="#586274" font-family="Arial, sans-serif" font-size="16">Thiết kế chịu ràng buộc về Data Migration, tối ưu trải nghiệm Client Portal</text>
+  <text x="64" y="538" fill="#586274" font-family="Arial, sans-serif" font-size="16">và hiệu suất vận hành Admin Portal.</text>
+  <g font-family="Arial, sans-serif" font-size="15"><path d="M1160 400H1536M1160 462H1536M1160 524H1536M1160 586H1536" stroke="#dfe4ec"/><text x="1160" y="438" fill="#8a94a4">Vai trò</text><text x="1364" y="438" fill="#131721">UX/UI Product Designer</text><text x="1160" y="500" fill="#8a94a4">Thời gian</text><text x="1450" y="500" fill="#131721">2025 – 2026</text><text x="1160" y="562" fill="#8a94a4">Nhóm</text><text x="1427" y="562" fill="#131721">1 designer, 4 dev</text></g>
+  <rect x="64" y="642" width="1472" height="294" fill="#eef1f5" stroke="#e2e6ec"/>
+  <g opacity=".55" stroke="#cfd6df" stroke-width="2"><path d="M64 642L1536 936M1536 642L64 936"/><path d="M64 740H1536M64 838H1536"/></g>
+  <rect x="676" y="764" width="248" height="52" rx="26" fill="#ffffff" opacity=".92"/>
+  <text x="716" y="796" fill="#687282" font-family="Arial, sans-serif" font-size="14" letter-spacing="2">ẢNH HERO · ERP</text>
+</svg>

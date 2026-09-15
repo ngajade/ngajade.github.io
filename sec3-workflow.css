@@ -1,0 +1,286 @@
+/* ERP workflow layout adapted to the original Ngajade typography and palette. */
+#sec3 {
+	--workflow-bg: #141310;
+	--workflow-text: #faf7f3;
+	--workflow-muted: rgba(250, 247, 243, 0.67);
+	--workflow-label: rgba(250, 247, 243, 0.62);
+	--workflow-line: rgba(250, 247, 243, 0.2);
+	--workflow-panel: rgba(255, 255, 255, 0.06);
+	--workflow-accent: #f93700;
+	background: var(--workflow-bg);
+	padding: clamp(72px, 8vw, 120px) max(24px, calc((100% - 1280px) / 2));
+	text-align: left;
+}
+
+#sec3 .workflow-shell {
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+#sec3 .workflow-head {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+	gap: clamp(40px, 7vw, 100px);
+	align-items: end;
+	min-height: 124.5px;
+}
+
+#sec3 .workflow-meta,
+#sec3 .workflow-step-no {
+	font-family: 'Encode Sans', sans-serif;
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--workflow-label);
+}
+
+#sec3 .workflow-heading {
+	position: relative;
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	gap: 8px;
+	width: fit-content;
+	padding-bottom: 8px;
+}
+
+#sec3 .workflow-heading .dec-text {
+	color: var(--workflow-text);
+}
+
+#sec3 .workflow-heading .maintitle {
+	color: var(--workflow-text);
+	font-size: clamp(45px, 3.7vw, 64px);
+}
+
+#sec3 .workflow-heading .animateline {
+	bottom: 0;
+	width: 150px;
+}
+
+#sec3 .workflow-intro {
+	max-width: 380px;
+	font-size: 13px;
+	line-height: 1.75;
+	letter-spacing: 0.03em;
+	color: var(--workflow-text);
+}
+
+#sec3 .workflow-meta {
+	display: flex;
+	justify-content: flex-start;
+	gap: 24px;
+	min-height: 53px;
+	margin-top: 50px;
+	padding: 19px 0;
+	border-top: 1px solid var(--workflow-line);
+	border-bottom: 1px solid var(--workflow-line);
+	color: rgba(250, 247, 243, 0.78);
+}
+
+#sec3 .workflow-meta b {
+	font-weight: 500;
+	color: var(--workflow-text);
+}
+
+#sec3 .workflow-meta span {
+	color: rgba(250, 247, 243, 0.78);
+}
+
+#sec3 .workflow-grid {
+	display: grid;
+	grid-template-columns: 308.25fr 332.25fr 332.25fr 307.25fr;
+	height: 477px;
+	border-bottom: 1px solid var(--workflow-line);
+	overflow: hidden;
+}
+
+#sec3 .workflow-step {
+	padding: 40px 24px 56px;
+	border-right: 1px solid var(--workflow-line);
+}
+
+#sec3 .workflow-step:first-child {
+	padding-left: 0;
+}
+
+#sec3 .workflow-step:last-child {
+	padding-right: 0;
+	padding-bottom: 80px;
+	border-right: 0;
+}
+
+#sec3 .workflow-step:nth-child(2) {
+	padding-top: 120px;
+}
+
+#sec3 .workflow-step:nth-child(3) {
+	padding-top: 180px;
+}
+
+#sec3 .workflow-step:nth-child(4) {
+	padding-top: 240px;
+}
+
+#sec3 .workflow-step h3,
+#sec3 .workflow-core h3 {
+	font-family: Ogg, serif;
+	font-weight: 400;
+	color: var(--workflow-text);
+}
+
+#sec3 .workflow-step h3 {
+	margin-top: 18px;
+	font-size: clamp(27px, 2.5vw, 38px);
+	line-height: 1.05;
+	letter-spacing: 0.01em;
+	text-transform: uppercase;
+}
+
+#sec3 .workflow-step > p:not(.workflow-ai) {
+	margin-top: 20px;
+	font-family: 'Encode Sans', sans-serif;
+	font-size: 13px;
+	line-height: 1.75;
+	letter-spacing: 0.03em;
+	color: var(--workflow-muted);
+}
+
+#sec3 .workflow-step .workflow-step-no,
+#sec3 .workflow-step > p:not(.workflow-ai) {
+	color: var(--workflow-text);
+}
+
+#sec3 .workflow-ai {
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	margin-top: 22px;
+	padding: 14px;
+	border: 0;
+	border-radius: 12px;
+	background: rgba(250, 247, 243, 0.075);
+	font-family: 'Encode Sans', sans-serif;
+	font-size: 11px;
+	line-height: 1.6;
+	letter-spacing: 0.03em;
+	color: rgba(250, 247, 243, 0.72);
+}
+
+#sec3 .workflow-ai span {
+	color: rgba(250, 247, 243, 0.72) !important;
+	opacity: 1;
+}
+
+#sec3 .workflow-ai b {
+	flex: 0 0 auto;
+	padding: 2px 7px;
+	border: 1px solid rgba(255, 255, 255, 0.34);
+	border-radius: 99px;
+	font-family: Montserrat, sans-serif;
+	font-size: 9px;
+	line-height: 1.2;
+	color: #faf7f3;
+}
+
+#sec3 .workflow-core {
+	width: 100%;
+	max-width: 800px;
+	margin-top: clamp(46px, 6vw, 76px);
+}
+
+#sec3 .workflow-core h3 {
+	padding-left: 24px;
+	border-left: 3px solid var(--workflow-accent);
+	font-size: 32px;
+	line-height: 1.08;
+}
+
+#sec3 .workflow-core p {
+	max-width: 800px;
+	margin-top: 16px;
+	font-size: 13px;
+	line-height: 1.75;
+	letter-spacing: 0.03em;
+	color: rgba(250, 247, 243, 0.68);
+}
+
+@media screen and (max-width: 1024px) {
+	#sec3 {
+		padding: 72px 24px !important;
+	}
+
+	#sec3 .workflow-head {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+
+	#sec3 .workflow-intro {
+		max-width: 680px;
+	}
+
+	#sec3 .workflow-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		height: auto;
+		min-height: 0;
+	}
+
+	#sec3 .workflow-step,
+	#sec3 .workflow-step:nth-child(n) {
+		min-height: 390px;
+		padding: 42px 28px;
+		border-bottom: 1px solid var(--workflow-line);
+	}
+
+	#sec3 .workflow-step:nth-child(odd) {
+		padding-left: 0;
+	}
+
+	#sec3 .workflow-step:nth-child(even) {
+		padding-right: 0;
+		border-right: 0;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	#sec3 .workflow-heading .maintitle {
+		font-size: 30px;
+	}
+
+	#sec3 .workflow-meta {
+		flex-direction: column;
+	}
+
+	#sec3 .workflow-grid {
+		grid-template-columns: 1fr;
+	}
+
+	#sec3 .workflow-step,
+	#sec3 .workflow-step:nth-child(n) {
+		min-height: 0;
+		padding: 36px 0;
+		border-right: 0;
+	}
+
+	#sec3 .workflow-step h3 {
+		font-size: 30px;
+	}
+
+	#sec3 .workflow-core {
+		max-width: 800px;
+	}
+
+	#sec3 .workflow-core h3 {
+		padding-left: 18px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#sec3 [data-aos] {
+		transition: none !important;
+		transform: none !important;
+	opacity: 1 !important;
+	}
+}
