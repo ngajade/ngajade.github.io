@@ -1952,3 +1952,28 @@ img { max-width: 100%; }
 		font-size: clamp(28px, 9vw, 38px);
 	}
 }
+
+/* HOME EXPERIENCE v68 — individual light rules on desktop. */
+@media screen and (min-width: 1025px) {
+	.header .hero-experience {
+		padding-top: 0 !important;
+		border-top: 0;
+	}
+	.header .hero-experience-item {
+		padding-top: 20px;
+		border-top: 1px solid rgba(20, 19, 16, .22);
+	}
+}
+
+/* HOME MOBILE v69 — clear title overlap and remove the heavy experience rule. */
+@media screen and (max-width: 640px) {
+	.header .hero-stage {
+		min-height: 380px;
+	}
+	.header .hero-portrait {
+		top: 68%;
+	}
+	.header .hero-experience {
+		border-top: 0;
+	}
+}
