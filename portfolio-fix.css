@@ -377,6 +377,30 @@ img {
 	color: #fff;
 	mix-blend-mode: difference;
 }
+#sec7 .portfolio-case-image > .product-design-badge {
+	top: 16px;
+	right: 16px;
+	left: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	height: 32px;
+	padding: 0 12px;
+	border: 0;
+	border-radius: 999px;
+	background: #f93700;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: .08em;
+	text-align: center;
+	text-transform: uppercase;
+	box-shadow: 0 8px 24px rgba(20, 19, 16, .2);
+	transform: none;
+	mix-blend-mode: normal;
+}
 #sec7 .portfolio-case-image img {
 	display: block;
 	width: 100%;
@@ -453,6 +477,14 @@ img {
 @media screen and (max-width: 640px) {
 	#sec7 .portfolio-case-grid { gap: 0; padding: 0; }
 	#sec7 .portfolio-case-image { border-radius: 5px; }
+	#sec7 .portfolio-case-image > .product-design-badge {
+		top: 12px;
+		right: 12px;
+		width: auto;
+		height: 28px;
+		padding: 0 10px;
+		font-size: 9px;
+	}
 	#sec7 .portfolio-case-top { gap: 14px; font-size: 10px; line-height: 1.5; }
 	#sec7 .portfolio-case h2 { margin-top: 16px; font-size: 30px; }
 	#sec7 .portfolio-case-meta { font-size: 12px; }
