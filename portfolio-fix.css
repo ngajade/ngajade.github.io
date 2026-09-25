@@ -377,28 +377,27 @@ img {
 	color: #fff;
 	mix-blend-mode: difference;
 }
-#sec7 .portfolio-case-image > .product-design-badge {
-	top: 16px;
-	right: 16px;
+#sec7 .portfolio-case-image > .featured-product-badge {
+	top: 0;
+	right: 14px;
 	left: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: auto;
-	height: 32px;
-	padding: 0 12px;
+	width: 72px;
+	height: 58px;
+	padding: 8px 7px 15px;
 	border: 0;
-	border-radius: 999px;
 	background: #f93700;
 	color: #fff;
-	font-size: 10px;
+	font-size: 9px;
 	font-weight: 700;
-	line-height: 1;
-	letter-spacing: .08em;
+	line-height: 1.35;
+	letter-spacing: .11em;
 	text-align: center;
 	text-transform: uppercase;
-	box-shadow: 0 8px 24px rgba(20, 19, 16, .2);
-	transform: none;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 86%, 0 100%);
+	filter: drop-shadow(0 8px 12px rgba(20, 19, 16, .24));
 	mix-blend-mode: normal;
 }
 #sec7 .portfolio-case-image img {
@@ -427,6 +426,30 @@ img {
 	letter-spacing: .14em;
 	text-transform: uppercase;
 	color: rgba(20, 19, 16, .58);
+}
+#sec7 .portfolio-tags {
+	display: flex;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	min-width: 0;
+}
+#sec7 .portfolio-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 26px;
+	padding: 5px 9px;
+	border: 1px solid rgba(20, 19, 16, .16);
+	border-radius: 999px;
+	background: transparent;
+	box-sizing: border-box;
+	color: #141310;
+	font-size: 10px;
+	letter-spacing: .1em;
+	line-height: 1.25;
+	text-align: center;
 }
 #sec7 .portfolio-case-view {
 	flex: 0 0 auto;
@@ -477,15 +500,23 @@ img {
 @media screen and (max-width: 640px) {
 	#sec7 .portfolio-case-grid { gap: 0; padding: 0; }
 	#sec7 .portfolio-case-image { border-radius: 5px; }
-	#sec7 .portfolio-case-image > .product-design-badge {
-		top: 12px;
-		right: 12px;
-		width: auto;
-		height: 28px;
-		padding: 0 10px;
-		font-size: 9px;
+	#sec7 .portfolio-case-image > .featured-product-badge {
+		top: 0;
+		right: 10px;
+		width: 62px;
+		height: 50px;
+		padding: 7px 6px 13px;
+		font-size: 8px;
 	}
 	#sec7 .portfolio-case-top { gap: 14px; font-size: 10px; line-height: 1.5; }
+	#sec7 .portfolio-tags {
+		gap: 6px;
+	}
+	#sec7 .portfolio-tag {
+		min-height: 24px;
+		padding: 4px 8px;
+		font-size: 9px;
+	}
 	#sec7 .portfolio-case h2 { margin-top: 16px; font-size: 30px; }
 	#sec7 .portfolio-case-meta { font-size: 12px; }
 	#sec7 .portfolio-case-info > p { font-size: 13px; }
