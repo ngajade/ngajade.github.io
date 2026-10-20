@@ -802,6 +802,76 @@ img {
 }
 #graphic-design .graphic-design-title span { display: inline-block; }
 #graphic-design .artwork-reel-heading .dec { margin: 0; }
+#graphic-design .gamus-feature {
+	width: min(1280px, calc(100% - 64px));
+	margin: 0 auto 56px;
+	border-top: 1px solid rgba(52, 52, 52, .3);
+	border-bottom: 1px solid rgba(52, 52, 52, .3);
+}
+#graphic-design .gamus-feature > a {
+	display: grid;
+	grid-template-columns: minmax(420px, 520px) minmax(280px, 1fr);
+	gap: clamp(60px, calc(2vw + 40px), 68px);
+	align-items: center;
+	padding: 48px 0;
+}
+#graphic-design .gamus-feature-image {
+	width: min(100%, 520px);
+	justify-self: start;
+	overflow: hidden;
+}
+#graphic-design .gamus-feature-image img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	transition: transform .8s ease;
+}
+#graphic-design .gamus-feature:hover .gamus-feature-image img { transform: scale(1.015); }
+#graphic-design .gamus-feature-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+}
+#graphic-design .gamus-feature-eyebrow {
+	font-family: 'Encode Sans', sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+}
+#graphic-design .gamus-feature h2 {
+	font-family: Ogg, serif;
+	font-size: clamp(34px, 4vw, 54px);
+	font-weight: 400;
+	line-height: 1;
+}
+#graphic-design .gamus-feature .portfolio-tags {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 8px;
+}
+#graphic-design .gamus-feature .portfolio-tag {
+	padding: 7px 12px;
+	border: 1px solid rgba(52, 52, 52, .28);
+	border-radius: 999px;
+	font-family: 'Encode Sans', sans-serif;
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: .06em;
+}
+#graphic-design .gamus-feature-view {
+	padding-bottom: 4px;
+	border-bottom: 1px solid currentColor;
+	font-family: 'Encode Sans', sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
 #graphic-design .artwork-reel-viewport {
 	width: 100%;
 	overflow-x: auto;
@@ -842,6 +912,9 @@ img {
 @media screen and (max-width: 1024px) {
 	#graphic-design.artwork-reel { padding: 96px 0 104px; }
 	#graphic-design .artwork-reel-heading { margin-bottom: 36px; }
+	#graphic-design .gamus-feature { width: calc(100% - 40px); margin-bottom: 44px; }
+	#graphic-design .gamus-feature > a { grid-template-columns: minmax(0, 1.35fr) minmax(240px, .8fr); gap: 28px; }
+	#graphic-design .gamus-feature-image { width: min(100%, 520px); }
 	#graphic-design .artwork-card { width: clamp(240px, 44vw, 340px); }
 }
 @media screen and (max-width: 640px) {
@@ -853,6 +926,11 @@ img {
 		text-align: left;
 	}
 	#graphic-design .artwork-reel-heading .maintitle { font-size: clamp(27px, 8vw, 36px) !important; }
+	#graphic-design .gamus-feature { width: calc(100% - 40px); margin-bottom: 36px; }
+	#graphic-design .gamus-feature > a { grid-template-columns: 1fr; gap: 22px; padding: 32px 0; }
+	#graphic-design .gamus-feature-image img { aspect-ratio: 4 / 3; }
+	#graphic-design .gamus-feature-info { gap: 16px; }
+	#graphic-design .gamus-feature h2 { font-size: 34px; }
 	#graphic-design .artwork-card { width: 72vw; max-width: 300px; }
 	#graphic-design .artwork-reel-track { gap: 12px; padding: 0 12px; }
 }
