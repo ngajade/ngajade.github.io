@@ -1801,7 +1801,8 @@ img { max-width: 100%; }
 	transform: rotate(45deg);
 }
 #sec4 .latest-works-heading + .s4-col {
-	margin-top: 0;
+	/* Share remaining space with the CTA margin to center the project list. */
+	margin-top: auto;
 }
 
 /* HOME WORKS v67 — fixed vertical rhythm instead of space-around. */
