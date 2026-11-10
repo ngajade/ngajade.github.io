@@ -368,3 +368,19 @@ img { max-width: 100%; }
 	}
 	#footer .ft-b .contenttext { width: 100% !important; text-align: center !important; }
 }
+
+/* Keep the motto ornaments outside the wrapped text on phones. */
+@media screen and (max-width: 640px) {
+	#sec6 .s6-3 .maintitle {
+		font-size: clamp(22px, 6vw, 34px) !important;
+		margin: 0;
+	}
+	#sec6 .s6-3 .dec { margin: 28px auto 24px; }
+	#sec6 .s6-3 .maintitle i {
+		display: block;
+		position: static;
+		font-size: 20px !important;
+	}
+	#sec6 .s6-3 .fa-quote-left { margin-bottom: 12px; }
+	#sec6 .s6-3 .fa-quote-right { margin-top: 12px; }
+}

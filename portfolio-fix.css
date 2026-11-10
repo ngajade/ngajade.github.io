@@ -451,6 +451,12 @@ img {
 	line-height: 1.25;
 	text-align: center;
 }
+#sec7 .portfolio-tag.portfolio-tag-highlight {
+	background: #f93700;
+	border-color: #f93700;
+	color: #fff;
+	font-weight: 600;
+}
 #sec7 .portfolio-case-view {
 	flex: 0 0 auto;
 	font-weight: 600;
@@ -515,7 +521,7 @@ img {
 	#sec7 .portfolio-tag {
 		min-height: 24px;
 		padding: 4px 8px;
-		font-size: 9px;
+		font-size: 10px;
 	}
 	#sec7 .portfolio-case h2 { margin-top: 16px; font-size: 30px; }
 	#sec7 .portfolio-case-meta { font-size: 12px; }
@@ -920,10 +926,10 @@ img {
 @media screen and (max-width: 640px) {
 	#graphic-design.artwork-reel { padding: 84px 0 92px; }
 	#graphic-design .artwork-reel-heading {
-		align-items: flex-start;
+		align-items: center;
 		padding: 0 20px;
 		margin-bottom: 28px;
-		text-align: left;
+		text-align: center;
 	}
 	#graphic-design .artwork-reel-heading .maintitle { font-size: clamp(27px, 8vw, 36px) !important; }
 	#graphic-design .gamus-feature { width: calc(100% - 40px); margin-bottom: 36px; }
@@ -1109,6 +1115,40 @@ img {
    8. SỬA "ARE YOU INTERESTING?" / "BOOK ME NOW" bị lệch khi responsive
       .s8-1 (chữ thường) trong CSS gốc không được căn giữa như .S8-1.
    ============================================================= */
+#sec8 .S8-1 {
+	padding-inline: clamp(20px, 6vw, 100px);
+	height: auto;
+	justify-content: center;
+	gap: 28px;
+}
+#sec8 .S8-1 > *,
+#sec8 .S8-1 .submit-btn {
+	margin: 0;
+}
+#sec8 .S8-1 > .minititle {
+	margin-bottom: 0 !important;
+}
+@media screen and (max-width: 1024px) {
+	#sec8 .S8-1 { padding: 60px 24px; }
+}
+@media screen and (max-width: 640px) {
+	#sec8 .S8-1 { padding: 48px 20px; gap: 24px; }
+	#sec8 .S8-1 img { height: 90px; width: auto; }
+}
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+	#sec7 .portfolio-case { padding: 36px 24px; }
+	#sec7 .portfolio-case-top { flex-wrap: wrap; gap: 12px; }
+	#sec7 .portfolio-tags { flex-basis: 100%; }
+}
+#sec8 .S8-1 .collaboration-title {
+	width: 100%;
+	font-size: clamp(20px, 7vw, 120px);
+	line-height: 1.15 !important;
+}
+#sec8 .collaboration-title > span {
+	display: block;
+	white-space: nowrap;
+}
 #sec8 .s8-1 {
 	display: flex;
 	flex-direction: column;
@@ -1372,4 +1412,25 @@ img {
 		height: auto !important;
 	}
 	#footer .ft-b .contenttext { width: 100% !important; text-align: center !important; }
+}
+@media screen and (max-width: 640px) {
+	#sec8 .s6-4 {
+		padding: 44px 20px;
+		gap: 36px;
+	}
+	#sec8 .s6-4 .minititle {
+		margin: 0 0 14px;
+		line-height: 1.5;
+	}
+	#sec8 .s6-4 .maintitle {
+		margin: 0;
+		font-size: clamp(26px, 7vw, 35px);
+		line-height: 1.15;
+	}
+	#sec8 .s6-4 .maintitle::after {
+		position: static;
+		display: block;
+		margin: 20px auto 0;
+		transform: rotate(45deg);
+	}
 }
