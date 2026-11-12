@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
     <!-- Bản vá responsive cho trang portfolio (nạp SAU cùng để ghi đè) -->
-    <link rel="stylesheet" href="portfolio-fix.css?v=58">
+    <link rel="stylesheet" href="portfolio-fix.css?v=65">
     <link rel="stylesheet" href="footer-mobile.css">
 </head>
 <body>
@@ -93,7 +93,7 @@
 			<article class="portfolio-case" data-aos="fade-up">
 				<a href="https://www.behance.net/gallery/141241033/Felice-Wedding-Planner-and-Studio-Website" target="_blank" rel="noopener noreferrer">
 					<div class="portfolio-case-image"><span>06</span><img src="assets/portfolio-thumbs/felice.jpg" alt="Felice Wedding Studio" loading="lazy" decoding="async"></div>
-					<div class="portfolio-case-info"><h2>Felice Wedding Studio</h2><div class="portfolio-case-top"><div class="portfolio-tags"><span class="portfolio-tag">Graduation Project</span><span class="portfolio-tag">UI/UX</span><span class="portfolio-tag">Web Design</span></div><span class="portfolio-case-view">View ↗</span></div></div>
+					<div class="portfolio-case-info"><h2>Felice Wedding Studio</h2><div class="portfolio-case-top"><div class="portfolio-tags"><span class="portfolio-tag portfolio-tag-highlight">Graduation Project</span><span class="portfolio-tag">HTML/CSS</span><span class="portfolio-tag">Web Design</span></div><span class="portfolio-case-view">View ↗</span></div></div>
 				</a>
 			</article>
 			<article class="portfolio-case" data-aos="fade-up">
@@ -111,13 +111,13 @@
 			<article class="portfolio-case" data-aos="fade-up">
 				<a href="https://klaverstudio.github.io/" target="_blank" rel="noopener noreferrer">
 					<div class="portfolio-case-image"><span>09</span><img src="assets/portfolio-thumbs/klaver.jpg" alt="Klaver Studio" loading="lazy" decoding="async"></div>
-					<div class="portfolio-case-info"><h2>Klaver Studio</h2><div class="portfolio-case-top"><div class="portfolio-tags"><span class="portfolio-tag">Web Design</span><span class="portfolio-tag">HTML/CSS</span></div><span class="portfolio-case-view">Live Preview ↗</span></div></div>
+					<div class="portfolio-case-info"><h2>Klaver Studio</h2><div class="portfolio-case-top"><div class="portfolio-tags"><span class="portfolio-tag">Web Design</span><span class="portfolio-tag portfolio-tag-highlight">HTML/CSS</span></div><span class="portfolio-case-view">Live Preview ↗</span></div></div>
 				</a>
 			</article>
 			<article class="portfolio-case" data-aos="fade-up">
 				<a href="https://sweetoothshop.github.io/" target="_blank" rel="noopener noreferrer">
 					<div class="portfolio-case-image"><span>10</span><img src="assets/portfolio-thumbs/bakery.jpg" alt="Bakery Shop" loading="lazy" decoding="async"></div>
-					<div class="portfolio-case-info"><h2>Bakery Shop</h2><div class="portfolio-case-top"><div class="portfolio-tags"><span class="portfolio-tag">Web Design</span><span class="portfolio-tag">Bootstrap</span></div><span class="portfolio-case-view">Live Preview ↗</span></div></div>
+					<div class="portfolio-case-info"><h2>Bakery Shop</h2><div class="portfolio-case-top"><div class="portfolio-tags"><span class="portfolio-tag">Web Design</span><span class="portfolio-tag portfolio-tag-highlight">HTML/CSS</span><span class="portfolio-tag">Responsive</span></div><span class="portfolio-case-view">Live Preview ↗</span></div></div>
 				</a>
 			</article>
 		</div>
@@ -221,23 +221,25 @@
 		var cursor = document.querySelector('.cursor');
 		var follower = document.querySelector('.cursor-follower');
 		if (!cursor || !follower) return;
-		var mouseX = 0, mouseY = 0, posX = 0, posY = 0;
-
-		document.addEventListener('mousemove', function (event) {
-			mouseX = event.clientX;
-			mouseY = event.clientY;
+		document.addEventListener('pointermove', function (event) {
+			if (event.pointerType !== 'mouse') return;
+			var x = event.clientX + 'px';
+			var y = event.clientY + 'px';
+			cursor.style.setProperty('--cursor-x', x);
+			cursor.style.setProperty('--cursor-y', y);
+			follower.style.setProperty('--follower-x', x);
+			follower.style.setProperty('--follower-y', y);
 		}, { passive: true });
 
-		function updateCursor() {
-			posX += (mouseX - posX) / 9;
-			posY += (mouseY - posY) / 9;
-			cursor.style.setProperty('--cursor-x', mouseX + 'px');
-			cursor.style.setProperty('--cursor-y', mouseY + 'px');
-			follower.style.setProperty('--follower-x', posX + 'px');
-			follower.style.setProperty('--follower-y', posY + 'px');
-			window.requestAnimationFrame(updateCursor);
+		function hideCursor() {
+			cursor.style.removeProperty('--cursor-x');
+			cursor.style.removeProperty('--cursor-y');
+			follower.style.removeProperty('--follower-x');
+			follower.style.removeProperty('--follower-y');
 		}
-		window.requestAnimationFrame(updateCursor);
+
+		document.documentElement.addEventListener('pointerleave', hideCursor);
+		window.addEventListener('blur', hideCursor);
 	})();
 </script>
 

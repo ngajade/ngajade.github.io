@@ -441,9 +441,9 @@ img {
 	justify-content: center;
 	min-height: 26px;
 	padding: 5px 9px;
-	border: 1px solid rgba(20, 19, 16, .16);
+	border: 1px solid rgba(20, 19, 16, .07);
 	border-radius: 999px;
-	background: transparent;
+	background: rgba(20, 19, 16, .06);
 	box-sizing: border-box;
 	color: #141310;
 	font-size: 10px;
@@ -452,9 +452,9 @@ img {
 	text-align: center;
 }
 #sec7 .portfolio-tag.portfolio-tag-highlight {
-	background: #f93700;
-	border-color: #f93700;
-	color: #fff;
+	background: rgba(249, 55, 0, 0.08);
+	border-color: rgba(249, 55, 0, .13);
+	color: #f93700;
 	font-weight: 600;
 }
 #sec7 .portfolio-case-view {
@@ -1433,4 +1433,10 @@ img {
 		margin: 20px auto 0;
 		transform: rotate(45deg);
 	}
+}
+
+/* Keep cursor coordinates responsive while retaining the opacity transition. */
+.cursor,
+.cursor-follower {
+	transition-property: opacity;
 }
