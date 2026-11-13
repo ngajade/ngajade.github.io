@@ -1516,7 +1516,8 @@ img { max-width: 100%; }
 	margin: 0;
 	padding: 10px 30px;
 	border: 1px solid #999;
-	background: transparent;
+	background: #141310;
+	color: #fff;
 	white-space: nowrap;
 }
 .header .hero-cta span {
@@ -1524,8 +1525,8 @@ img { max-width: 100%; }
 	transition: transform .3s ease;
 }
 .header .hero-cta:hover {
-	background: #141310;
-	color: #fff;
+	background: #f8f5f2;
+	color: #141310;
 	transform: translateY(-3px);
 }
 .header .hero-cta:hover span { transform: translate(3px,-3px); }

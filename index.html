@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;500&amp;family=Mrs+Saint+Delafield&amp;family=Poppins:wght@200&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="portstyle.css">
+  <link rel="stylesheet" href="portstyle.css?v=cursor-1">
 	<link rel="icon" href="logob.png" type="image/x-icon">
 	<script src="https://kit.fontawesome.com/cb8f931045.js" crossorigin="anonymous"></script>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,9 +21,9 @@
 	<meta property="og:image:width" content="1200"/>
 	<meta property="og:image:height" content="600"/>
     <!-- Bản vá responsive cho trang chủ (nạp SAU cùng để ghi đè) -->
-    <link rel="stylesheet" href="index-fix.css?v=74">
+    <link rel="stylesheet" href="index-fix.css?v=80">
     <link rel="stylesheet" href="sec3-workflow.css?v=10">
-    <link rel="stylesheet" href="footer-mobile.css">
+    <link rel="stylesheet" href="footer-mobile.css?v=2">
 </head>
 <body>
   <div class="cursor"></div>
@@ -396,41 +396,6 @@ function scrollFunction() {
 				delay: 0.6,
 			});
 		</script>
-	<script>
-            var cursor = $(".cursor"),
-                follower = $(".cursor-follower");
-
-            var posX = 0,
-                posY = 0,
-                mouseX = 0,
-                mouseY = 0;
-
-            TweenMax.to({}, 0.016, {
-                repeat: -1,
-                onRepeat: function() {
-                    posX += (mouseX - posX) / 9;
-                    posY += (mouseY - posY) / 9;
-
-                    TweenMax.set(follower, {
-                        css: {
-                            left: posX - 20,
-                            top: posY - 20
-                        }
-                    });
-
-                    TweenMax.set(cursor, {
-                        css: {
-                            left: mouseX,
-                            top: mouseY
-                        }
-                    });
-                }
-            });
-
-            $(document).on("mousemove", function(e) {
-                mouseX = e.pageX;
-                mouseY = e.pageY;
-            });
-        </script>
+	<script src="cursor.js"></script>
 </body>
 </html>

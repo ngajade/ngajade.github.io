@@ -36,14 +36,5 @@
 	#footer .ft-nav .link a { margin: 0 !important; font-size: 13px; }
 	#footer .ft-col:nth-child(3) > div { margin-bottom: 10px; }
 	#footer .ft-col:nth-child(3) i { margin: 0 10px !important; font-size: 18px; }
-	#footer .ft-b {
-		width: 100% !important;
-		flex-direction: column !important;
-		align-items: center !important;
-		text-align: center !important;
-		gap: 6px !important;
-		padding: 20px 24px !important;
-		height: auto !important;
-	}
-	#footer .ft-b .contenttext { width: 100% !important; text-align: center !important; }
+	#footer .ft-b { display: none !important; }
 }

@@ -8,7 +8,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;500&amp;family=Mrs+Saint+Delafield&amp;family=Poppins:wght@200&amp;display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="portstyle.css?v=2">
+	<link rel="stylesheet" href="portstyle.css?v=cursor-1">
 	<link rel="icon" href="logob.png" type="image/x-icon">
 	<script defer src="https://kit.fontawesome.com/cb8f931045.js" crossorigin="anonymous"></script>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
     <!-- Bản vá responsive cho trang portfolio (nạp SAU cùng để ghi đè) -->
     <link rel="stylesheet" href="portfolio-fix.css?v=65">
-    <link rel="stylesheet" href="footer-mobile.css">
+    <link rel="stylesheet" href="footer-mobile.css?v=2">
 </head>
 <body>
 <div class="cursor"></div>
@@ -215,33 +215,7 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-<script>
-	(function () {
-		if (!window.matchMedia('(pointer: fine)').matches) return;
-		var cursor = document.querySelector('.cursor');
-		var follower = document.querySelector('.cursor-follower');
-		if (!cursor || !follower) return;
-		document.addEventListener('pointermove', function (event) {
-			if (event.pointerType !== 'mouse') return;
-			var x = event.clientX + 'px';
-			var y = event.clientY + 'px';
-			cursor.style.setProperty('--cursor-x', x);
-			cursor.style.setProperty('--cursor-y', y);
-			follower.style.setProperty('--follower-x', x);
-			follower.style.setProperty('--follower-y', y);
-		}, { passive: true });
-
-		function hideCursor() {
-			cursor.style.removeProperty('--cursor-x');
-			cursor.style.removeProperty('--cursor-y');
-			follower.style.removeProperty('--follower-x');
-			follower.style.removeProperty('--follower-y');
-		}
-
-		document.documentElement.addEventListener('pointerleave', hideCursor);
-		window.addEventListener('blur', hideCursor);
-	})();
-</script>
+<script src="cursor.js"></script>
 
 <!-- Mobile menu toggle (hamburger) -->
 <script>

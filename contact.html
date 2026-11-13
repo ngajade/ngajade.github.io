@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Contact</title>
-  <link rel="stylesheet" href="portstyle.css">
+  <link rel="stylesheet" href="portstyle.css?v=cursor-1">
 	<link rel="icon" href="logob.png" type="image/x-icon">
 	<script src="https://kit.fontawesome.com/cb8f931045.js" crossorigin="anonymous"></script>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 	<meta property="og:image:width" content="1200"/>
 	<meta property="og:image:height" content="300"/>
     <link rel="stylesheet" href="pages-fix.css?v=5">
-    <link rel="stylesheet" href="footer-mobile.css">
+    <link rel="stylesheet" href="footer-mobile.css?v=2">
 </head>
 <body>
  <div class="cursor"></div>
@@ -183,52 +183,7 @@ function scrollFunction() {
 
 
     </script>
-        <script>
-            var cursor = $(".cursor"),
-                follower = $(".cursor-follower");
-
-            var posX = 0,
-                posY = 0,
-                mouseX = 0,
-                mouseY = 0;
-
-            TweenMax.to({}, 0.016, {
-                repeat: -1,
-                onRepeat: function() {
-                    posX += (mouseX - posX) / 9;
-                    posY += (mouseY - posY) / 9;
-
-                    TweenMax.set(follower, {
-                        css: {
-                            left: posX - 20,
-                            top: posY - 20
-                        }
-                    });
-
-                    TweenMax.set(cursor, {
-                        css: {
-                            left: mouseX,
-                            top: mouseY
-                        }
-                    });
-                }
-            });
-
-            $(document).on("mousemove", function(e) {
-                mouseX = e.pageX;
-                mouseY = e.pageY;
-            });
-
-            $(".portfolio-item img").on("mouseenter", function() {
-                cursor.addClass("active");
-                follower.addClass("active");
-            });
-
-            $(".portfolio-item img").on("mouseleave", function() {
-                cursor.removeClass("active");
-                follower.removeClass("active");
-            });
-        </script>
+        <script src="cursor.js"></script>
 <script>
 	(function () {
 		var burger = document.getElementById("hamburger"), body = document.body;
