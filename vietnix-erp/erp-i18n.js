@@ -19,7 +19,7 @@
     ['Xem và lọc hóa đơn, thanh toán, in hoặc tải hóa đơn. Admin có thể hủy hóa đơn, điều chỉnh tín dụng, thêm và chỉnh sửa giao dịch.', 'View and filter invoices, make payments, and print or download invoices. Admins can cancel invoices, adjust credit, and add or edit transactions.'],
     ['Gửi, tiếp nhận và xử lý yêu cầu hỗ trợ về tài khoản và dịch vụ, đồng thời theo dõi phản hồi.', 'Submit, receive, and handle account and service requests, and track replies.'],
 
-    ['Vai trò','My role'],['Bối cảnh','Context'],['Màn hình','Screens'],['Thời gian','Timeline'],['Nhóm','Team'],['1 designer, 4 dev','1 designer, 4 developers'],
+    ['Vai trò','My role'],['Bối cảnh','Context'],['Màn hình','Screens'],['Thời gian','Timeline'],['Nền tảng','Platforms'],['01 - 10/2026','Jan - Oct 2026'],['Case study · 01 - 10/2026','Case study · Jan - Oct 2026'],
     ['Thiết kế lại trải nghiệm Vietnix ERP khi chuyển từ WHMCS sang hệ thống tự xây dựng cho cả Client Portal và Admin Portal.','Redesigning the Vietnix ERP experience as it moves from WHMCS to a custom system for both the Client and Admin portals.'],
     ['Bài toán không chỉ là giao diện mới: luồng thao tác phải thích ứng với','The challenge goes beyond a new interface: workflows must account for'],
     [', nhu cầu quản lý dịch vụ của',', service management in the'],
