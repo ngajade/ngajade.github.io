@@ -1052,27 +1052,24 @@
     @media(max-width:1100px) and (min-width:801px){.nav-links{gap:16px;font-size:15px}.language-switch{margin-left:16px}.brand{font-size:24px}}
     @media(max-width:800px){.language-switch{margin-left:auto}.nav-inner .menu{margin-left:12px}.language-switch button{min-height:38px}}
     .capabilities { padding: clamp(64px, 8vw, 120px) 0; background: var(--surface-soft); }
-    .capabilities-head { max-width: 780px; }
-    .capabilities-head .eyebrow { margin-bottom: 16px; }
-    .capabilities-head h2 { font-size: clamp(38px, 5.2vw, 76px); line-height: 1.04; }
-    .capabilities-head > p { margin-top: 20px; max-width: 640px; font-size: 16px; line-height: 1.6; color: var(--secondary); }
-    .capabilities-head > p { font: 400 15px/22px var(--body-font); color: var(--ink); }
-    .capabilities-list { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--line); }
+    .capabilities-inner { display:grid; grid-template-columns:minmax(0,9fr) minmax(0,11fr); gap:clamp(24px,5vw,80px); align-items:start; }
+    .capabilities-head .eyebrow { margin-bottom:24px; }
+    .capabilities-head h2 { font-size:clamp(38px,5.2vw,76px); line-height:1.04; }
+    .capabilities-head > p { margin-top:28px; max-width:50ch; font:400 15px/22px var(--body-font); color:var(--ink); }
+    .capabilities-list { list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
     .capability-row {
-      display: grid; grid-template-columns: 144px minmax(0, 1fr) minmax(0, 1.5fr);
-      column-gap: 24px; align-items: center; padding: 28px 0 34px; border-bottom: 1px solid var(--line);
+      display:grid; grid-template-columns:minmax(36px, 1fr) minmax(0, 5fr);
+      gap:8px clamp(12px, 2vw, 28px); align-items:baseline;
+      padding:20px 0; border-bottom:1px solid var(--line);
     }
-    .capability-no { font: 500 12px/14px var(--ui); letter-spacing: .1em; color: var(--ink45); }
-    .capability-row h3 { font: 600 30px/37px var(--display); letter-spacing: -.02em; }
-    .capability-row p { grid-column: 3; font: 400 15px/22px var(--body-font); letter-spacing: -.005em; color: var(--ink); }
-    .capabilities-note { margin-top: 24px; max-width: 820px; color: var(--secondary); }
-    @media (min-width: 521px) and (max-width: 800px) {
-      .capabilities-inner { width: calc(100% - 40px); }
+    .capability-no { color:var(--ink45); font:500 12px/1.4 var(--ui); letter-spacing:.08em; }
+    .capability-row h3 { margin:0; font:600 clamp(16px, 1.4vw, 20px)/1.25 var(--display); }
+    .capability-row p { grid-column:2; margin:0; font:400 15px/1.55 var(--body-font); color:var(--ink); }
+    @media (min-width:521px) and (max-width:800px) {
+      .capabilities-inner { width:calc(100% - 40px); }
     }
-    @media (max-width: 800px) {
-      .capability-row { grid-template-columns: 40px minmax(0, 1fr); row-gap: 16px; padding: 20px 0 28px; }
-      .capability-row h3 { font-size: 25px; line-height: 31px; }
-      .capability-row p { grid-column: 2; }
+    @media (max-width:800px) {
+      .capabilities-inner { grid-template-columns:1fr; gap:24px; }
     }
   </style>
 </head>
@@ -1086,14 +1083,13 @@
     </div></section>
     <section class="migration dark" id="migration"><div class="wrap migration-inner"><div class="migration-head reveal"><p class="eyebrow">02 - Bối cảnh</p><h2 class="display">Từ nền tảng mua sẵn sang<br>hệ thống tự xây dựng</h2></div><div class="problem-grid"><article class="problem-card reveal"><h3>Vấn đề</h3><p>Vietnix sử dụng WHMCS - nền tảng quản lý hosting sẵn có nhưng khó tùy biến theo nghiệp vụ riêng và có giới hạn khi tích hợp, mở rộng.</p></article><article class="problem-card reveal"><h3>Bài toán đặt ra</h3><p>Thiết kế trải nghiệm cho hệ thống ERP hosting tự xây dựng, trong bối cảnh cần chuyển dữ liệu của hàng chục nghìn khách hàng. Hai portal phải hỗ trợ nhu cầu quản lý dịch vụ của Client và quy trình vận hành của Admin.</p></article></div><div class="comparison"><figure class="compare-item before reveal"><div class="compare-media"><img src="assets/02-context-whmcs-before.jpg" alt="Giao diện WHMCS cũ" loading="lazy"></div><figcaption>Hệ thống WHMCS cũ</figcaption></figure><div class="compare-arrow">→</div><figure class="compare-item after reveal"><div class="compare-media"><img src="assets/02-context-vietnix-erp-after.jpg" alt="Giao diện Vietnix ERP mới trên laptop" loading="lazy"></div><figcaption>Hệ thống Vietnix ERP mới</figcaption></figure></div></div></section>
     <section class="capabilities" id="capabilities" aria-labelledby="capabilities-title"><div class="wrap capabilities-inner">
-      <div class="capabilities-head reveal"><div><p class="eyebrow">03 - Phạm vi tính năng</p><h2 class="display" id="capabilities-title">Các nghiệp vụ cốt lõi</h2></div><p>Admin Portal hỗ trợ đội ngũ vận hành; Client Portal giúp khách hàng theo dõi và tự xử lý những công việc liên quan đến dịch vụ.</p></div>
+      <div class="capabilities-head reveal"><div><p class="eyebrow">03 - Phạm vi tính năng</p><h2 class="display" id="capabilities-title">Nghiệp vụ cốt lõi</h2></div><p>Admin Portal hỗ trợ đội ngũ vận hành; Client Portal giúp khách hàng theo dõi và tự xử lý những công việc liên quan đến dịch vụ.</p></div>
       <ol class="capabilities-list">
-        <li class="capability-row reveal"><span class="capability-no">01</span><h3>Khách hàng và tài khoản</h3><p>Hồ sơ và nhóm khách hàng, phân quyền theo vai trò trên cả hai portal, chuyển đổi tài khoản, 2FA, danh bạ và lịch sử tương tác.</p></li>
-        <li class="capability-row reveal"><span class="capability-no">02</span><h3>Sản phẩm và đơn hàng</h3><p>Danh mục dịch vụ, đăng ký dịch vụ, giỏ hàng và quản lý đơn hàng.</p></li>
-        <li class="capability-row reveal"><span class="capability-no">03</span><h3>Hóa đơn, giao dịch và tín dụng</h3><p>Quản lý hóa đơn, thanh toán, giao dịch và số dư tín dụng.</p></li>
-        <li class="capability-row reveal"><span class="capability-no">04</span><h3>Yêu cầu hỗ trợ</h3><p>Quản lý yêu cầu hỗ trợ và phản hồi về tài khoản, dịch vụ.</p></li>
-        <li class="capability-row reveal"><span class="capability-no">05</span><h3>Quản lý tệp tải xuống</h3><p>Thư viện tệp tải xuống và quản lý thư mục, tệp tin.</p></li>
-        <li class="capability-row reveal"><span class="capability-no">06</span><h3>Cài đặt Admin Portal</h3><p>Quản lý phòng ban nội bộ, quản trị viên, vai trò và phân quyền. Cấu hình khuyến mãi, mẫu email, sản phẩm và dịch vụ.</p></li>
+        <li class="capability-row reveal"><span class="capability-no" aria-hidden="true">01</span><h3>Khách hàng và tài khoản</h3> <p>Hồ sơ và nhóm khách hàng, phân quyền theo vai trò trên cả hai portal, chuyển đổi tài khoản, 2FA, danh bạ và lịch sử tương tác.</p></li>
+        <li class="capability-row reveal"><span class="capability-no" aria-hidden="true">02</span><h3>Sản phẩm và đơn hàng</h3> <p>Danh mục dịch vụ, đăng ký dịch vụ, giỏ hàng và quản lý đơn hàng.</p></li>
+        <li class="capability-row reveal"><span class="capability-no" aria-hidden="true">03</span><h3>Hóa đơn, giao dịch và tín dụng</h3> <p>Quản lý hóa đơn, thanh toán, giao dịch và số dư tín dụng.</p></li>
+        <li class="capability-row reveal"><span class="capability-no" aria-hidden="true">04</span><h3>Yêu cầu hỗ trợ</h3> <p>Quản lý yêu cầu hỗ trợ và phản hồi về tài khoản, dịch vụ.</p></li>
+        <li class="capability-row reveal"><span class="capability-no" aria-hidden="true">05</span><h3>Cài đặt Admin Portal</h3> <p>Quản lý phòng ban nội bộ, quản trị viên, vai trò và phân quyền. Cấu hình khuyến mãi, mẫu email, sản phẩm và dịch vụ.</p></li>
       </ol>
     </div></section>
     <section class="design" id="system"><div class="wrap design-inner">
