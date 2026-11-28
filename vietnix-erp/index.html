@@ -1071,10 +1071,114 @@
     @media (max-width:800px) {
       .capabilities-inner { grid-template-columns:1fr; gap:24px; }
     }
+    #system {
+      background:var(--ink);
+      color:#fff;
+      --ds-dark-muted:rgba(255,255,255,.75);
+      --ds-dark-line:rgba(255,255,255,.2);
+    }
+    #system :is(.design-head h2,.ds-stat strong,.ds-stat span,.core-message p,.acc-button) { color:#fff; }
+    #system :is(.eyebrow,.design-description,.ds-stat small,.foundation-head p,.acc-no) { color:var(--ds-dark-muted); }
+    #system .acc-content p { color:var(--ds-dark-muted); }
+    #system {
+      --ds-dark-panel:#181818;
+      --ds-dark-inset:#232323;
+      --ds-dark-accent:#8dbbff;
+    }
+    #system .foundation-visual {
+      background:var(--ds-dark-panel); color:#fff; border-color:var(--ds-dark-line);
+    }
+    #system .foundation-visual p { color:var(--ds-dark-muted); }
+    #system :is(.screen-canvas,.wire-sidebar,.wire-main div,.demo-field,.demo-loading,.demo-button:not(.primary)) {
+      background:var(--ds-dark-inset); color:#fff; border-color:var(--ds-dark-line);
+    }
+    #system .wire-main i,#system .wire-sidebar i { background:var(--ds-dark-line); }
+    #system .demo-field.disabled { color:var(--ds-dark-muted); background:var(--ds-dark-panel); }
+    #system .demo-field.error { border-color:#ef4444; }
+    #system .demo-field:focus-visible,#system .demo-button:focus-visible { outline:2px solid var(--ds-dark-accent); outline-offset:2px; }
+    #system :is(.demo-button.ghost,.demo-feedback,.screen-thumb small) { color:var(--ds-dark-accent); }
+    #system .screen-thumb small { background:rgba(141,187,255,.14); }
+    #system .screen-thumb.admin small { color:#ffac92; background:rgba(255,172,146,.14); }
+    #system .token-naming-steps li:nth-child(-n+2) {
+      background:var(--ds-dark-panel); color:#fff; border-color:var(--ds-dark-line);
+    }
+    #system .token-naming-steps :is(small,code) { color:var(--ds-dark-muted); }
+    #system :is(.ds-stats,.ds-stat,.core-message,.accordion,.acc) { border-color:var(--ds-dark-line); }
+    #system .acc-button:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+    #system .screens-visual .screen-canvas { background:#f2f3f5; border-color:var(--line); }
+    #system .token-naming-steps li:first-child { background:#202020; }
+    #system .token-naming-steps li:nth-child(2) { background:#2d2d2d; }
+    #system .token-naming-steps li:nth-child(3) { background:#3a3a3a; border-color:var(--ds-dark-line); }
+    #system .component-states { height:auto; }
+    #system .component-states h4 { margin:0 0 16px; font-size:15px; }
+    #system .button-states { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,136px),1fr)); gap:16px; }
+    #system .button-states strong { display:block; margin-bottom:8px; color:var(--ds-dark-muted); font-size:13px; }
+    #system .button-example {
+      display:inline-flex; align-items:center; justify-content:center; gap:7px;
+      min-height:36px; min-width:min(100%, 120px); padding:6px 12px; border-radius:8px;
+      background:var(--blue); color:#fff; font-size:13px; font-weight:600;
+    }
+    #system .button-example.is-hover { background:#0d55b9; }
+    #system .button-example.is-focus { outline:2px solid var(--ds-dark-accent); outline-offset:3px; }
+    #system .button-example.is-disabled { background:var(--ds-dark-inset); color:var(--ds-dark-muted); }
+    #system .button-example.is-loading::before {
+      content:""; width:12px; height:12px; border:2px solid rgba(255,255,255,.4);
+      border-top-color:#fff; border-radius:50%; animation:demo-spin .8s linear infinite;
+    }
+    #system .acc.open:has(.component-states) :is(.acc-content,.acc-body) { height:auto; max-height:none; }
+    @media(prefers-reduced-motion:reduce) {
+      #system .button-example.is-loading::before { animation:none; }
+    }
+    body { padding-top:72px; }
+    .nav {
+      position:fixed;
+      inset:0 0 auto;
+      background:transparent;
+      border-bottom:0;
+      backdrop-filter:none;
+      pointer-events:none;
+    }
+    .nav-inner {
+      position:relative;
+      top:0;
+      pointer-events:auto;
+      border:1px solid transparent;
+      border-radius:16px;
+      transition:width .28s ease, max-width .28s ease, height .28s ease,
+        top .28s ease, padding .28s ease, background-color .25s ease, box-shadow .25s ease;
+    }
+    .nav.is-scrolled .nav-inner {
+      width:calc(100% - 24px);
+      max-width:1100px;
+      height:58px;
+      top:10px;
+      padding-inline:16px;
+      background:rgba(255,255,255,.74);
+      backdrop-filter:blur(18px) saturate(145%);
+      border-radius:999px;
+      border-color:rgba(255,255,255,.65);
+      box-shadow:0 6px 24px rgba(10,10,10,.1);
+    }
+    @media(max-width:800px) {
+      .nav.is-scrolled .nav-inner { width:calc(100% - 40px); padding-inline:12px; }
+      .menu-open .nav .nav-inner {
+        width:100%; height:72px; top:0; padding-inline:16px;
+        background:#fff; backdrop-filter:none; border-color:transparent; border-radius:0; box-shadow:none;
+      }
+    }
+    @media(min-width:801px) and (max-width:1000px) {
+      .nav.is-scrolled .nav-inner { width:calc(100% - 64px); padding-inline:6px; }
+      .nav .brand { font-size:22px; white-space:nowrap; }
+      .nav .nav-links { font-size:13px; gap:8px; }
+      .nav.is-scrolled .nav-links { gap:4px; }
+      .nav .language-switch { margin-left:8px; }
+    }
+    .nav.is-scrolled .nav-links { font-size:14px; }
+    @media(prefers-reduced-motion:reduce) { .nav-inner { transition:none; } }
 </style>
 </head>
 <body>
-  <header class="nav"><div class="wrap nav-inner"><a class="brand" href="#top">Nga Pham</a><nav class="nav-links" aria-label="Điều hướng case study"><a href="#context">Vai trò</a><a href="#migration">Bối cảnh</a><a href="#capabilities">Phạm vi tính năng</a><a href="#system">Design system</a><a href="#process">Workflow</a><a href="#account-context">Case study</a><a href="#screens">Màn hình</a></nav><button class="menu" type="button" aria-label="Mở menu" aria-expanded="false"></button></div><div class="progress"></div></header>
+  <header class="nav"><div class="wrap nav-inner"><a class="brand" href="#top">Vietnix ERP</a><nav class="nav-links" aria-label="Điều hướng case study"><a href="#context">Vai trò</a><a href="#migration">Bối cảnh</a><a href="#capabilities">Phạm vi tính năng</a><a href="#process">Workflow</a><a href="#account-context">Case study</a><a href="#system">Design system</a><a href="#screens">Màn hình</a></nav><button class="menu" type="button" aria-label="Mở menu" aria-expanded="false"></button></div></header>
   <main id="top">
     <section class="hero"><div class="wrap hero-inner">
       <div class="hero-intro"><div class="hero-title reveal"><h1 class="display title-xl">ERP - Platform Migration<br>&amp; System Redesign</h1></div><div class="hero-info"><div class="hero-copy reveal"><p class="lead">Thiết kế lại trải nghiệm Vietnix ERP khi chuyển từ WHMCS sang hệ thống tự xây dựng cho cả Client Portal và Admin Portal.</p><p class="detail">Đây là bài toán thiết kế chịu ràng buộc về Data Migration, không đơn thuần là thay đổi giao diện. Hệ thống mới đồng thời tối ưu trải nghiệm Client Portal và hiệu suất vận hành Admin Portal, đồng thời duy trì tư duy quen thuộc để đảm bảo quá trình chuyển giao liền mạch.</p></div><dl class="meta-list reveal"><div class="meta-row"><dt>Vai trò</dt><dd>UX/UI Product Designer</dd></div><div class="meta-row"><dt>Thời gian</dt><dd>01 - 10/2026</dd></div><div class="meta-row"><dt>Nền tảng</dt><dd>Client Portal &amp; Admin Portal</dd></div></dl></div></div>
@@ -1092,23 +1196,9 @@
         <li class="capability-row reveal"><span class="capability-no" aria-hidden="true">05</span><h3>Cài đặt Admin Portal</h3> <p>Quản lý phòng ban nội bộ, quản trị viên, vai trò và phân quyền. Cấu hình khuyến mãi, mẫu email, sản phẩm và dịch vụ.</p></li>
       </ol>
     </div></section>
-    <section class="design" id="system"><div class="wrap design-inner">
-      <div class="design-head reveal"><p class="eyebrow">04 - Nền tảng thiết kế</p><h2 class="display title-xl">Design System</h2><p class="design-description">Xây dựng hệ thống màu theo Design Token, cho phép giao diện linh hoạt chuyển đổi giữa các Brand Theme và Light/Dark Mode. Thư viện component được xây dựng bằng React và Tailwind CSS.</p></div>
-      <div class="design-showcase"><div class="design-overview reveal"><div class="ds-stats"><div class="ds-stat"><strong data-count="2">2</strong><span>Appearance Modes</span><small>Light · Dark</small></div><div class="ds-stat"><strong data-count="148">148</strong><span>Component sets</span></div><div class="ds-stat"><strong data-count="2" data-suffix="+">2+</strong><span>Brand Themes</span><small>Multi-brand</small></div></div><div class="core-message"><p>Từ những mảnh giao diện rời rạc thành một hệ thống có thể mở rộng</p></div></div><div class="ds-media reveal"><img src="assets/03-design-system-overview.jpg" alt="Tổng quan Design System hỗ trợ token, Light Dark mode và nhiều brand theme" loading="lazy"></div></div>
-      <div class="foundation"><div class="foundation-head reveal"><p class="eyebrow">Từ token đến màn hình thật</p><p>Token → Component → Pattern giúp xây dựng màn hình mới nhất quán và dễ mở rộng.</p></div><div class="accordion"><article class="acc open"><button class="acc-button" type="button" aria-expanded="true"><span class="acc-no">01</span><span class="acc-title">Tokens</span><span class="acc-plus">−</span></button><div class="acc-body"><div><div class="acc-content"><div><p>Màu sắc, kiểu chữ, khoảng cách và hiệu ứng được quản lý qua token thay vì đặt giá trị trực tiếp trên từng component, giúp các thay đổi được đồng bộ.</p></div><div class="token-naming">
-  <ol class="token-naming-steps">
-    <li><small>Tầng 1</small><strong>Primitive</strong><code>white · #FFFFFF</code></li>
-    <li><small>Tầng 2</small><strong>Semantic</strong><code>surface/raised</code></li>
-    <li><small>Tầng 3</small><strong>Component</strong><code>card/background</code></li>
-  </ol>
-</div></div></div></div></article>
-        <article class="acc"><button class="acc-button" type="button" aria-expanded="false"><span class="acc-no">02</span><span class="acc-title">Components</span><span class="acc-plus">+</span></button><div class="acc-body"><div><div class="acc-content"><div class="foundation-copy"><p>Từ các token nền tảng, xây dựng thành những component có thể tái sử dụng và kết hợp linh hoạt, với đầy đủ variant và trạng thái tương tác.</p></div><div class="foundation-visual component-visual" aria-label="Ví dụ variant và trạng thái của component"><div class="demo-actions"><button class="demo-button primary" type="button" data-demo-action="renew">Gia hạn</button><button class="demo-button" type="button" data-demo-action="cancel">Huỷ</button><button class="demo-button ghost" type="button" data-demo-action="detail" aria-expanded="false">Xem chi tiết</button></div><div class="demo-fields"><input class="demo-field" type="text" placeholder="vietnix.vn" aria-label="Tên miền dạng placeholder"><input class="demo-field" type="text" value="vietnix.vn" aria-label="Tên miền có thể chỉnh sửa"></div><div class="demo-fields"><input class="demo-field disabled" type="text" value="Đã khoá" disabled aria-label="Field bị khoá"><input class="demo-field error" type="text" value="erp" aria-label="Field có lỗi"><span class="demo-loading">Đang kiểm tra</span></div><p class="demo-feedback" aria-live="polite">Chọn một hành động để xem trạng thái component.</p></div></div></div></div></article>
-        <article class="acc"><button class="acc-button" type="button" aria-expanded="false"><span class="acc-no">03</span><span class="acc-title">Patterns</span><span class="acc-plus">+</span></button><div class="acc-body"><div><div class="acc-content"><div class="foundation-copy"><p>Các component được kết hợp thành pattern chuẩn hóa, giúp các màn hình mới có điểm xuất phát nhất quán thay vì thiết kế lại từ đầu.</p></div><div class="foundation-visual pattern-visual" aria-label="Minh hoạ các pattern giao diện"><div class="wireframe"><div class="wire-sidebar"><i></i><i></i><i></i><i></i></div><div class="wire-main"><div><i></i><i></i></div><div><i></i><i></i></div><div><i></i><i></i></div></div></div><p class="pattern-list">List · Detail · Dashboard · File Manager · Chat</p></div></div></div></div></article>
-        <article class="acc"><button class="acc-button" type="button" aria-expanded="false"><span class="acc-no">04</span><span class="acc-title">Product screens</span><span class="acc-plus">+</span></button><div class="acc-body"><div><div class="acc-content"><div class="foundation-copy"><p>Từ cùng một Design System, các màn hình được triển khai cho hai hệ thống và hai nhóm người dùng khác nhau, nhưng vẫn duy trì một ngôn ngữ thiết kế nhất quán.</p></div><div class="foundation-visual screens-visual" aria-label="Minh hoạ màn hình khách hàng và quản trị"><div class="screen-thumb"><div class="screen-canvas"><img src="assets/03-product-screens-client-theme-plugin.jpg" alt="Màn hình Theme &amp; Plugin trên Client Portal" loading="lazy" onerror="this.hidden=true"></div><small>Khách hàng</small></div><div class="screen-thumb admin"><div class="screen-canvas"><img src="assets/03-product-screens-admin-download-manager.jpg" alt="Màn hình Quản lý Download trên Admin Portal" loading="lazy" onerror="this.hidden=true"></div><small>Admin</small></div></div></div></div></div></article></div></div>
-    </div></section>
-    <section class="process dark" id="process"><div class="wrap process-inner"><div class="process-head"><div class="reveal"><p class="eyebrow">05 - Workflow</p><h2 class="display title-xl">Quy trình làm việc</h2></div><p class="intro reveal">AI hỗ trợ đọc tài liệu và dựng prototype; mình chịu trách nhiệm làm rõ vấn đề, lựa chọn phương án và đối chiếu thiết kế với bản triển khai.</p></div><div class="flow-wrap"><div class="flow-meta"><span>Số bước: <b>04</b></span></div><div class="flow"><article class="flow-card reveal"><small>Bước 01</small><h3>Làm rõ yêu cầu</h3><p>Đọc tài liệu nghiệp vụ để làm rõ business logic, user role và các trường hợp đặc biệt. Đối chiếu với hệ thống hiện tại, chia nhỏ phạm vi thiết kế và xác định những điểm cần cải thiện trong luồng thao tác.</p><p class="ai-note"><b>AI</b><span>Kết nối AI với tài liệu qua MCP để hỗ trợ phân tích yêu cầu và gợi ý các tình huống cần làm rõ.</span></p></article><article class="flow-card reveal"><figure class="flow-visual"><img src="assets/04-workflow-design-review.jpg" alt="Prototype ERP trong bước thiết kế giải pháp" loading="lazy" onerror="this.hidden=true"></figure><small>Bước 02</small><h3>Thiết kế giải pháp</h3><p>Chuyển yêu cầu thành user flow và prototype có thể tương tác. Trao đổi sớm với team về tính khả thi, hoàn thiện các trạng thái và tương tác cần thiết trước khi review phương án cùng team.</p><p class="ai-note"><b>AI</b><span>Dựng prototype chạy được để cả team có thể trực tiếp trải nghiệm và phản hồi.</span></p></article><article class="flow-card reveal"><small>Bước 03</small><h3>Review &amp; Hỗ trợ triển khai</h3><p>Trình bày phương án qua prototype tương tác được xây dựng với sự hỗ trợ của AI, giúp team trải nghiệm luồng thao tác và phản hồi cụ thể. Cập nhật Figma, bổ sung ghi chú xử lý và phối hợp với Development để giải đáp, điều chỉnh trong quá trình triển khai.</p></article><article class="flow-card reveal"><figure class="flow-visual"><img src="assets/04-workflow-staging.jpg" alt="Kiểm tra và cải tiến sản phẩm ERP trên staging" loading="lazy" onerror="this.hidden=true"></figure><small>Bước 04</small><h3>Kiểm tra &amp; Cải tiến</h3><p>Kiểm tra từng phần đã triển khai trên staging về giao diện, tương tác, responsive và các trường hợp đặc biệt. Phối hợp xử lý sai lệch theo tiêu chí đã thống nhất; tiếp nhận phản hồi từ Sprint Review để đề xuất cải tiến cho backlog.</p></article></div></div><div class="process-core reveal"><strong>AI hỗ trợ quá trình, còn quyết định thiết kế thuộc về mình.</strong><p>AI giúp mình đọc tài liệu và dựng prototype nhanh hơn. Việc xác định luồng thao tác, cấu trúc thông tin và những điểm cần phản biện vẫn dựa trên yêu cầu sản phẩm cùng trao đổi với team.</p></div></div></section>
+    <section class="process dark" id="process"><div class="wrap process-inner"><div class="process-head"><div class="reveal"><p class="eyebrow">04 - Workflow</p><h2 class="display title-xl">Quy trình làm việc</h2></div><p class="intro reveal">AI hỗ trợ đọc tài liệu và dựng prototype; mình chịu trách nhiệm làm rõ vấn đề, lựa chọn phương án và đối chiếu thiết kế với bản triển khai.</p></div><div class="flow-wrap"><div class="flow-meta"><span>Số bước: <b>04</b></span></div><div class="flow"><article class="flow-card reveal"><small>Bước 01</small><h3>Làm rõ yêu cầu</h3><p>Đọc tài liệu nghiệp vụ để làm rõ business logic, user role và các trường hợp đặc biệt. Đối chiếu với hệ thống hiện tại, chia nhỏ phạm vi thiết kế và xác định những điểm cần cải thiện trong luồng thao tác.</p><p class="ai-note"><b>AI</b><span>Kết nối AI với tài liệu qua MCP để hỗ trợ phân tích yêu cầu và gợi ý các tình huống cần làm rõ.</span></p></article><article class="flow-card reveal"><figure class="flow-visual"><img src="assets/04-workflow-design-review.jpg" alt="Prototype ERP trong bước thiết kế giải pháp" loading="lazy" onerror="this.hidden=true"></figure><small>Bước 02</small><h3>Thiết kế giải pháp</h3><p>Chuyển yêu cầu thành user flow và prototype có thể tương tác. Trao đổi sớm với team về tính khả thi, hoàn thiện các trạng thái và tương tác cần thiết trước khi review phương án cùng team.</p><p class="ai-note"><b>AI</b><span>Dựng prototype chạy được để cả team có thể trực tiếp trải nghiệm và phản hồi.</span></p></article><article class="flow-card reveal"><small>Bước 03</small><h3>Review &amp; Hỗ trợ triển khai</h3><p>Trình bày phương án qua prototype tương tác được xây dựng với sự hỗ trợ của AI, giúp team trải nghiệm luồng thao tác và phản hồi cụ thể. Cập nhật Figma, bổ sung ghi chú xử lý và phối hợp với Development để giải đáp, điều chỉnh trong quá trình triển khai.</p></article><article class="flow-card reveal"><figure class="flow-visual"><img src="assets/04-workflow-staging.jpg" alt="Kiểm tra và cải tiến sản phẩm ERP trên staging" loading="lazy" onerror="this.hidden=true"></figure><small>Bước 04</small><h3>Kiểm tra &amp; Cải tiến</h3><p>Kiểm tra từng phần đã triển khai trên staging về giao diện, tương tác, responsive và các trường hợp đặc biệt. Phối hợp xử lý sai lệch theo tiêu chí đã thống nhất; tiếp nhận phản hồi từ Sprint Review để đề xuất cải tiến cho backlog.</p></article></div></div><div class="process-core reveal"><strong>AI hỗ trợ quá trình, còn quyết định thiết kế thuộc về mình.</strong><p>AI giúp mình đọc tài liệu và dựng prototype nhanh hơn. Việc xác định luồng thao tác, cấu trúc thông tin và những điểm cần phản biện vẫn dựa trên yêu cầu sản phẩm cùng trao đổi với team.</p></div></div></section>
     <section class="case-studies" id="account-context"><div class="wrap">
-      <div class="case-studies-head"><p class="eyebrow">06 - Case study</p><h2 class="display">Ba quyết định trong một hệ thống phức tạp</h2><p>Mỗi ví dụ bắt đầu từ một vấn đề của hệ thống cũ, rồi cho thấy điều mình ưu tiên, đánh đổi và thể hiện trong giao diện mới.</p></div>
+      <div class="case-studies-head"><p class="eyebrow">05 - Case study</p><h2 class="display">Ba quyết định trong một hệ thống phức tạp</h2><p>Mỗi ví dụ bắt đầu từ một vấn đề của hệ thống cũ, rồi cho thấy điều mình ưu tiên, đánh đổi và thể hiện trong giao diện mới.</p></div>
 
       <article class="ux-case open">
         <button class="ux-case-head reveal" type="button" aria-expanded="true"><span class="ux-case-number">01</span><span class="ux-case-title">Thiết kế thông tin theo đúng ngữ cảnh</span><span class="ux-case-mark">−</span></button>
@@ -1179,6 +1269,29 @@
         </div>
       </article>
     </div></section>
+    <section class="design" id="system"><div class="wrap design-inner">
+      <div class="design-head reveal"><p class="eyebrow">06 - Nền tảng thiết kế</p><h2 class="display title-xl">Design System</h2><p class="design-description">Xây dựng hệ thống màu theo Design Token, cho phép giao diện linh hoạt chuyển đổi giữa các Brand Theme và Light/Dark Mode. Thư viện component được xây dựng bằng React và Tailwind CSS.</p></div>
+      <div class="design-showcase"><div class="design-overview reveal"><div class="ds-stats"><div class="ds-stat"><strong data-count="2">2</strong><span>Appearance Modes</span><small>Light · Dark</small></div><div class="ds-stat"><strong data-count="148">148</strong><span>Component sets</span></div><div class="ds-stat"><strong data-count="2" data-suffix="+">2+</strong><span>Brand Themes</span><small>Multi-brand</small></div></div><div class="core-message"><p>Từ những mảnh giao diện rời rạc thành một hệ thống có thể mở rộng</p></div></div><div class="ds-media reveal"><img src="assets/03-design-system-overview.jpg" alt="Tổng quan Design System hỗ trợ token, Light Dark mode và nhiều brand theme" loading="lazy"></div></div>
+      <div class="foundation"><div class="foundation-head reveal"><p class="eyebrow">Từ token đến màn hình thật</p><p>Token → Component → Pattern giúp xây dựng màn hình mới nhất quán và dễ mở rộng.</p></div><div class="accordion"><article class="acc open"><button class="acc-button" type="button" aria-expanded="true"><span class="acc-no">01</span><span class="acc-title">Tokens</span><span class="acc-plus">−</span></button><div class="acc-body"><div><div class="acc-content"><div><p>Màu sắc, kiểu chữ, khoảng cách và hiệu ứng được quản lý qua token thay vì đặt giá trị trực tiếp trên từng component, giúp các thay đổi được đồng bộ.</p></div><div class="token-naming">
+  <ol class="token-naming-steps">
+    <li><small>Tầng 1</small><strong>Primitive</strong><code>white · #FFFFFF</code></li>
+    <li><small>Tầng 2</small><strong>Semantic</strong><code>surface/raised</code></li>
+    <li><small>Tầng 3</small><strong>Component</strong><code>card/background</code></li>
+  </ol>
+</div></div></div></div></article>
+        <article class="acc"><button class="acc-button" type="button" aria-expanded="false"><span class="acc-no">02</span><span class="acc-title">Components</span><span class="acc-plus">+</span></button><div class="acc-body"><div><div class="acc-content"><div class="foundation-copy"><p>Từ các token nền tảng, xây dựng thành những component có thể tái sử dụng và kết hợp linh hoạt, với đầy đủ variant và trạng thái tương tác.</p></div><div class="foundation-visual component-states">
+          <h4>Trạng thái của nút</h4>
+          <div class="button-states">
+            <div><strong>Mặc định</strong><span class="button-example is-default">Lưu thay đổi</span></div>
+            <div><strong>Hover</strong><span class="button-example is-hover">Lưu thay đổi</span></div>
+            <div><strong>Đang tải</strong><span class="button-example is-loading">Đang lưu</span></div>
+            <div><strong>Focus</strong><span class="button-example is-focus">Lưu thay đổi</span></div>
+            <div><strong>Vô hiệu hóa</strong><span class="button-example is-disabled">Lưu thay đổi</span></div>
+          </div>
+        </div></div></div></div></article>
+        <article class="acc"><button class="acc-button" type="button" aria-expanded="false"><span class="acc-no">03</span><span class="acc-title">Patterns</span><span class="acc-plus">+</span></button><div class="acc-body"><div><div class="acc-content"><div class="foundation-copy"><p>Các component được kết hợp thành pattern chuẩn hóa, giúp các màn hình mới có điểm xuất phát nhất quán thay vì thiết kế lại từ đầu.</p></div><div class="foundation-visual pattern-visual" aria-label="Minh hoạ các pattern giao diện"><div class="wireframe"><div class="wire-sidebar"><i></i><i></i><i></i><i></i></div><div class="wire-main"><div><i></i><i></i></div><div><i></i><i></i></div><div><i></i><i></i></div></div></div><p class="pattern-list">List · Detail · Dashboard · File Manager · Chat</p></div></div></div></div></article>
+        <article class="acc"><button class="acc-button" type="button" aria-expanded="false"><span class="acc-no">04</span><span class="acc-title">Product screens</span><span class="acc-plus">+</span></button><div class="acc-body"><div><div class="acc-content"><div class="foundation-copy"><p>Từ cùng một Design System, các màn hình được triển khai cho hai hệ thống và hai nhóm người dùng khác nhau, nhưng vẫn duy trì một ngôn ngữ thiết kế nhất quán.</p></div><div class="foundation-visual screens-visual" aria-label="Minh hoạ màn hình khách hàng và quản trị"><div class="screen-thumb"><div class="screen-canvas"><img src="assets/03-product-screens-client-theme-plugin.jpg" alt="Màn hình Theme &amp; Plugin trên Client Portal" loading="lazy" onerror="this.hidden=true"></div><small>Khách hàng</small></div><div class="screen-thumb admin"><div class="screen-canvas"><img src="assets/03-product-screens-admin-download-manager.jpg" alt="Màn hình Quản lý Download trên Admin Portal" loading="lazy" onerror="this.hidden=true"></div><small>Admin</small></div></div></div></div></div></article></div></div>
+    </div></section>
     <section class="screens" id="screens">
       <div class="screens-inner">
         <div class="screen-head reveal"><p class="eyebrow">07 - Màn hình</p><h2 class="display title-xl">Hệ thống trong thực tế</h2><p class="description">Client Portal và Admin Portal phục vụ hai nhóm người dùng khác nhau trên cùng một Design System.</p><div class="screen-legend"><span class="legend admin">Trang admin</span><span class="legend client">Trang client</span></div></div>
@@ -1220,12 +1333,11 @@
   <footer class="footer" id="footer"><div class="wrap footer-inner"><p class="footer-kicker">Let's work together</p><h2 class="footer-title">Have a project<br><span class="footer-gradient">in mind?</span></h2><a class="footer-mail" href="mailto:phnga2405@gmail.com"><span>phnga2405@gmail.com</span><span class="footer-arrow" aria-hidden="true">↗</span></a></div></footer>
   <script>
     (()=>{const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,menu=document.querySelector('.menu'),links=[...document.querySelectorAll('.nav-links a[href^="#"]')];links.forEach(link=>link.dataset.motionLabel=link.textContent.trim());menu.addEventListener('click',()=>{const open=document.body.classList.toggle('menu-open');menu.setAttribute('aria-expanded',String(open))});links.forEach(link=>link.addEventListener('click',()=>{document.body.classList.remove('menu-open');menu.setAttribute('aria-expanded','false')}));
-    const bar=document.querySelector('.progress'),onScroll=()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max?scrollY/max*100:0)+'%';let current='';document.querySelectorAll('main section[id],main .role[id]').forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.42)current=s.id});links.forEach(a=>a.classList.toggle('active',a.hash==='#'+current))};addEventListener('scroll',onScroll,{passive:true});onScroll();
+    const header=document.querySelector('.nav'),onScroll=()=>{header.classList.toggle('is-scrolled',scrollY>24);let current='';document.querySelectorAll('main section[id],main .role[id]').forEach(s=>{if(s.getBoundingClientRect().top<innerHeight*.42)current=s.id});links.forEach(a=>a.classList.toggle('active',a.hash==='#'+current))};addEventListener('scroll',onScroll,{passive:true});onScroll();
     const count=el=>{if(el.dataset.done)return;el.dataset.done=1;const end=+el.dataset.count,start=performance.now(),tick=now=>{const t=Math.min(1,(now-start)/950),v=Math.round(end*(1-Math.pow(1-t,3)));el.textContent=(el.dataset.format==='dot'?v.toLocaleString('de-DE'):v)+(el.dataset.suffix||'');if(t<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)};
     document.querySelectorAll('.case-studies-head,.foundation-head,.footer-kicker,.footer-title,.footer-mail,.footer-bottom').forEach(el=>el.classList.add('reveal'));const reveal=[...document.querySelectorAll('.reveal')];reveal.forEach(el=>{const siblings=[...el.parentElement.children].filter(child=>child.classList.contains('reveal')),index=siblings.indexOf(el);el.style.setProperty('--reveal-delay',Math.min(Math.max(index,0)*70,210)+'ms')});if(reduce)reveal.forEach(e=>e.classList.add('in'));else{const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');x.target.querySelectorAll('[data-count]').forEach(count);if(x.target.matches('[data-count]'))count(x.target);io.unobserve(x.target)}}),{threshold:.12,rootMargin:'0px 0px -4% 0px'});reveal.forEach(e=>io.observe(e))}
     document.querySelectorAll('.acc-button').forEach(b=>b.addEventListener('click',()=>{const item=b.closest('.acc'),open=item.classList.contains('open');document.querySelectorAll('.acc').forEach(a=>{a.classList.remove('open');a.querySelector('.acc-button').setAttribute('aria-expanded','false');a.querySelector('.acc-plus').textContent='+'});if(!open){item.classList.add('open');b.setAttribute('aria-expanded','true');b.querySelector('.acc-plus').textContent='−'}}));
     const uxCases=[...document.querySelectorAll('#account-context .ux-case')];uxCases.forEach((item,index)=>{const head=item.querySelector('.ux-case-head'),mark=item.querySelector('.ux-case-mark'),body=item.querySelector('.ux-case-body'),toggleCase=()=>{const wasOpen=item.classList.contains('open');uxCases.forEach(other=>{const active=other===item&&!wasOpen;other.classList.toggle('open',active);other.querySelector('.ux-case-head').setAttribute('aria-expanded',String(active));other.querySelector('.ux-case-mark').textContent=active?'−':'+';other.querySelector('.ux-case-body').hidden=!active});if(!wasOpen)requestAnimationFrame(()=>head.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}))};head.setAttribute('aria-expanded',String(index===0));item.classList.toggle('open',index===0);mark.textContent=index===0?'−':'+';body.hidden=index!==0;head.addEventListener('click',toggleCase)});
-    const componentDemo=document.querySelector('.component-visual');if(componentDemo){const feedback=componentDemo.querySelector('.demo-feedback'),renew=componentDemo.querySelector('[data-demo-action="renew"]'),detail=componentDemo.querySelector('[data-demo-action="detail"]'),setFeedback=text=>{feedback.textContent=text};renew.addEventListener('click',()=>{renew.textContent='Đã chọn gia hạn';renew.disabled=true;setFeedback('Primary action đã chuyển sang trạng thái hoàn tất.')});componentDemo.querySelector('[data-demo-action="cancel"]').addEventListener('click',()=>{renew.textContent='Gia hạn';renew.disabled=false;detail.setAttribute('aria-expanded','false');setFeedback('Trạng thái component đã được đặt lại.')});detail.addEventListener('click',()=>{const expanded=detail.getAttribute('aria-expanded')==='true';detail.setAttribute('aria-expanded',String(!expanded));setFeedback(expanded?'Đã thu gọn thông tin chi tiết.':'Chi tiết: tên miền vietnix.vn · trạng thái đang hoạt động.')});const errorField=componentDemo.querySelector('.demo-field.error');errorField.addEventListener('input',()=>{errorField.classList.toggle('error',errorField.value.trim().length<3);setFeedback(errorField.classList.contains('error')?'Giá trị cần có ít nhất 3 ký tự.':'Field đã chuyển từ error sang valid.')})}
     const screenCards=[...document.querySelectorAll('.screen-row:first-child .screen-card')];
     const dragRow=document.querySelector('.screen-row:first-child'),dragTrack=dragRow?.querySelector('.screen-track');if(dragRow&&dragTrack){screenCards.forEach(card=>{const clone=card.cloneNode(true);clone.classList.add('screen-card-clone');clone.setAttribute('aria-hidden','true');clone.setAttribute('tabindex','-1');dragTrack.appendChild(clone)});const updateLoopDistance=()=>{const gap=parseFloat(getComputedStyle(dragTrack).columnGap)||0,distance=screenCards.reduce((sum,card)=>sum+card.getBoundingClientRect().width,0)+gap*screenCards.length;dragTrack.style.setProperty('--screen-loop-distance',-distance+'px')};updateLoopDistance();new ResizeObserver(updateLoopDistance).observe(dragRow);let dragging=false,moved=false,startX=0,startScroll=0;screenCards.forEach(card=>{card.addEventListener('pointerenter',()=>dragTrack.classList.add('is-paused'));card.addEventListener('pointerleave',()=>{if(!dragging)dragTrack.classList.remove('is-paused')})});dragRow.addEventListener('pointerdown',event=>{dragging=true;moved=false;startX=event.clientX;startScroll=dragRow.scrollLeft;dragRow.classList.add('is-dragging');dragTrack.classList.add('is-paused');dragRow.setPointerCapture(event.pointerId)});dragRow.addEventListener('pointermove',event=>{if(!dragging)return;const delta=event.clientX-startX;if(Math.abs(delta)>5)moved=true;dragRow.scrollLeft=startScroll-delta});const finishDrag=event=>{if(!dragging)return;dragging=false;dragRow.classList.remove('is-dragging');if(dragRow.hasPointerCapture(event.pointerId))dragRow.releasePointerCapture(event.pointerId);if(!dragRow.querySelector(':hover.screen-card:not(.screen-card-clone)'))dragTrack.classList.remove('is-paused')};dragRow.addEventListener('pointerup',finishDrag);dragRow.addEventListener('pointercancel',finishDrag);dragRow.addEventListener('click',event=>{if(moved){event.preventDefault();event.stopImmediatePropagation();moved=false}},true)}})();
   </script>

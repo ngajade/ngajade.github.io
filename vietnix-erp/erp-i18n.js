@@ -1,6 +1,12 @@
 /* Page copy only: exported product screenshots intentionally retain their source language. */
 (() => {
   const pairs = [
+    ["Trạng thái của nút", "Button states"],
+    ["Lưu thay đổi", "Save changes"],
+    ["Đang lưu", "Saving"],
+    ["Mặc định", "Default"],
+    ["Đang tải", "Loading"],
+    ["Vô hiệu hóa", "Disabled"],
     ['Token → Component → Pattern giúp xây dựng màn hình mới nhất quán và dễ mở rộng.', 'Token → Component → Pattern keeps new screens consistent and makes the system easier to extend.'],
     ['Tầng 1','Layer 1'],['Tầng 2','Layer 2'],['Tầng 3','Layer 3'],
     ['03 - Phạm vi tính năng','03 - Feature scope'],
@@ -30,7 +36,7 @@
     ['02 - Bối cảnh','02 - Context'],['Từ nền tảng mua sẵn sang','From an off-the-shelf platform'],['hệ thống tự xây dựng','to a custom-built system'],['Vấn đề','Problem'],['Bài toán đặt ra','The challenge'],
     ['Vietnix sử dụng WHMCS - nền tảng quản lý hosting sẵn có nhưng khó tùy biến theo nghiệp vụ riêng và có giới hạn khi tích hợp, mở rộng.','Vietnix used WHMCS, an off-the-shelf hosting platform that was difficult to adapt to its specific workflows and limited in integration and scalability.'],
     ['Thiết kế trải nghiệm cho hệ thống ERP hosting tự xây dựng, trong bối cảnh cần chuyển dữ liệu của hàng chục nghìn khách hàng. Hai portal phải hỗ trợ nhu cầu quản lý dịch vụ của Client và quy trình vận hành của Admin.','Design the experience for a custom hosting ERP while accounting for the migration of data for tens of thousands of customers. The two portals needed to support Client service management and Admin operations.'],
-    ['Hệ thống WHMCS cũ','Previous WHMCS system'],['Hệ thống Vietnix ERP mới','New Vietnix ERP system'],['04 - Nền tảng thiết kế','04 - Design foundation'],
+    ['Hệ thống WHMCS cũ','Previous WHMCS system'],['Hệ thống Vietnix ERP mới','New Vietnix ERP system'],['06 - Nền tảng thiết kế','06 - Design foundation'],
     ['Phạm vi tính năng','Feature scope'],['Nghiệp vụ cốt lõi','Core workflows'],
     ['Admin Portal hỗ trợ đội ngũ vận hành; Client Portal giúp khách hàng theo dõi và tự xử lý những công việc liên quan đến dịch vụ.','The Admin Portal supports operations, while the Client Portal helps customers track and manage service-related tasks.'],
     ['Khách hàng và tài khoản','Customers and accounts'],['Tìm, lọc và tạo hồ sơ khách hàng; quản lý nhóm khách hàng, tài khoản đăng nhập và phân quyền.','Search, filter, and create customer profiles; manage customer groups, login accounts, and permissions.'],['Xem hồ sơ, chọn tài khoản đang sử dụng và nhận biết quyền thao tác.','View profile details, select the active account, and understand available permissions.'],
